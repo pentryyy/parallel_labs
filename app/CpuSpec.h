@@ -2,7 +2,7 @@
 #include <string>
 
 class CpuSpec {
-public:
+private:
     std::string model;
     int pcoreCount;
     int ecoreCount;
@@ -11,7 +11,7 @@ public:
     double pcoreFrequency;
     double ecoreFrequency;
     double uncoreFrequency;
-
+public:
     CpuSpec(const std::string &model = "", 
             int pcoreCount = 0,
             int ecoreCount = 0,
@@ -30,6 +30,8 @@ public:
         ecoreFrequency(ecoreFrequency),
         uncoreFrequency(uncoreFrequency)
     {}
+    
+    ~CpuSpec() {}
 
     void Print() const {
         std::cout << "CPU Model: " << model

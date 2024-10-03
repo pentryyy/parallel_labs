@@ -2,13 +2,13 @@
 #include <string>
 
 class GpuSpec {
-public:
+private:
     std::string model;
     int memorySize;
     int coreCount;
     double coreFrequency;
-    double vramFrequency;
-
+    double vramFrequency;    
+public:
     GpuSpec(const std::string &model = "", 
             int memorySize = 0, 
             int coreCount = 0, 
@@ -22,6 +22,8 @@ public:
         vramFrequency(vramFrequency)
     {}
 
+    ~GpuSpec() {}
+    
     void Print() const {
         std::cout << "GPU Model: " << model
                   << ", Memory Size: " << memorySize << " MB"
