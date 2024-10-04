@@ -1,0 +1,23 @@
+ClusterNode
+GpuSpec
+AMD Radeon RX 6800 XT
+16384
+4608
+2015
+2100
+CpuSpec
+AMD Ryzen 9 5900X
+12
+0
+0
+1
+4700
+0
+1800
+RamSpec
+65536
+3600
+DDR4
+LanSpec
+2500
+01:23:45:67:89:AB

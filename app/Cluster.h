@@ -2,43 +2,72 @@
 #include <fstream>
 #include "ClusterNode.h"
 
-class Cluster  {
+class Cluster {
 private:
     std::vector<ClusterNode> nodes;
+
 public:
     void AddNode(const ClusterNode &node) {
         nodes.push_back(node);
     }
 
     void Print() const {
-        std::cout << "Cluster contains " << nodes.size() << " nodes:\n";
+        if (nodes.size()){
+            std::cout << "Кластер содержит " << nodes.size() << " узлов:" << std::endl;
+            std::cout << std::string(128, '-') << std::endl;
+        } else {
+            std::cout << std::string(128, '-') << std::endl;
+        }
         for (const auto &node : nodes) {
             node.Print();
             std::cout << std::string(128, '-') << std::endl;
         }
     }
 
-    void Import(const std::string &filename) {
-        std::ifstream in(filename);
-        if (in.is_open()) {
-            int nodeCount;
-            in >> nodeCount;
-            nodes.resize(nodeCount);
-            for (auto &node : nodes) {
-                node.Import(in);
-            }
-            in.close();
+    bool Import(const std::string& fileName) {
+        std::ifstream file("import/" + fileName);
+        if (!file.is_open()) {
+            std::cerr << "Ошибка при открытии файла: " << fileName << std::endl;
+            return false;
         }
+        std::string header;
+        std::getline(file, header);
+        if (header != "Cluster") {
+            std::cerr << "Неверный формат файла. Ожидается заголовок 'Cluster'." << std::endl;
+            return false;
+        }
+        while (file) {
+            std::getline(file, header);
+            if (header == "ClusterNode") {
+                ClusterNode node;
+                if(!node.ImportNode(file)) { return false; }
+                nodes.push_back(node);
+            } else if (header.empty()) {
+                break;
+            }
+        }
+        file.close();
+        std::cout << "Импорт кластера из файла успешно выполнен: " << fileName << std::endl;
+        return true;
     }
-
-    void Export(const std::string &filename) const {
-        std::ofstream out(filename);
-        if (out.is_open()) {
-            out << nodes.size() << std::endl;
-            for (const auto &node : nodes) {
-                node.Export(out);
-            }
-            out.close();
+    
+    bool Export(const std::string& fileName) const {
+        std::ofstream file("export/" + fileName);
+        if (!file.is_open()) {
+            std::cerr << "Ошибка при открытии файла для записи: " << fileName << std::endl;
+            return false;
         }
+        file << "Cluster";
+        for (const auto& node : nodes) {
+            file <<  std::endl << "ClusterNode";
+            if (!node.ExportNode(file)) {
+                std::cerr << "Не удалось экспортировать узел." << std::endl;
+                file.close();
+                return false;
+            }
+        }
+        file.close();
+        std::cout << "Экспорт кластера в файл успешно выполнен: " << fileName << std::endl;
+        return true;
     }
 };
