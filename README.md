@@ -6,5 +6,8 @@
 2. Разработать класс `ClusterNode`, моделирующий вычислительный узел кластера. `ClusterNode` должен содержать сведения об установленных в нём технических устройствах.
 3. Разработать класс `Cluster`, моделирующий структуру вычислительного кластера.
 
-![alt text](https://github.com/pentryyy/parallel_labs/blob/main/images/ClassDiagram.png)
-<p style="text-align: center;">Диаграмма классов</p>
+Диаграмма классов
+
+![Диаграмма классов](https://github.com/pentryyy/parallel_labs/blob/main/images/ClassDiagram.png)
+
+Программа для 1-ой лабораторной работы находится по пути 1/lab1.

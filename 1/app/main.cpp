@@ -1,6 +1,13 @@
 #include "Cluster.h"
+#include <sstream>
+#include <locale>
+#include <codecvt>
+#include <Windows.h>
+#include <conio.h>
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+
     GpuSpec gpu1("AMD RX 6800 XT", 16384, 4608, 2250.0, 2000.0);
     CpuSpec cpu1("AMD Ryzen 7 7800X3D", 8, 0, false, true, 4500.0, 0.0, 2133.0);
     RamSpec ram1(32768, 6400.0, "DDR5");
@@ -40,5 +47,19 @@ int main() {
     сlusterF.Export("cluster_export.txt");
     сlusterF.Print();
 
+    std::cout << "Нажмите любую клавишу для продолжения..." << std::endl;
+
+    /* Запись строк в память вместо стандартного вывода (консоли) 
+    для корректного отображения кириллицы при запуске main.exe */
+    std::ostringstream buffer;
+    std::streambuf* originalCoutBuffer = std::cout.rdbuf(buffer.rdbuf());
+
+    std::cout.rdbuf(originalCoutBuffer);
+    std::string output = buffer.str();
+
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    std::wstring wideOutput = converter.from_bytes(output);
+
+    getch();
     return 0;
 }

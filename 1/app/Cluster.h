@@ -14,13 +14,13 @@ public:
     void Print() const {
         if (nodes.size()){
             std::cout << "Кластер содержит " << nodes.size() << " узлов:" << std::endl;
-            std::cout << std::string(128, '-') << std::endl;
+            std::cout << std::string(96, '-') << std::endl;
         } else {
-            std::cout << std::string(128, '-') << std::endl;
+            std::cout << std::string(96, '-') << std::endl;
         }
         for (const auto &node : nodes) {
             node.Print();
-            std::cout << std::string(128, '-') << std::endl;
+            std::cout << std::string(96, '-') << std::endl;
         }
     }
 
