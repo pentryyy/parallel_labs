@@ -33,8 +33,8 @@ int main() {
     ClusterNode clusterNode2(gpuF, cpuF, ramF, lanF);
     
     ClusterNode clusterNodeF;
-    clusterNodeF.Import("cluster_node_import.txt");
-    clusterNodeF.Export("cluster_node_export.txt");
+    clusterNodeF.ImportFromFile("cluster_node_import.txt");
+    clusterNodeF.ExportToFile("cluster_node_export.txt");
     
     Cluster сluster1;
     сluster1.AddNode(clusterNode1);
@@ -43,8 +43,8 @@ int main() {
     сluster1.Print();
 
     Cluster сlusterF;
-    сlusterF.Import("cluster_import.txt");
-    сlusterF.Export("cluster_export.txt");
+    сlusterF.ImportFromFile("cluster_import.txt");
+    сlusterF.ExportToFile("cluster_export.txt");
     сlusterF.Print();
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
