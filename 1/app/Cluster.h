@@ -5,7 +5,6 @@
 class Cluster {
 private:
     std::vector<ClusterNode> nodes;
-
 public:
     void AddNode(const ClusterNode &node) {
         nodes.push_back(node);
@@ -40,11 +39,9 @@ public:
             std::getline(file, header);
             if (header == "ClusterNode") {
                 ClusterNode node;
-                if(!node.ImportNode(file)) { return false; }
+                if(!node.Import(file)) { return false; }
                 nodes.push_back(node);
-            } else if (header.empty()) {
-                break;
-            }
+            } else if (header.empty()) { break; }
         }
         file.close();
         std::cout << "Импорт кластера из файла успешно выполнен: " << fileName << std::endl;
@@ -59,12 +56,8 @@ public:
         }
         file << "Cluster";
         for (const auto& node : nodes) {
-            file <<  std::endl << "ClusterNode";
-            if (!node.ExportNode(file)) {
-                std::cerr << "Не удалось экспортировать узел." << std::endl;
-                file.close();
-                return false;
-            }
+            file << std::endl;
+            node.Export(file);
         }
         file.close();
         std::cout << "Экспорт кластера в файл успешно выполнен: " << fileName << std::endl;

@@ -1,7 +1,6 @@
-#include <iostream>
-#include <string>
+#include "InputOutput.h"
 
-class LanSpec {
+class LanSpec : public InputOutput {
 private:
     double speed;  
     std::string macAddress;
@@ -15,52 +14,24 @@ public:
     
     ~LanSpec() {}
     
+    std::string GetClassHeader() const override { return "LanSpec"; }
+
     void Print() const {
         std::cout << "Скорость LAN: " << speed << " Мбит/с"
                   << ", MAC-адрес: " << macAddress << std::endl;
     }
 
-    void Import(std::istream& in) {
+    bool Import(std::istream& in) override {
+        if (!CheckHeaderName(in)) { return false; }
         in >> speed
            >> macAddress;
         in.ignore();
+        return true;
     }
 
-    void Export(std::ostream& out) const {
-        out << speed << std::endl
+    void Export(std::ostream& out) const override {
+        out << GetClassHeader() << std::endl
+            << speed << std::endl
             << macAddress;
-    }
-    bool Import(const std::string& fileName) {
-        std::ifstream file("import/" + fileName);
-        if (!file.is_open()) {
-            std::cerr << "Ошибка при открытии файла: " << fileName << std::endl;
-            return false;
-        }
-        std::string header;
-        std::getline(file, header);
-        if (header != "LanSpec") {
-            std::cerr << "Неверный формат файла. Ожидается заголовок 'LanSpec'." << std::endl;
-            return false;
-        }
-        file >> speed
-             >> macAddress;
-        file.ignore();
-        file.close();
-        std::cout << "Импорт из файла успешно выполнен: " << fileName << std::endl;
-        return true;
-    }
-
-    bool Export(const std::string& fileName) const {
-        std::ofstream file("export/" + fileName);
-        if (!file.is_open()) {
-            std::cerr << "Ошибка при открытии файла для записи: " << fileName << std::endl;
-            return false;
-        }
-        file << "LanSpec" << std::endl
-             << speed << std::endl
-             << macAddress;
-        file.close();
-        std::cout << "Экспорт в файл успешно выполнен: " << fileName << std::endl;
-        return true;
     }
 };

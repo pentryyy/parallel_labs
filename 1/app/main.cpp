@@ -14,20 +14,20 @@ int main() {
     LanSpec lan1(2500.0, "00:1B:2C:3D:4E:5F");
 
     GpuSpec gpuF;
-    gpuF.Import("gpu_import.txt");
-    gpuF.Export("gpu_export.txt");
-   
+    gpuF.ImportFromFile("gpu_import.txt");
+    gpuF.ExportToFile("gpu_export.txt");
+
     CpuSpec cpuF;
-    cpuF.Import("cpu_import.txt");
-    cpuF.Export("cpu_export.txt");
-   
+    cpuF.ImportFromFile("cpu_import.txt");
+    cpuF.ExportToFile("cpu_export.txt");
+
     RamSpec ramF;
-    ramF.Import("ram_import.txt");
-    ramF.Export("ram_export.txt");
-   
+    ramF.ImportFromFile("ram_import.txt");
+    ramF.ExportToFile("ram_export.txt");
+
     LanSpec lanF;
-    lanF.Import("lan_import.txt");
-    lanF.Export("lan_export.txt");
+    lanF.ImportFromFile("lan_import.txt");
+    lanF.ExportToFile("lan_export.txt");
 
     ClusterNode clusterNode1(gpu1, cpu1, ram1, lan1);
     ClusterNode clusterNode2(gpuF, cpuF, ramF, lanF);
@@ -35,7 +35,7 @@ int main() {
     ClusterNode clusterNodeF;
     clusterNodeF.Import("cluster_node_import.txt");
     clusterNodeF.Export("cluster_node_export.txt");
- 
+    
     Cluster сluster1;
     сluster1.AddNode(clusterNode1);
     сluster1.AddNode(clusterNode2);
@@ -47,10 +47,12 @@ int main() {
     сlusterF.Export("cluster_export.txt");
     сlusterF.Print();
 
-    std::cout << "Нажмите любую клавишу для продолжения..." << std::endl;
+    std::cout << "Нажмите любую клавишу для продолжения... ";
 
-    /* Запись строк в память вместо стандартного вывода (консоли) 
-    для корректного отображения кириллицы при запуске main.exe */
+    /* 
+    Запись строк в память вместо стандартного вывода (консоли) 
+    для корректного отображения кириллицы при запуске main.exe.
+    */
     std::ostringstream buffer;
     std::streambuf* originalCoutBuffer = std::cout.rdbuf(buffer.rdbuf());
 

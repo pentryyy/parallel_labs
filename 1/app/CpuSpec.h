@@ -1,7 +1,6 @@
-#include <iostream>
-#include <string>
+#include "InputOutput.h"
 
-class CpuSpec {
+class CpuSpec : public InputOutput {
 private:
     std::string model;
     int pcoreCount;
@@ -33,6 +32,8 @@ public:
     
     ~CpuSpec() {}
 
+    std::string GetClassHeader() const override { return "CpuSpec"; }
+
     void Print() const { 
         std::cout << "Модель процессора: " << model
                 << ", Количество производительных ядер: " << pcoreCount
@@ -44,7 +45,8 @@ public:
                 << ", Частота межъядерной шины: " << uncoreFrequency << " МГц" << std::endl;
     }
 
-    void Import(std::istream& in) {
+    bool Import(std::istream& in) override {
+        if (!CheckHeaderName(in)) { return false; }
         std::getline(in, model);
         in >> pcoreCount
            >> ecoreCount
@@ -54,52 +56,11 @@ public:
            >> ecoreFrequency
            >> uncoreFrequency;
         in.ignore();
-    }
-
-    void Export(std::ostream& out) const {
-        out << model << std::endl
-            << pcoreCount << std::endl
-            << ecoreCount << std::endl
-            << hasEcore << std::endl
-            << hasMultithreading << std::endl
-            << pcoreFrequency << std::endl
-            << ecoreFrequency << std::endl
-            << uncoreFrequency;
-    }
-
-    bool Import(const std::string& fileName) {
-        std::ifstream file("import/" + fileName);
-        if (!file.is_open()) {
-            std::cerr << "Ошибка при открытии файла: " << fileName << std::endl;
-            return false;
-        }
-        std::string header;
-        std::getline(file, header);
-        if (header != "CpuSpec") {
-            std::cerr << "Неверный формат файла. Ожидается заголовок 'CpuSpec'." << std::endl;
-            return false;
-        }
-        std::getline(file, model);
-        file >> pcoreCount
-             >> ecoreCount
-             >> hasEcore
-             >> hasMultithreading
-             >> pcoreFrequency
-             >> ecoreFrequency
-             >> uncoreFrequency;
-        file.ignore();
-        file.close();
-        std::cout << "Импорт из файла успешно выполнен: " << fileName << std::endl;
         return true;
     }
 
-    bool Export(const std::string& fileName) const {
-        std::ofstream file("export/" + fileName);
-        if (!file.is_open()) {
-            std::cerr << "Ошибка при открытии файла для записи: " << fileName << std::endl;
-            return false;
-        }
-        file << "CpuSpec" << std::endl
+    void Export(std::ostream& out) const override {
+        out << GetClassHeader() << std::endl
             << model << std::endl
             << pcoreCount << std::endl
             << ecoreCount << std::endl
@@ -108,8 +69,5 @@ public:
             << pcoreFrequency << std::endl
             << ecoreFrequency << std::endl
             << uncoreFrequency;
-        file.close();
-        std::cout << "Экспорт в файл успешно выполнен: " << fileName << std::endl;
-        return true;
     }
 };
