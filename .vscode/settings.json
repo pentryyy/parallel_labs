@@ -68,7 +68,14 @@
         "unordered_map": "cpp",
         "variant": "cpp",
         "xhash": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "algorithm": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "iomanip": "cpp",
+        "unordered_set": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }

@@ -4,38 +4,30 @@
 #include <codecvt>
 #include <Windows.h>
 #include <conio.h>
-#include "main/DenseMatrix.h"
+#include "src/DenseMatrix.h"
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
 
-    DenseMatrix<int> matrix1(2, 2);
-    DenseMatrix<int> matrix2(2, 2);
+    DenseMatrix<int> matrix1(3, 3);
 
-    matrix1(0, 0) = 1;
-    matrix1(0, 1) = 2;
-    matrix1(1, 0) = 3;
-    matrix1(1, 1) = 4;
+    matrix1(0, 0) = 3; matrix1(0, 1) = 20; matrix1(0, 2) = 43;
+    matrix1(1, 0) = 33; matrix1(1, 1) = 95; matrix1(1, 2) = 36;
+    matrix1(2, 0) = 23; matrix1(2, 1) = 3; matrix1(2, 2) = 5;
 
-    DenseMatrix<int> result = matrix1 + matrix2;
+    matrix1.Export("dense_matrix_export.txt");
+    matrix1.Print();
 
-    std::cout << "Результат сложения:\n";
-    for (std::size_t i = 0; i < 2; ++i) {
-        for (std::size_t j = 0; j < 2; ++j) {
-            std::cout << result(i, j) << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    DenseMatrix<int> multResult = matrix1 * matrix2;
-
-    std::cout << "Результат умножения:\n";
-    for (std::size_t i = 0; i < 2; ++i) {
-        for (std::size_t j = 0; j < 2; ++j) {
-            std::cout << multResult(i, j) << " ";
-        }
-        std::cout << std::endl;
-    }
+    DenseMatrix<int> matrix2 = DenseMatrix<int>::Import("dense_matrix_import.txt");
+    matrix2.Print();
+    
+    DenseMatrix<int> matrixPlus = matrix1 + matrix2;
+    DenseMatrix<int> matrixMinus = matrix1 - matrix2;
+    DenseMatrix<int> matrixMultiply = matrix1 * matrix2;
+    
+    matrixPlus.Print();
+    matrixMinus.Print();
+    matrixMultiply.Print();
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 
