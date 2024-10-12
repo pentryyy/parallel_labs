@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <cstring>
 #include <fstream>
+#include <limits>
 #ifndef MATRIX_H
 #define MATRIX_H
 
@@ -29,7 +30,7 @@ public:
     }
 
     ~Matrix() { delete[] Data; }
-
+    
     auto operator()(std::size_t i, std::size_t j) const -> T {
         if (i >= this->M || j >= this->N) {
             throw std::out_of_range("Индексы выходят за пределы матрицы.");
@@ -44,20 +45,62 @@ public:
         return Data[i * N + j];
     }
 
+    
     void Print() const {
-        std::cout << "Результат вывода матрицы "  << this->M <<" x " << this->N << std::endl
-                  <<std::string(96, '-') << std::endl;
+        std::cout << "Результат вывода матрицы " << this->M << " x " << this->N << std::endl
+                << std::string(96, '-') << std::endl;
         for (std::size_t i = 0; i < M; ++i) {
             for (std::size_t j = 0; j < N; ++j) {
-                std::cout << Data[i * N + j] << " ";
+                std::cout << Data[i * N + j] << "  ";
             }
             std::cout << std::endl;
         }
         std::cout << std::string(96, '-') << std::endl;
     }
 
-    virtual Matrix<T>* Transpose() const = 0;
-    virtual Matrix<T>* ScalarMultiplication(T scalar) const  = 0;
+    template<typename MatrixT>
+    static MatrixT Import(const std::string& fileName) {
+        std::ifstream file("import/" + fileName);
+        if (!file.is_open()) {
+            throw std::runtime_error("Ошибка при открытии файла: " + fileName);
+        }
+        std::string header;
+        std::getline(file, header);
+        if (header != MatrixT::GetClassHeader()) {
+            throw std::runtime_error("Неверный формат файла. Ожидается заголовок '" + MatrixT::GetClassHeader() + "'.");
+        }
+        std::size_t rows, cols;
+        file >> rows >> cols;
+        MatrixT matrix(rows, cols);
+        for (std::size_t i = 0; i < rows; ++i) {
+            for (std::size_t j = 0; j < cols; ++j) {
+                if (!(file >> (matrix)(i, j))) {
+                    throw std::runtime_error("Ошибка чтения данных из файла.");
+                }
+            }
+        }
+        file.close();
+        std::cout << "Импорт из файла успешно выполнен: " << fileName << std::endl;
+        return matrix;
+    }
+
+    template<typename MatrixT>
+    void Export(const std::string& fileName) const {
+        std::ofstream file("export/" + fileName);
+        if (!file.is_open()) {
+            throw std::runtime_error("Ошибка при открытии файла для записи: " + fileName);
+        }
+        file << MatrixT::GetClassHeader() << std::endl;
+        file << this->M << " " << this->N;
+        for (std::size_t i = 0; i < this->M; ++i) {
+            file << std::endl;
+            for (std::size_t j = 0; j < this->N; ++j) {
+                file << (*this)(i, j) << " ";
+            }
+        }
+        file.close();
+        std::cout << "Экспорт в файл успешно выполнен: " << fileName << std::endl;
+    }
 };
 
 #endif

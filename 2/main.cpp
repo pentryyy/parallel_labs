@@ -5,6 +5,7 @@
 #include <Windows.h>
 #include <conio.h>
 #include "src/DenseMatrix.h"
+#include "src/DiagonalMatrix.h"
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -25,9 +26,40 @@ int main() {
     DenseMatrix<int> matrixMinus = matrix1 - matrix2;
     DenseMatrix<int> matrixMultiply = matrix1 * matrix2;
     
+    DenseMatrix<int> transposedMatrix = matrix2.Transpose();
+    DenseMatrix<int> scaledMatrix = matrix2.ScalarMultiplication(2);     
+
     matrixPlus.Print();
     matrixMinus.Print();
     matrixMultiply.Print();
+
+    transposedMatrix.Print();
+    scaledMatrix.Print();
+
+    DiagonalMatrix<int> matrix1d(3);
+    matrix1d(0, 0) = 13;
+    matrix1d(1, 1) = 51;
+    matrix1d(2, 2) = 24;
+
+    matrix1d.Export("diagonal_matrix_export.txt");
+    matrix1d.Print();
+
+    DiagonalMatrix<int> matrix2d = DiagonalMatrix<int>::Import("diagonal_matrix_import.txt");
+    matrix2d.Print();
+  
+    DiagonalMatrix<int> matrixPlusD = matrix1d + matrix2d;
+    DiagonalMatrix<int> matrixMinusD = matrix1d - matrix2d;
+    DiagonalMatrix<int> matrixMultiplyD = matrix1d * matrix2d;
+ 
+    DiagonalMatrix<int> transposedMatrixD = matrix2d.Transpose();
+    DiagonalMatrix<int> scaledMatrixD = matrix2d.ScalarMultiplication(2);   
+
+    matrixPlusD.Print();
+    matrixMinusD.Print();
+    matrixMultiplyD.Print();
+
+    transposedMatrixD.Print();
+    scaledMatrixD.Print();
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 
