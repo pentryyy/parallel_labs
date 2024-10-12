@@ -10,6 +10,8 @@ private:
     double pcoreFrequency;
     double ecoreFrequency;
     double uncoreFrequency;
+protected:
+    std::string GetClassHeader() const override { return "CpuSpec"; }
 public:
     CpuSpec(const std::string &model = "", 
             int pcoreCount = 0,
@@ -32,7 +34,14 @@ public:
     
     ~CpuSpec() {}
 
-    std::string GetClassHeader() const override { return "CpuSpec"; }
+    std::string GetModel() const { return model; }
+    int GetPcoreCount() const { return pcoreCount; }
+    int GetEcoreCount() const { return ecoreCount; }
+    bool HasEcore() const { return hasEcore; }
+    bool HasMultithreading() const { return hasMultithreading; }
+    double GetPcoreFrequency() const { return pcoreFrequency; }
+    double GetEcoreFrequency() const { return ecoreFrequency; }
+    double GetUncoreFrequency() const { return uncoreFrequency; }
 
     void Print() const { 
         std::cout << "Модель процессора: " << model

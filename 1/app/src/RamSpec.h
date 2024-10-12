@@ -5,6 +5,8 @@ private:
     int capacity;
     double frequency;
     std::string type;
+protected:
+    std::string GetClassHeader() const override { return "RamSpec"; }
 public:
     RamSpec(int capacity = 0, 
             double frequency = 0.0,
@@ -17,7 +19,9 @@ public:
 
     ~RamSpec() {}
 
-    std::string GetClassHeader() const override { return "RamSpec"; }
+    int GetCapacity() const { return capacity; }
+    double GetFrequency() const { return frequency; }
+    std::string GetType() const { return type; }
 
     void Print() const {
         std::cout << "Объем ОЗУ: " << capacity << " МБ"

@@ -8,7 +8,19 @@ namespace CpuData {
 }
 
 TEST(CpuSpecTest, Constructor) {
-    EXPECT_EQ(CpuData::cpu.GetClassHeader(), "CpuSpec") << "Ошибка конструктора!";
+    EXPECT_NE(CpuData::cpu.GetModel(), "") << "Поле model пусто!";
+    EXPECT_GT(CpuData::cpu.GetPcoreCount(), 0) << "Поле pcoreCount равно 0!";
+    if (CpuData::cpu.HasEcore()){
+        EXPECT_TRUE(CpuData::cpu.HasEcore()) << "Поле hasEcore не установлено!";
+        EXPECT_GT(CpuData::cpu.GetEcoreCount(), 0) << "Поле ecoreCount равно 0!";
+        EXPECT_GT(CpuData::cpu.GetEcoreFrequency(), 0.0) << "Поле ecoreFrequency равно 0!";
+
+    }
+    if (CpuData::cpu.HasMultithreading()){
+        EXPECT_TRUE(CpuData::cpu.HasMultithreading()) << "Поле hasMultithreading не установлено!";
+    }
+    EXPECT_GT(CpuData::cpu.GetPcoreFrequency(), 0.0) << "Поле pcoreFrequency равно 0!";
+    EXPECT_GT(CpuData::cpu.GetUncoreFrequency(), 0.0) << "Поле uncoreFrequency равно 0!";
 }
 
 TEST(CpuSpecTest, Export) {

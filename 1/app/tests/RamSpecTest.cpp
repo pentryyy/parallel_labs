@@ -8,7 +8,9 @@ namespace RamData {
 }
 
 TEST(RamSpecTest, Constructor) {
-    EXPECT_EQ(RamData::ram.GetClassHeader(), "RamSpec") << "Ошибка конструктора!";
+    EXPECT_GT(RamData::ram.GetCapacity(), 0) << "Поле capacity равно 0!";
+    EXPECT_GT(RamData::ram.GetFrequency(), 0.0) << "Поле frequency равно 0!";
+    EXPECT_NE(RamData::ram.GetType(), "") << "Поле type пусто!";
 }
 
 TEST(RamSpecTest, Export) {

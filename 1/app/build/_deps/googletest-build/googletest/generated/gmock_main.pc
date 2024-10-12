@@ -1,5 +1,5 @@
-libdir=C:/Program Files (x86)/parallel_lab1/lib
-includedir=C:/Program Files (x86)/parallel_lab1/include
+libdir=C:/Program Files (x86)/parallel_lab_1/lib
+includedir=C:/Program Files (x86)/parallel_lab_1/include
 
 Name: gmock_main
 Description: GoogleMock (with main() function)

@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\f81ce1e4ae81d0abee81b345c9b1d6f8\googletest-populate-mkdir.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\2c51fea8b7560e9a1171008a917f2fff\googletest-populate-mkdir.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\f81ce1e4ae81d0abee81b345c9b1d6f8\googletest-populate-download.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\2c51fea8b7560e9a1171008a917f2fff\googletest-populate-download.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\f81ce1e4ae81d0abee81b345c9b1d6f8\googletest-populate-update.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\2c51fea8b7560e9a1171008a917f2fff\googletest-populate-update.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\f81ce1e4ae81d0abee81b345c9b1d6f8\googletest-populate-patch.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\2c51fea8b7560e9a1171008a917f2fff\googletest-populate-patch.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\f81ce1e4ae81d0abee81b345c9b1d6f8\googletest-populate-configure.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\2c51fea8b7560e9a1171008a917f2fff\googletest-populate-configure.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\f81ce1e4ae81d0abee81b345c9b1d6f8\googletest-populate-build.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\2c51fea8b7560e9a1171008a917f2fff\googletest-populate-build.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\f81ce1e4ae81d0abee81b345c9b1d6f8\googletest-populate-install.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\2c51fea8b7560e9a1171008a917f2fff\googletest-populate-install.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\f81ce1e4ae81d0abee81b345c9b1d6f8\googletest-populate-test.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\2c51fea8b7560e9a1171008a917f2fff\googletest-populate-test.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\7ed970072ba578a5826b38de7e177672\googletest-populate-complete.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\67d78691ef834714ffdd51d3877109bf\googletest-populate-complete.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\27c66d888307c99f81cd26705b6f40e3\googletest-populate.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\7dba531f08abb118be53fd7c4b695143\googletest-populate.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\googletest-populate" />
+    <None Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\googletest-populate" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{C6BD96FB-F1C2-3CC4-A3FA-9590662A5393}</UniqueIdentifier>
+      <UniqueIdentifier>{3ABEDA93-26EF-3122-8B5C-3DE0B554280F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -4,6 +4,8 @@ class LanSpec : public InputOutput {
 private:
     double speed;  
     std::string macAddress;
+protected:
+    std::string GetClassHeader() const override { return "LanSpec"; }
 public:
     LanSpec(double speed = 0.0,
             const std::string &macAddress = ""
@@ -14,7 +16,8 @@ public:
     
     ~LanSpec() {}
     
-    std::string GetClassHeader() const override { return "LanSpec"; }
+    double GetSpeed() const { return speed; }
+    std::string GetMacAddress() const { return macAddress; }
 
     void Print() const {
         std::cout << "Скорость LAN: " << speed << " Мбит/с"

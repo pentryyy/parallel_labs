@@ -13,7 +13,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{283A7CD9-2316-3594-8C52-02211C0A1B51}</ProjectGuid>
+    <ProjectGuid>{76828C75-220E-38CD-BAA1-F846CA005F13}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -48,11 +48,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-subbuild/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-subbuild/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-subbuild -BC:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-subbuild --check-stamp-file C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-subbuild/CMakeFiles/generate.stamp
+C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-subbuild -BC:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-subbuild --check-stamp-file C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-subbuild/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -60,22 +60,22 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeGenericSystem.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\PatchInfo.txt.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\UpdateInfo.txt.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\cfgcmd.txt.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\download.cmake.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\extractfile.cmake.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\mkdirs.cmake.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Platform\Windows.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\3.29.0\CMakeSystem.cmake;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\googletest-populate-prefix\tmp\googletest-populate-mkdirs.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeDetermineSystem.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeGenericSystem.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeSystem.cmake.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\PatchInfo.txt.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\UpdateInfo.txt.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\cfgcmd.txt.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\download.cmake.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\extractfile.cmake.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\mkdirs.cmake.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Platform\Windows.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\3.29.0\CMakeSystem.cmake;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\googletest-populate-prefix\tmp\googletest-populate-mkdirs.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\ZERO_CHECK.vcxproj">
-      <Project>{E8AC253E-254B-3740-A48A-278835D452C9}</Project>
+    <ProjectReference Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\ZERO_CHECK.vcxproj">
+      <Project>{81EFF46E-47BE-3D55-99AE-08CB41894471}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\googletest-populate.vcxproj">
-      <Project>{7073411C-6B97-36F7-AFEF-23F5D7BA978E}</Project>
+    <ProjectReference Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\1\app\build\_deps\googletest-subbuild\googletest-populate.vcxproj">
+      <Project>{EB0A2946-45C8-3EC2-B66E-5A3B683DF7F4}</Project>
       <Name>googletest-populate</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

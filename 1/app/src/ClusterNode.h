@@ -9,6 +9,8 @@ private:
     CpuSpec cpu;
     RamSpec ram;
     LanSpec lan;
+protected:
+    std::string GetClassHeader() const override { return "ClusterNode"; }
 public:
     ClusterNode(const GpuSpec &gpu = {}, 
                 const CpuSpec &cpu = {}, 
@@ -23,7 +25,6 @@ public:
 
     ~ClusterNode() {}
 
-    std::string GetClassHeader() const override { return "ClusterNode"; }
 
     void Print() const {
         std::cout << "Спецификации узла кластера:" << std::endl;

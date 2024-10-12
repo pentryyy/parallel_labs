@@ -8,7 +8,8 @@ namespace LanData {
 }
 
 TEST(LanSpecTest, Constructor) {
-    EXPECT_EQ(LanData::lan.GetClassHeader(), "LanSpec") << "Ошибка конструктора!";
+    EXPECT_GT(LanData::lan.GetSpeed(), 0.0) << "Поле speed равно 0!";
+    EXPECT_NE(LanData::lan.GetMacAddress(), "") << "Поле macAddress пусто!";
 }
 
 TEST(LanSpecTest, Export) {

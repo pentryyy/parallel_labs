@@ -8,7 +8,11 @@ namespace GpuData {
 }
 
 TEST(GpuSpecTest, Constructor) {
-    EXPECT_EQ(GpuData::gpu.GetClassHeader(), "GpuSpec") << "Ошибка конструктора!";
+    EXPECT_NE(GpuData::gpu.GetModel(), "") << "Поле model пусто!";
+    EXPECT_GT(GpuData::gpu.GetMemorySize(), 0) << "Поле memorySize равно 0!";
+    EXPECT_GT(GpuData::gpu.GetCoreCount(), 0) << "Поле coreCount равно 0!";
+    EXPECT_GT(GpuData::gpu.GetCoreFrequency(), 0.0) << "Поле coreFrequency равно 0!";
+    EXPECT_GT(GpuData::gpu.GetVramFrequency(), 0.0) << "Поле vramFrequency равно 0!";
 }
 
 TEST(GpuSpecTest, Export) {

@@ -6,7 +6,9 @@ private:
     int memorySize;
     int coreCount;
     double coreFrequency;
-    double vramFrequency;    
+    double vramFrequency;
+protected:
+    std::string GetClassHeader() const override { return "GpuSpec"; }
 public:
     GpuSpec(const std::string &model = "", 
             int memorySize = 0, 
@@ -23,7 +25,11 @@ public:
 
     ~GpuSpec() {}
     
-    std::string GetClassHeader() const override { return "GpuSpec"; }
+    std::string GetModel() const { return model; }
+    int GetMemorySize() const { return memorySize; }
+    int GetCoreCount() const { return coreCount; }
+    double GetCoreFrequency() const { return coreFrequency; }
+    double GetVramFrequency() const { return vramFrequency; }
 
     void Print() const { 
         std::cout << "Модель видеокарты: " << model
