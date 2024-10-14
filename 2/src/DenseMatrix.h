@@ -7,17 +7,18 @@ public:
 
     ~DenseMatrix() {}
 
-    static std::string GetClassHeader() {
-        return "DenseMatrix";
+    T& operator()(std::size_t i, std::size_t j) {
+        if (i >= this->M || j >= this->N) {
+            throw std::out_of_range("Индексы выходят за пределы матрицы.");
+        }
+        return this->Data[i * this->N + j];
     }
 
-    void Export(const std::string& fileName) const {
-        Matrix<T>::template Export<DenseMatrix<T>>(fileName);
-    }
-
-    static DenseMatrix<T> Import(const std::string& fileName) {
-        DenseMatrix<T> matrix = Matrix<T>::template Import<DenseMatrix<T>>(fileName);
-        return matrix;
+    T operator()(std::size_t i, std::size_t j) const {
+        if (i >= this->M || j >= this->N) {
+            throw std::out_of_range("Индексы выходят за пределы матрицы.");
+        }
+        return this->Data[i * this->N + j];
     }
 
     DenseMatrix<T> operator+(const DenseMatrix<T>& other) const {
@@ -80,5 +81,18 @@ public:
             }
         }
         return result;
+    }
+
+    std::string GetClassHeader() const override {
+        return "DenseMatrix";
+    }
+
+    void Export(const std::string& fileName) const {
+        Matrix<T>::template Export<DenseMatrix<T>>(fileName);
+    }
+
+    static DenseMatrix<T> Import(const std::string& fileName) {
+        DenseMatrix<T> matrix = Matrix<T>::template Import<DenseMatrix<T>>(fileName);
+        return matrix;
     }
 };

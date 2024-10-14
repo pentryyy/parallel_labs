@@ -36,11 +36,9 @@ int main() {
     transposedMatrix.Print();
     scaledMatrix.Print();
 
-    DiagonalMatrix<int> matrix1d(3);
-    matrix1d(0, 0) = 13;
-    matrix1d(1, 1) = 51;
-    matrix1d(2, 2) = 24;
-
+    std::vector<int> diagonal{12, 43, 26};
+    
+    DiagonalMatrix<int> matrix1d(diagonal);
     matrix1d.Export("diagonal_matrix_export.txt");
     matrix1d.Print();
 
