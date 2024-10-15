@@ -2,6 +2,7 @@
 #include <numeric>
 #include <stdexcept>
 #include "Matrix.h"
+#include "DiagonalMatrix.h"
 #include "DenseMatrix.h"
 
 template <typename T>
@@ -11,13 +12,7 @@ private:
     std::vector<std::size_t> row_block_sizes;
     std::vector<std::size_t> col_block_sizes;
 
-    // Метод расчета количества строк для конструктора матрицы
-    std::size_t CalculateTotalRows(const std::vector<std::size_t>& sizes) {
-        return std::accumulate(sizes.begin(), sizes.end(), std::size_t(0));
-    }
-
-    // Метод расчета количества столбцов для конструктора матрицы
-    std::size_t CalculateTotalCols(const std::vector<std::size_t>& sizes) {
+    std::size_t CalculateTotalRowsCols(const std::vector<std::size_t>& sizes) {
         return std::accumulate(sizes.begin(), sizes.end(), std::size_t(0));
     }
 
@@ -38,7 +33,7 @@ public:
     BlockMatrix(const std::vector<std::vector<DenseMatrix<T>>>& blockMatrix, 
                 const std::vector<std::size_t>& rowSizes, 
                 const std::vector<std::size_t>& colSizes
-            ) : Matrix<T>(CalculateTotalRows(rowSizes), CalculateTotalCols(colSizes)),
+            ) : Matrix<T>(CalculateTotalRowsCols(rowSizes), CalculateTotalRowsCols(colSizes)),
             blocks(blockMatrix), 
             row_block_sizes(rowSizes), 
             col_block_sizes(colSizes) {
@@ -66,6 +61,40 @@ public:
         }
         return blocks[block_row][block_col](row_in_block, col_in_block);
     }
+    
+    BlockMatrix<T> operator+(const BlockMatrix<T>& other) const {
+        if (blocks.size() != other.blocks.size() || blocks[0].size() != other.blocks[0].size()) {
+            throw std::invalid_argument("Размеры матриц не совпадают для сложения.");
+        }
+        std::vector<std::vector<DenseMatrix<T>>> result_blocks = blocks;
+        for (std::size_t i = 0; i < blocks.size(); ++i) {
+            for (std::size_t j = 0; j < blocks[i].size(); ++j) {
+                for (std::size_t row = 0; row < row_block_sizes[i]; ++row) {
+                    for (std::size_t col = 0; col < col_block_sizes[j]; ++col) {
+                        result_blocks[i][j](row, col) = blocks[i][j](row, col) + other.blocks[i][j](row, col);
+                    }
+                }
+            }
+        }
+        return BlockMatrix(result_blocks, row_block_sizes, col_block_sizes);
+    }
+
+    BlockMatrix<T> operator-(const BlockMatrix<T>& other) const {
+        if (blocks.size() != other.blocks.size() || blocks[0].size() != other.blocks[0].size()) {
+            throw std::invalid_argument("Размеры матриц не совпадают для вычитания.");
+        }
+        std::vector<std::vector<DenseMatrix<T>>> result_blocks = blocks;
+        for (std::size_t i = 0; i < blocks.size(); ++i) {
+            for (std::size_t j = 0; j < blocks[i].size(); ++j) {
+                for (std::size_t row = 0; row < row_block_sizes[i]; ++row) {
+                    for (std::size_t col = 0; col < col_block_sizes[j]; ++col) {
+                        result_blocks[i][j](row, col) = blocks[i][j](row, col) - other.blocks[i][j](row, col);
+                    }
+                }
+            }
+        }
+        return BlockMatrix(result_blocks, row_block_sizes, col_block_sizes);
+    }
 
     std::string GetClassHeader() const override {
         return "BlockMatrix";
@@ -73,10 +102,5 @@ public:
 
     void Export(const std::string& fileName) const {
         Matrix<T>::template Export<BlockMatrix<T>>(fileName);
-    }
-
-    static BlockMatrix<T> Import(const std::string& fileName) {
-        BlockMatrix<T> matrix = Matrix<T>::template Import<BlockMatrix<T>>(fileName);
-        return matrix;
-    }   
+    } 
 };

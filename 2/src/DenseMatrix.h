@@ -7,14 +7,14 @@ public:
 
     ~DenseMatrix() {}
 
-    T& operator()(std::size_t i, std::size_t j) {
+    T& operator()(std::size_t i, std::size_t j) override {
         if (i >= this->M || j >= this->N) {
             throw std::out_of_range("Индексы выходят за пределы матрицы.");
         }
         return this->Data[i * this->N + j];
     }
 
-    T operator()(std::size_t i, std::size_t j) const {
+    T operator()(std::size_t i, std::size_t j) const override {
         if (i >= this->M || j >= this->N) {
             throw std::out_of_range("Индексы выходят за пределы матрицы.");
         }
@@ -48,10 +48,10 @@ public:
     }
 
     DenseMatrix<T> operator*(const DenseMatrix<T>& other) const {
-        if (this->N != other.M) {
+        if (this->M != other.M || this->N != other.N) {
             throw std::invalid_argument("Количество столбцов первой матрицы должно быть равно количеству строк второй матрицы.");
         }
-        DenseMatrix<T> result(this->M, other.N);
+        DenseMatrix<T> result(this->M, this->N);
         for (std::size_t i = 0; i < this->M; ++i) {
             for (std::size_t j = 0; j < other.N; ++j) {
                 result(i, j) = 0;

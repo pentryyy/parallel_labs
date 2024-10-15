@@ -40,7 +40,7 @@ public:
         for (std::size_t i = 0; i < M; ++i) {
             std::cout << "| ";
             for (std::size_t j = 0; j < N; ++j) {
-                std::cout << std::setw(5) << Data[i * N + j] << " ";
+                std::cout << std::setw(10) << (*this)(i, j) << " ";
             }
             std::cout << "|" << std::endl;
         }
