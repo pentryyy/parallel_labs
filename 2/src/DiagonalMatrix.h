@@ -13,6 +13,7 @@ public:
         }
     }
 
+    // Коснструктор на основе вектора диагональных элементов
     DiagonalMatrix(const std::vector<T>& diagonal) : Matrix<T>(diagonal.size(), diagonal.size()) {
         std::size_t size = diagonal.size();
         for (std::size_t i = 0; i < size; ++i) {

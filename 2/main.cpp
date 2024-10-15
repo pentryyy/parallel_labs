@@ -4,8 +4,8 @@
 #include <codecvt>
 #include <Windows.h>
 #include <conio.h>
-#include "src/DenseMatrix.h"
 #include "src/DiagonalMatrix.h"
+#include "src/BlockMatrix.h"
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -58,6 +58,43 @@ int main() {
 
     transposedMatrixD.Print();
     scaledMatrixD.Print();
+
+    // Создание блочной матрицы с 2x2 блоками
+    DenseMatrix<int> block1(2, 2);
+    block1(0, 0) = 1; block1(0, 1) = 2;
+    block1(1, 0) = 3; block1(1, 1) = 4;
+
+    DenseMatrix<int> block2(2, 2);
+    block2(0, 0) = 5; block2(0, 1) = 6;
+    block2(1, 0) = 7; block2(1, 1) = 8;
+
+    DenseMatrix<int> block3(2, 2);
+    block3(0, 0) = 9; block3(0, 1) = 10;
+    block3(1, 0) = 11; block3(1, 1) = 12;
+
+    DenseMatrix<int> block4(2, 2);
+    block4(0, 0) = 13; block4(0, 1) = 14;
+    block4(1, 0) = 15; block4(1, 1) = 16;
+
+    // Создаем блочную матрицу 2x2 блоков
+    std::vector<std::vector<DenseMatrix<int>>> blocks = {
+        {block1, block2},
+        {block3, block4}
+    };
+    std::vector<std::size_t> row_block_sizes = {2, 2};
+    std::vector<std::size_t> col_block_sizes = {2, 2};
+
+    BlockMatrix<int> matrix1b(blocks, row_block_sizes, col_block_sizes);
+
+    // Экспортируем блочную матрицу
+    matrix1b.Export("block_matrix_export.txt");
+
+    // Печатаем первую блочную матрицу
+    std::cout << "Matrix 1:" << std::endl;
+    matrix1b.Print();
+
+    // BlockMatrix<int> matrix2 = BlockMatrix<int>::Import("block_matrix_import.txt");
+    // matrix2.Print();
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 
