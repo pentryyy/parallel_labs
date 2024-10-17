@@ -13,6 +13,8 @@ protected:
     std::size_t N = 0;
     T* Data = nullptr;
 public:
+    using Type = T;
+ 
     Matrix(std::size_t M, std::size_t N) {
         if (N == 0 || M == 0) {
             throw std::invalid_argument("Число строк и столбцов должно быть больше нуля.");

@@ -5,19 +5,19 @@
 #include "DiagonalMatrix.h"
 #include "DenseMatrix.h"
 
-template <typename T>
-class BlockMatrix : public Matrix<T> {
+template <typename MatrixT>
+class BlockMatrix : public Matrix<typename MatrixT::Type> {
 private:
-    std::vector<std::vector<DenseMatrix<T>>> MatrixBlocks;
+    std::vector<std::vector<MatrixT>> MatrixBlocks;
     std::pair<std::size_t, std::size_t> MatrixMesh;
     std::pair<std::size_t, std::size_t> MatrixSize;
 public:
-    BlockMatrix(std::size_t M, std::size_t N) : Matrix<T>(M, N) {}
+    BlockMatrix(std::size_t M, std::size_t N) : Matrix<typename MatrixT::Type>(M, N) {}
 
-    BlockMatrix(const std::vector<std::vector<DenseMatrix<T>>>& MatrixBlocks, 
+    BlockMatrix(const std::vector<std::vector<MatrixT>>& MatrixBlocks, 
                 const std::pair<std::size_t, std::size_t>& MatrixMesh,
                 const std::pair<std::size_t, std::size_t>& MatrixSize)
-        : Matrix<T>(MatrixMesh.first * MatrixSize.first, MatrixMesh.second * MatrixSize.second),
+        : Matrix<typename MatrixT::Type>(MatrixMesh.first * MatrixSize.first, MatrixMesh.second * MatrixSize.second),
           MatrixBlocks(MatrixBlocks), MatrixMesh(MatrixMesh), MatrixSize(MatrixSize) {
         
         if (MatrixSize.first == 0 || MatrixSize.second == 0) {
@@ -36,14 +36,14 @@ public:
 
     ~BlockMatrix() {}
 
-    BlockMatrix<T> operator+(const BlockMatrix<T>& other) const {
+    BlockMatrix<MatrixT> operator+(const BlockMatrix<MatrixT>& other) const {
         if ((this->MatrixMesh.first * this->MatrixSize.first) != 
             (other.MatrixMesh.first * other.MatrixSize.first) || 
             (this->MatrixMesh.second * this->MatrixSize.second) != 
             (other.MatrixMesh.second * other.MatrixSize.second)) {
             throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
         }
-        BlockMatrix<T> result(this->MatrixMesh.first * this->MatrixSize.first,
+        BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
                               this->MatrixMesh.second * this->MatrixSize.second);
         for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {
             for (std::size_t j = 0; j < (this->MatrixMesh.second * this->MatrixSize.second); ++j) {
@@ -53,14 +53,14 @@ public:
         return result;
     }
 
-    BlockMatrix<T> operator-(const BlockMatrix<T>& other) const {
+    BlockMatrix<MatrixT> operator-(const BlockMatrix<MatrixT>& other) const {
         if ((this->MatrixMesh.first * this->MatrixSize.first) != 
             (other.MatrixMesh.first * other.MatrixSize.first) || 
             (this->MatrixMesh.second * this->MatrixSize.second) != 
             (other.MatrixMesh.second * other.MatrixSize.second)) {
             throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
         }
-        BlockMatrix<T> result(this->MatrixMesh.first * this->MatrixSize.first,
+        BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
                               this->MatrixMesh.second * this->MatrixSize.second);
         for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {
             for (std::size_t j = 0; j < (this->MatrixMesh.second * this->MatrixSize.second); ++j) {
@@ -70,14 +70,14 @@ public:
         return result;
     }
 
-    BlockMatrix<T> operator*(const BlockMatrix<T>& other) const {
+    BlockMatrix<MatrixT> operator*(const BlockMatrix<MatrixT>& other) const {
         if ((this->MatrixMesh.first * this->MatrixSize.first) != 
             (other.MatrixMesh.first * other.MatrixSize.first) || 
             (this->MatrixMesh.second * this->MatrixSize.second) != 
             (other.MatrixMesh.second * other.MatrixSize.second)) {
             throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
         }
-        BlockMatrix<T> result(this->MatrixMesh.first * this->MatrixSize.first,
+        BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
                               this->MatrixMesh.second * this->MatrixSize.second);
         for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {
             for (std::size_t j = 0; j < (this->MatrixMesh.second * this->MatrixSize.second); ++j) {
@@ -87,22 +87,22 @@ public:
         return result;
     }
 
-   BlockMatrix<T> Transpose() const {
+   BlockMatrix<MatrixT> Transpose() const {
         std::pair<std::size_t, std::size_t> newMatrixMesh = {MatrixMesh.second, MatrixMesh.first};
-        std::vector<std::vector<DenseMatrix<T>>> transposedBlocks(newMatrixMesh.first, 
-                                                                  std::vector<DenseMatrix<T>>(newMatrixMesh.second,
-                                                                                              DenseMatrix<T>(MatrixSize.second, 
+        std::vector<std::vector<MatrixT>> transposedBlocks(newMatrixMesh.first, 
+                                                                  std::vector<MatrixT>(newMatrixMesh.second,
+                                                                                              MatrixT(MatrixSize.second, 
                                                                                                              MatrixSize.first)));
         for (std::size_t i = 0; i < MatrixMesh.first; ++i) {
             for (std::size_t j = 0; j < MatrixMesh.second; ++j) {
                 transposedBlocks[j][i] = this->MatrixBlocks[i][j].Transpose();
             }
         }
-        return BlockMatrix<T>(transposedBlocks, newMatrixMesh, MatrixSize);
+        return BlockMatrix<MatrixT>(transposedBlocks, newMatrixMesh, MatrixSize);
     }
 
-    BlockMatrix<T> ScalarMultiplication(T scalar) const {
-        BlockMatrix<T> result(this->MatrixMesh.first * this->MatrixSize.first,
+    BlockMatrix<MatrixT> ScalarMultiplication(typename MatrixT::Type scalar) const {
+        BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
                               this->MatrixMesh.second * this->MatrixSize.second);
         for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {
             for (std::size_t j = 0; j < (this->MatrixMesh.second * this->MatrixSize.second); ++j) {
@@ -116,15 +116,15 @@ public:
         return "BlockMatrix";
     }
 
-    static BlockMatrix<T> Import(const std::string& fileName,
+    static BlockMatrix<MatrixT> Import(const std::string& fileName,
                                  const std::pair<std::size_t, std::size_t>& MatrixMesh,
                                  const std::pair<std::size_t, std::size_t>& MatrixSize) {    
         std::size_t BlocksCount = MatrixMesh.first * MatrixMesh.second;
         std::size_t MatrixSizeСomposition = MatrixSize.first * MatrixSize.second;
         // Двумерный вектор для хранения блоков матриц
-        std::vector<std::vector<DenseMatrix<T>>> MatrixBlocks(MatrixMesh.first, 
-                                                              std::vector<DenseMatrix<T>>(MatrixMesh.second, 
-                                                                                          DenseMatrix<T>(MatrixSize.first,
+        std::vector<std::vector<MatrixT>> MatrixBlocks(MatrixMesh.first, 
+                                                              std::vector<MatrixT>(MatrixMesh.second, 
+                                                                                          MatrixT(MatrixSize.first,
                                                                                                          MatrixSize.second)));
         std::ifstream file("import/" + fileName);
         if (!file.is_open()) {
@@ -134,7 +134,7 @@ public:
         std::getline(file, header);
         std::size_t rows, cols;
         file >> rows >> cols;
-        BlockMatrix<T> matrixTemp(rows, cols);
+        BlockMatrix<MatrixT> matrixTemp(rows, cols);
         if (header != matrixTemp.GetClassHeader()) { 
             throw std::runtime_error("Неверный формат файла. Ожидается заголовок '" + matrixTemp.GetClassHeader() + "'.");
         }
@@ -150,12 +150,12 @@ public:
             }
         }
         file.close();
-        BlockMatrix<T> matrix(MatrixBlocks, MatrixMesh, MatrixSize);    
+        BlockMatrix<MatrixT> matrix(MatrixBlocks, MatrixMesh, MatrixSize);    
         std::cout << "Импорт из файла успешно выполнен: " << fileName << std::endl;
         return matrix;
     }
 
     void Export(const std::string& fileName) const {
-        Matrix<T>::template Export<BlockMatrix<T>>(fileName);
+        Matrix<typename MatrixT::Type>::template Export<BlockMatrix<MatrixT>>(fileName);
     }
 };
