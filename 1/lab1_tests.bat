@@ -1,4 +1,4 @@
 @echo off
-cd app/build
+cd ../build
 ctest --output-on-failure
 pause

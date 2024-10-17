@@ -1,0 +1,24 @@
+GpuSpecTest.Constructor 1 0.0068022
+GpuSpecTest.Export 1 0.0061008
+GpuSpecTest.Import 1 0.0061053
+GpuSpecTest.Print 1 0.0060751
+CpuSpecTest.Constructor 1 0.0058778
+CpuSpecTest.Export 1 0.0059412
+CpuSpecTest.Import 1 0.005928
+CpuSpecTest.Print 1 0.0060723
+RamSpecTest.Constructor 1 0.0058415
+RamSpecTest.Export 1 0.0058582
+RamSpecTest.Import 1 0.0064872
+RamSpecTest.Print 1 0.0061779
+LanSpecTest.Constructor 1 0.006208
+LanSpecTest.Export 1 0.0057598
+LanSpecTest.Import 1 0.0060893
+LanSpecTest.Print 1 0.0067114
+ClusterNodeTest.Constructor 1 0.005964
+ClusterNodeTest.Export 1 0.0064834
+ClusterNodeTest.Import 1 0.0068259
+ClusterNodeTest.Print 1 0.0065602
+ClusterTest.Import 1 0.0064688
+ClusterTest.Export 1 0.0063803
+ClusterTest.Print 1 0.0067118
+---

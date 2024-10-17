@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/4d3d258b93eb5f959e304ddd9f787629/googletest-populate.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/e3980d449d0d4f2486d33a192a5f5456/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/395d35a50697c7c0bba9052ad8cbc2f1/googletest-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/395d35a50697c7c0bba9052ad8cbc2f1/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/395d35a50697c7c0bba9052ad8cbc2f1/googletest-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/395d35a50697c7c0bba9052ad8cbc2f1/googletest-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/395d35a50697c7c0bba9052ad8cbc2f1/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/395d35a50697c7c0bba9052ad8cbc2f1/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/395d35a50697c7c0bba9052ad8cbc2f1/googletest-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/395d35a50697c7c0bba9052ad8cbc2f1/googletest-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-populate"
+		],
+		"name" : "googletest-populate"
+	}
+}
