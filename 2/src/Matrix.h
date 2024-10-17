@@ -29,10 +29,22 @@ public:
         std::memcpy(Data, Matrix.Data, M * N * sizeof(T));
     }
 
-    ~Matrix() { delete[] Data; }
+    ~Matrix() {}
 
-    virtual T& operator()(std::size_t i, std::size_t j) = 0;
-    virtual T operator()(std::size_t i, std::size_t j) const = 0;
+    T& operator()(std::size_t i, std::size_t j) {
+        if (i >= this->M || j >= this->N) {
+            throw std::out_of_range("Индексы выходят за пределы матрицы.");
+        }
+        return this->Data[i * this->N + j];
+    }
+
+    T operator()(std::size_t i, std::size_t j) const {
+        if (i >= this->M || j >= this->N) {
+            throw std::out_of_range("Индексы выходят за пределы матрицы.");
+        }
+        return this->Data[i * this->N + j];
+    }
+
     virtual std::string GetClassHeader()  const = 0;
 
     void Print() const {

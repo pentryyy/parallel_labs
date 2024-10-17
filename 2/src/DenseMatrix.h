@@ -7,20 +7,6 @@ public:
 
     ~DenseMatrix() {}
 
-    T& operator()(std::size_t i, std::size_t j) override {
-        if (i >= this->M || j >= this->N) {
-            throw std::out_of_range("Индексы выходят за пределы матрицы.");
-        }
-        return this->Data[i * this->N + j];
-    }
-
-    T operator()(std::size_t i, std::size_t j) const override {
-        if (i >= this->M || j >= this->N) {
-            throw std::out_of_range("Индексы выходят за пределы матрицы.");
-        }
-        return this->Data[i * this->N + j];
-    }
-
     DenseMatrix<T> operator+(const DenseMatrix<T>& other) const {
         if (this->M != other.M || this->N != other.N) {
             throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");

@@ -23,7 +23,7 @@ public:
     
     ~DiagonalMatrix() {}
 
-    T& operator()(std::size_t i, std::size_t j) override {
+    T& operator()(std::size_t i, std::size_t j) {
         if (i >= this->M || j >= this->N) {
             throw std::out_of_range("Индексы выходят за пределы матрицы.");
         }
@@ -34,7 +34,7 @@ public:
         return this->Data[i * this->N + j];
     }
 
-    T operator()(std::size_t i, std::size_t j) const override {
+    T operator()(std::size_t i, std::size_t j) const {
         if (i >= this->M || j >= this->N) {
             throw std::out_of_range("Индексы выходят за пределы матрицы.");
         }

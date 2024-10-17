@@ -6,6 +6,9 @@
 #include <conio.h>
 #include "src/BlockMatrix.h"
 
+#include <cstdlib> // для функции rand()
+#include <ctime>   // для функции time()
+
 int main() {
     SetConsoleOutputCP(CP_UTF8);
 
@@ -45,6 +48,27 @@ int main() {
     transposedMatrixD.Export("diagonal_matrix_transpose.txt");
     scaledMatrixD.Export("diagonal_matrix_scalar.txt");
 
+    std::pair<std::size_t, std::size_t> matrixMesh = {5, 4};
+    std::pair<std::size_t, std::size_t> matrixSize = {2, 2};
+
+    BlockMatrix<int> matrix1b = BlockMatrix<int>::Import("block_matrix_1.txt", matrixMesh, matrixSize);
+    BlockMatrix<int> matrix2b = BlockMatrix<int>::Import("block_matrix_2.txt", matrixMesh, matrixSize);
+    
+    matrix1b.Print();
+    matrix2b.Print();
+
+    BlockMatrix<int> matrixPlusB = matrix1b + matrix2b;
+    BlockMatrix<int> matrixMinusB = matrix2b - matrix1b;
+    BlockMatrix<int> matrixMultiplyB = matrix1b * matrix2b;
+    BlockMatrix<int> transposedMatrixB = matrix2b.Transpose();
+    BlockMatrix<int> scaledMatrixB = matrix2b.ScalarMultiplication(3);
+
+    matrixPlusB.Export("block_matrix_plus.txt");
+    matrixMinusB.Export("block_matrix_minus.txt");
+    matrixMultiplyB.Export("block_matrix_multiply.txt");
+    transposedMatrixB.Export("block_matrix_transpose.txt");
+    scaledMatrixB.Export("block_matrix_scalar.txt");
+   
     std::cout << "Нажмите любую клавишу для продолжения... ";
 
     /* 

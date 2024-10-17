@@ -1,5 +1,5 @@
-if(EXISTS "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/lab1_tests[1]_tests.cmake")
-  include("C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/lab1_tests[1]_tests.cmake")
+if(EXISTS "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/lab1_tests[1]_tests.cmake")
+  include("C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/lab1_tests[1]_tests.cmake")
 else()
   add_test(lab1_tests_NOT_BUILT lab1_tests_NOT_BUILT)
 endif()

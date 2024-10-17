@@ -4,16 +4,16 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
       The system is: Windows - 10.0.22631 - AMD64
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
@@ -24,9 +24,9 @@ events:
       The output was:
       0
       Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-      Сборка начата 12.10.2024 15:39:26.
+      Сборка начата 16.10.2024 17:39:50.
       
-      Проект "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" в узле 1 (целевые объекты по умолчанию).
+      Проект "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" в узле 1 (целевые объекты по умолчанию).
       PrepareForBuild:
         Создание каталога "Debug\\".
         Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
@@ -39,7 +39,7 @@ events:
         CMakeCCompilerId.c
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.exe
+        CompilerIdC.vcxproj -> C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
@@ -47,13 +47,13 @@ events:
       FinalizeBuildStatus:
         Файл "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" удаляется.
         Обращение к "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      Сборка проекта "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" завершена (целевые объекты по умолчанию).
+      Сборка проекта "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" завершена (целевые объекты по умолчанию).
       
       Сборка успешно завершена.
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:00.23
+      Прошло времени 00:00:01.40
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -61,14 +61,14 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/3.29.0/CompilerIdC/CompilerIdC.exe
+        C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/3.29.0/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
@@ -79,9 +79,9 @@ events:
       The output was:
       0
       Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-      Сборка начата 12.10.2024 15:39:26.
+      Сборка начата 16.10.2024 17:39:52.
       
-      Проект "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" в узле 1 (целевые объекты по умолчанию).
+      Проект "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" в узле 1 (целевые объекты по умолчанию).
       PrepareForBuild:
         Создание каталога "Debug\\".
         Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
@@ -94,7 +94,7 @@ events:
         CMakeCXXCompilerId.cpp
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.exe
+        CompilerIdCXX.vcxproj -> C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
@@ -102,13 +102,13 @@ events:
       FinalizeBuildStatus:
         Файл "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" удаляется.
         Обращение к "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Сборка проекта "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" завершена (целевые объекты по умолчанию).
+      Сборка проекта "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" завершена (целевые объекты по умолчанию).
       
       Сборка успешно завершена.
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:00.32
+      Прошло времени 00:00:01.18
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -116,19 +116,19 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/3.29.0/CompilerIdCXX/CompilerIdCXX.exe
+        C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/3.29.0/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:64 (try_compile)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:64 (try_compile)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-u4w9yi"
-      binary: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-u4w9yi"
+      source: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-jjoj4x"
+      binary: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-jjoj4x"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -137,47 +137,47 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-u4w9yi'
+        Change Dir: 'C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-jjoj4x'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8b02c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c9707.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 12.10.2024 15:39:26.
+        Сборка начата 16.10.2024 17:39:54.
         
-        Проект "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u4w9yi\\cmTC_8b02c.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jjoj4x\\cmTC_c9707.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_8b02c.dir\\Debug\\".
+          Создание каталога "cmTC_c9707.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u4w9yi\\Debug\\".
-          Создание каталога "cmTC_8b02c.dir\\Debug\\cmTC_8b02c.tlog\\".
+          Создание каталога "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jjoj4x\\Debug\\".
+          Создание каталога "cmTC_c9707.dir\\Debug\\cmTC_c9707.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_8b02c.dir\\Debug\\cmTC_8b02c.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_8b02c.dir\\Debug\\cmTC_8b02c.tlog\\unsuccessfulbuild".
+          Создание "cmTC_c9707.dir\\Debug\\cmTC_c9707.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_c9707.dir\\Debug\\cmTC_c9707.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8b02c.dir\\Debug\\\\" /Fd"cmTC_8b02c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\mvvol\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c9707.dir\\Debug\\\\" /Fd"cmTC_c9707.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\pentryyy\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8b02c.dir\\Debug\\\\" /Fd"cmTC_8b02c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\mvvol\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c9707.dir\\Debug\\\\" /Fd"cmTC_c9707.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\pentryyy\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u4w9yi\\Debug\\cmTC_8b02c.exe" /INCREMENTAL /ILK:"cmTC_8b02c.dir\\Debug\\cmTC_8b02c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-u4w9yi/Debug/cmTC_8b02c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-u4w9yi/Debug/cmTC_8b02c.lib" /MACHINE:X64  /machine:x64 cmTC_8b02c.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_8b02c.vcxproj -> C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u4w9yi\\Debug\\cmTC_8b02c.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jjoj4x\\Debug\\cmTC_c9707.exe" /INCREMENTAL /ILK:"cmTC_c9707.dir\\Debug\\cmTC_c9707.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-jjoj4x/Debug/cmTC_c9707.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-jjoj4x/Debug/cmTC_c9707.lib" /MACHINE:X64  /machine:x64 cmTC_c9707.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_c9707.vcxproj -> C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jjoj4x\\Debug\\cmTC_c9707.exe
         FinalizeBuildStatus:
-          Файл "cmTC_8b02c.dir\\Debug\\cmTC_8b02c.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_8b02c.dir\\Debug\\cmTC_8b02c.tlog\\cmTC_8b02c.lastbuildstate".
-        Сборка проекта "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u4w9yi\\cmTC_8b02c.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_c9707.dir\\Debug\\cmTC_c9707.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_c9707.dir\\Debug\\cmTC_c9707.tlog\\cmTC_c9707.lastbuildstate".
+        Сборка проекта "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jjoj4x\\cmTC_c9707.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:00.23
+        Прошло времени 00:00:01.14
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:170 (message)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:170 (message)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit link information:
@@ -193,9 +193,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:207 (cmake_determine_linker_id)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:207 (cmake_determine_linker_id)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe" "-v"
@@ -204,14 +204,14 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:64 (try_compile)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:64 (try_compile)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-xb2twd"
-      binary: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-xb2twd"
+      source: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-7pqfm4"
+      binary: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-7pqfm4"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -220,47 +220,47 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-xb2twd'
+        Change Dir: 'C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-7pqfm4'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c67a7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6a9e8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 12.10.2024 15:39:27.
+        Сборка начата 16.10.2024 17:39:55.
         
-        Проект "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb2twd\\cmTC_c67a7.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7pqfm4\\cmTC_6a9e8.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_c67a7.dir\\Debug\\".
+          Создание каталога "cmTC_6a9e8.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb2twd\\Debug\\".
-          Создание каталога "cmTC_c67a7.dir\\Debug\\cmTC_c67a7.tlog\\".
+          Создание каталога "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7pqfm4\\Debug\\".
+          Создание каталога "cmTC_6a9e8.dir\\Debug\\cmTC_6a9e8.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_c67a7.dir\\Debug\\cmTC_c67a7.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_c67a7.dir\\Debug\\cmTC_c67a7.tlog\\unsuccessfulbuild".
+          Создание "cmTC_6a9e8.dir\\Debug\\cmTC_6a9e8.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_6a9e8.dir\\Debug\\cmTC_6a9e8.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c67a7.dir\\Debug\\\\" /Fd"cmTC_c67a7.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Users\\mvvol\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6a9e8.dir\\Debug\\\\" /Fd"cmTC_6a9e8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Users\\pentryyy\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c67a7.dir\\Debug\\\\" /Fd"cmTC_c67a7.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Users\\mvvol\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6a9e8.dir\\Debug\\\\" /Fd"cmTC_6a9e8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Users\\pentryyy\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb2twd\\Debug\\cmTC_c67a7.exe" /INCREMENTAL /ILK:"cmTC_c67a7.dir\\Debug\\cmTC_c67a7.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-xb2twd/Debug/cmTC_c67a7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-xb2twd/Debug/cmTC_c67a7.lib" /MACHINE:X64  /machine:x64 cmTC_c67a7.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_c67a7.vcxproj -> C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb2twd\\Debug\\cmTC_c67a7.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7pqfm4\\Debug\\cmTC_6a9e8.exe" /INCREMENTAL /ILK:"cmTC_6a9e8.dir\\Debug\\cmTC_6a9e8.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-7pqfm4/Debug/cmTC_6a9e8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-7pqfm4/Debug/cmTC_6a9e8.lib" /MACHINE:X64  /machine:x64 cmTC_6a9e8.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_6a9e8.vcxproj -> C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7pqfm4\\Debug\\cmTC_6a9e8.exe
         FinalizeBuildStatus:
-          Файл "cmTC_c67a7.dir\\Debug\\cmTC_c67a7.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_c67a7.dir\\Debug\\cmTC_c67a7.tlog\\cmTC_c67a7.lastbuildstate".
-        Сборка проекта "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xb2twd\\cmTC_c67a7.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_6a9e8.dir\\Debug\\cmTC_6a9e8.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_6a9e8.dir\\Debug\\cmTC_6a9e8.tlog\\cmTC_6a9e8.lastbuildstate".
+        Сборка проекта "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7pqfm4\\cmTC_6a9e8.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:00.23
+        Прошло времени 00:00:01.14
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:170 (message)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:170 (message)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
@@ -276,9 +276,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:207 (cmake_determine_linker_id)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:207 (cmake_determine_linker_id)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe" "-v"
@@ -287,17 +287,17 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
       - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
       - "build/_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-rwodab"
-      binary: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-rwodab"
+      source: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-ldwo8e"
+      binary: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-ldwo8e"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -305,55 +305,55 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-rwodab'
+        Change Dir: 'C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-ldwo8e'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_83f8a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_56926.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 12.10.2024 15:39:29.
+        Сборка начата 16.10.2024 17:40:02.
         
-        Проект "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\cmTC_83f8a.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\cmTC_56926.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_83f8a.dir\\Debug\\".
+          Создание каталога "cmTC_56926.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\Debug\\".
-          Создание каталога "cmTC_83f8a.dir\\Debug\\cmTC_83f8a.tlog\\".
+          Создание каталога "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\Debug\\".
+          Создание каталога "cmTC_56926.dir\\Debug\\cmTC_56926.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_83f8a.dir\\Debug\\cmTC_83f8a.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_83f8a.dir\\Debug\\cmTC_83f8a.tlog\\unsuccessfulbuild".
+          Создание "cmTC_56926.dir\\Debug\\cmTC_56926.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_56926.dir\\Debug\\cmTC_56926.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_83f8a.dir\\Debug\\\\" /Fd"cmTC_83f8a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_56926.dir\\Debug\\\\" /Fd"cmTC_56926.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\src.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_83f8a.dir\\Debug\\\\" /Fd"cmTC_83f8a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\src.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_56926.dir\\Debug\\\\" /Fd"cmTC_56926.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\src.c"
           src.c
-        C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\src.c(1,10): error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\cmTC_83f8a.vcxproj]
-        Сборка проекта "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\cmTC_83f8a.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+        C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\src.c(1,10): error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\cmTC_56926.vcxproj]
+        Сборка проекта "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\cmTC_56926.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\cmTC_83f8a.vcxproj" (целевой объект по умолчанию) (1) ->
+        "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\cmTC_56926.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект ClCompile) -> 
-          C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\src.c(1,10): error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rwodab\\cmTC_83f8a.vcxproj]
+          C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\src.c(1,10): error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ldwo8e\\cmTC_56926.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
         
-        Прошло времени 00:00:00.18
+        Прошло времени 00:00:01.13
         
       exitCode: 1
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:175 (_threads_check_lib)"
       - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
       - "build/_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-pfdzvy"
-      binary: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-pfdzvy"
+      source: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-demjzz"
+      binary: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-demjzz"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -361,57 +361,57 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-pfdzvy'
+        Change Dir: 'C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-demjzz'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e6f05.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bee04.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 12.10.2024 15:39:30.
+        Сборка начата 16.10.2024 17:40:04.
         
-        Проект "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\cmTC_e6f05.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\cmTC_bee04.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_e6f05.dir\\Debug\\".
+          Создание каталога "cmTC_bee04.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\Debug\\".
-          Создание каталога "cmTC_e6f05.dir\\Debug\\cmTC_e6f05.tlog\\".
+          Создание каталога "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\Debug\\".
+          Создание каталога "cmTC_bee04.dir\\Debug\\cmTC_bee04.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_e6f05.dir\\Debug\\cmTC_e6f05.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_e6f05.dir\\Debug\\cmTC_e6f05.tlog\\unsuccessfulbuild".
+          Создание "cmTC_bee04.dir\\Debug\\cmTC_bee04.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_bee04.dir\\Debug\\cmTC_bee04.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e6f05.dir\\Debug\\\\" /Fd"cmTC_e6f05.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bee04.dir\\Debug\\\\" /Fd"cmTC_bee04.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\CheckFunctionExists.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e6f05.dir\\Debug\\\\" /Fd"cmTC_e6f05.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\CheckFunctionExists.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bee04.dir\\Debug\\\\" /Fd"cmTC_bee04.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\Debug\\cmTC_e6f05.exe" /INCREMENTAL /ILK:"cmTC_e6f05.dir\\Debug\\cmTC_e6f05.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-pfdzvy/Debug/cmTC_e6f05.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-pfdzvy/Debug/cmTC_e6f05.lib" /MACHINE:X64  /machine:x64 cmTC_e6f05.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\cmTC_e6f05.vcxproj]
-        Сборка проекта "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\cmTC_e6f05.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\Debug\\cmTC_bee04.exe" /INCREMENTAL /ILK:"cmTC_bee04.dir\\Debug\\cmTC_bee04.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-demjzz/Debug/cmTC_bee04.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-demjzz/Debug/cmTC_bee04.lib" /MACHINE:X64  /machine:x64 cmTC_bee04.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\cmTC_bee04.vcxproj]
+        Сборка проекта "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\cmTC_bee04.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\cmTC_e6f05.vcxproj" (целевой объект по умолчанию) (1) ->
+        "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\cmTC_bee04.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект Link) -> 
-          LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pfdzvy\\cmTC_e6f05.vcxproj]
+          LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-demjzz\\cmTC_bee04.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
         
-        Прошло времени 00:00:00.19
+        Прошло времени 00:00:01.07
         
       exitCode: 1
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
-      - "C:/Users/mvvol/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Users/pentryyy/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:176 (_threads_check_lib)"
       - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
       - "build/_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-cyg1b5"
-      binary: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-cyg1b5"
+      source: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-nn4r5o"
+      binary: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-nn4r5o"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -419,42 +419,42 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-cyg1b5'
+        Change Dir: 'C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-nn4r5o'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_78a30.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_fe342.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 12.10.2024 15:39:30.
+        Сборка начата 16.10.2024 17:40:05.
         
-        Проект "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\cmTC_78a30.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\cmTC_fe342.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_78a30.dir\\Debug\\".
+          Создание каталога "cmTC_fe342.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\Debug\\".
-          Создание каталога "cmTC_78a30.dir\\Debug\\cmTC_78a30.tlog\\".
+          Создание каталога "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\Debug\\".
+          Создание каталога "cmTC_fe342.dir\\Debug\\cmTC_fe342.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_78a30.dir\\Debug\\cmTC_78a30.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_78a30.dir\\Debug\\cmTC_78a30.tlog\\unsuccessfulbuild".
+          Создание "cmTC_fe342.dir\\Debug\\cmTC_fe342.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_fe342.dir\\Debug\\cmTC_fe342.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_78a30.dir\\Debug\\\\" /Fd"cmTC_78a30.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fe342.dir\\Debug\\\\" /Fd"cmTC_fe342.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\CheckFunctionExists.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_78a30.dir\\Debug\\\\" /Fd"cmTC_78a30.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\CheckFunctionExists.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fe342.dir\\Debug\\\\" /Fd"cmTC_fe342.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\Debug\\cmTC_78a30.exe" /INCREMENTAL /ILK:"cmTC_78a30.dir\\Debug\\cmTC_78a30.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-cyg1b5/Debug/cmTC_78a30.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-cyg1b5/Debug/cmTC_78a30.lib" /MACHINE:X64  /machine:x64 cmTC_78a30.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\cmTC_78a30.vcxproj]
-        Сборка проекта "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\cmTC_78a30.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\Debug\\cmTC_fe342.exe" /INCREMENTAL /ILK:"cmTC_fe342.dir\\Debug\\cmTC_fe342.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-nn4r5o/Debug/cmTC_fe342.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/CMakeFiles/CMakeScratch/TryCompile-nn4r5o/Debug/cmTC_fe342.lib" /MACHINE:X64  /machine:x64 cmTC_fe342.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\cmTC_fe342.vcxproj]
+        Сборка проекта "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\cmTC_fe342.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\cmTC_78a30.vcxproj" (целевой объект по умолчанию) (1) ->
+        "C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\cmTC_fe342.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект Link) -> 
-          LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [C:\\Users\\mvvol\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cyg1b5\\cmTC_78a30.vcxproj]
+          LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [C:\\Users\\pentryyy\\OneDrive\\Desktop\\parallel_labs\\1\\app\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nn4r5o\\cmTC_fe342.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
         
-        Прошло времени 00:00:00.18
+        Прошло времени 00:00:01.10
         
       exitCode: 1
 ...

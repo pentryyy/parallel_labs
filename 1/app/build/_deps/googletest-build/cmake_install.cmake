@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-src
+# Install script for directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/mvvol/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-build/googlemock/cmake_install.cmake")
+  include("C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/1/app/build/_deps/googletest-build/googlemock/cmake_install.cmake")
 
 endif()
 
