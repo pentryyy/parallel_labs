@@ -14,12 +14,6 @@ protected:
             throw std::logic_error("Объект должен быть инициализирован");
         }
     }
-
-    void checkVectorFilling() const {
-        if (data.empty()) {
-            throw std::runtime_error("Вектор не должен быть пустой");
-        }
-    }
 public:
     Vector(int n) {
         std::vector<T> newData(n);

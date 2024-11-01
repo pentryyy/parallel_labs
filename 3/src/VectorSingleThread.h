@@ -1,5 +1,4 @@
 #include <random>
-#include <algorithm>
 #include <cmath>
 #include "Vector.h"
 #include "IOperations.h"
@@ -31,7 +30,6 @@ public:
 
     T minimumValue() override {
         this->checkInitialization();
-        this->checkVectorFilling();
         
         T minValue = this->data[0];
         for (const T& elem : this->data) {
@@ -44,7 +42,6 @@ public:
 
     size_t minimumIndexByValue() override {
         this->checkInitialization();
-        this->checkVectorFilling();
         
         T minValue = this->data[0];
         size_t minIndex = 0;
@@ -60,7 +57,6 @@ public:
 
     T maximumValue() override {
         this->checkInitialization();
-        this->checkVectorFilling();
         
         T maxValue = this->data[0];
         for (const T& elem : this->data) {
@@ -73,7 +69,6 @@ public:
 
     size_t maximumIndexByValue() override {
         this->checkInitialization();
-        this->checkVectorFilling();
         
         T maxValue = this->data[0];
         size_t maxIndex = 0;
@@ -89,13 +84,11 @@ public:
 
     T avgValue() override {
         this->checkInitialization();
-        this->checkVectorFilling();
         return static_cast<T>(sumValue()) / this->data.size();
     }
 
     unsigned __int32 sumValue() override {
         this->checkInitialization();
-        this->checkVectorFilling();
 
         T sum = T(0);
         for (const T& elem : this->data) {
@@ -106,7 +99,6 @@ public:
 
     unsigned __int64 euclidMonheton() override {
         this->checkInitialization();
-        this->checkVectorFilling();
 
         T sumOfSquares = T(0);
         for (const T& elem : this->data) {
@@ -117,6 +109,7 @@ public:
 
     unsigned __int64 scalarMultiply(const Vector<T>& other) override {
         this->checkInitialization();
+        
         if (this->data.size() != other.getData().size()) {
             throw std::invalid_argument("Размеры векторов не совпадают");
         }
