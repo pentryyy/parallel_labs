@@ -1,8 +1,11 @@
 #include <thread>
 #include <vector>
+#include <list>
 #include <mutex>
 #include <cmath>
 #include <random>
+#include <chrono>  // Для замера времени
+#include <functional> // Для приема функции в качестве аргумента
 #include "Vector.h"
 #include "IOperations.h"
 
@@ -81,27 +84,26 @@ public:
 
     size_t minimumIndexByValue() override {
         this->checkInitialization();
-        
+
+        std::list<T> listOfIndexes;
         T minValue = this->data[0];
-        size_t minIndex = 0;
-        auto minIndexTask = [this, &minValue, &minIndex](size_t start, size_t end) {
+
+        auto minIndexTask = [this, &minValue, &listOfIndexes](size_t start, size_t end) {
             T localMin = this->data[start];
             size_t localIndex = start;
-            for (size_t i = start + 1; i < end; ++i) {
+            for (size_t i = start; i < end; ++i) {
                 if (this->data[i] < localMin) {
                     localMin = this->data[i];
                     localIndex = i;
                 }
             }
             std::lock_guard<std::mutex> lock(mutex);
-            if (localMin < minValue) {
-                minValue = localMin;
-                minIndex = localIndex;
-            }
+            if (localMin < minValue) { listOfIndexes.push_back(localIndex); }
         };
 
         runInParallel(minIndexTask);
-        return minIndex;
+        listOfIndexes.sort();
+        return listOfIndexes.front(); // Первое вхождение минимального элемента
     }
 
     T maximumValue() override {
@@ -125,27 +127,26 @@ public:
 
     size_t maximumIndexByValue() override {
         this->checkInitialization();
-        
+
+        std::list<T> listOfIndexes;
         T maxValue = this->data[0];
-        size_t maxIndex = 0;
-        auto maxIndexTask = [this, &maxValue, &maxIndex](size_t start, size_t end) {
+       
+        auto maxIndexTask = [this, &maxValue, &listOfIndexes](size_t start, size_t end) {
             T localMax = this->data[start];
             size_t localIndex = start;
-            for (size_t i = start + 1; i < end; ++i) {
+            for (size_t i = start; i < end; ++i) {
                 if (this->data[i] > localMax) {
                     localMax = this->data[i];
                     localIndex = i;
                 }
             }
             std::lock_guard<std::mutex> lock(mutex);
-            if (localMax > maxValue) {
-                maxValue = localMax;
-                maxIndex = localIndex;
-            }
+            if (localMax > maxValue) { listOfIndexes.push_back(localIndex); }
         };
 
         runInParallel(maxIndexTask);
-        return maxIndex;
+        listOfIndexes.sort();
+        return listOfIndexes.front(); // Первое вхождение максимального элемента
     }
 
     T avgValue() override {
@@ -207,5 +208,48 @@ public:
 
         runInParallel(scalarTask);
         return productSum;
+    }
+    
+    void createTestData(const std::string& fileName) override {
+        this->checkInitialization();
+
+        std::ofstream file("export/" + fileName);
+        if (!file.is_open()) {
+            throw std::runtime_error("Ошибка при открытии файла для записи: " + fileName);
+        }
+
+        auto measureTime = [this, &file](const std::function<void()>& func, const std::string& funcName) {
+            // Для коректтной записи значений в файл
+            static bool firstCall = true;
+            if (!firstCall) { file << '\n'; } 
+            else { firstCall = false; }
+            
+            file << funcName;
+
+            // Количество итераций равно количеству потоков процессора
+            for(int i = 1; i <= std::thread::hardware_concurrency(); ++i) {
+                this->threadCount = i;
+                auto startTime = std::chrono::high_resolution_clock::now();
+                
+                func();  // Выполняем переданную функцию
+
+                auto endTime = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double> elapsed = endTime - startTime;
+                
+                file << '\n' << elapsed.count();
+            }
+        };
+
+        measureTime([this]() { minimumValue(); }, "minimumValue");
+        measureTime([this]() { minimumIndexByValue(); }, "minimumIndexByValue");
+        measureTime([this]() { maximumValue(); }, "maximumValue");
+        measureTime([this]() { maximumIndexByValue(); }, "maximumIndexByValue");
+        measureTime([this]() { sumValue(); }, "sumValue");
+        measureTime([this]() { avgValue(); }, "avgValue"); 
+        measureTime([this]() { euclidMonheton(); }, "euclidMonheton");
+        measureTime([this]() { scalarMultiply(*this); }, "scalarMultiply");
+
+        file.close();
+        std::cout << "Данные тестирования успешно созданы: " << fileName << '\n';
     }
 };

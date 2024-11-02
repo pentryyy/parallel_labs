@@ -28,11 +28,12 @@ int main() {
     std::cout << "Эвклидова норма: "               << vectorSingleThread.euclidMonheton() << '\n';
     std::cout << "Скалярное произведение: "        << vectorSingleThread.scalarMultiply(vectorSingleThread) << '\n';
     vectorSingleThread.exportToFile("vector_single_thread_export.txt");
+    vectorSingleThread.createTestData("single_thread_test_log.txt");
 
     std::cout << std::string(32, '-') << "Работа многопоточных методов" <<  std::string(31, '-') << '\n';
 
     VectorMultiThread<int> vectorMultiThread(1e7);
-    vectorMultiThread.setThreadCount(6);
+    vectorMultiThread.setThreadCount(10);
     // vectorMultiThread.initializedConst(52);
     // vectorMultiThread.initializedRandom(0, 255);
     vectorMultiThread.importFromFile("vector_import_data.txt");
@@ -45,6 +46,7 @@ int main() {
     std::cout << "Эвклидова норма: "               << vectorMultiThread.euclidMonheton() << '\n';
     std::cout << "Скалярное произведение: "        << vectorMultiThread.scalarMultiply(vectorMultiThread) << '\n';
     vectorMultiThread.exportToFile("vector_multi_thread_export.txt");
+    vectorMultiThread.createTestData("multi_thread_test_log.txt");
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 

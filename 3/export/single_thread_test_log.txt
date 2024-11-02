@@ -1,0 +1,16 @@
+minimumValue
+0.0218186
+minimumIndexByValue
+0.0135372
+maximumValue
+0.0229691
+maximumIndexByValue
+0.0135161
+sumValue
+0.0217692
+avgValue
+0.0217902
+euclidMonheton
+0.0236506
+scalarMultiply
+0.0216245
