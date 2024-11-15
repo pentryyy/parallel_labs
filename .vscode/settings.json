@@ -77,7 +77,8 @@
         "iomanip": "cpp",
         "unordered_set": "cpp",
         "numeric": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "filesystem": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }
