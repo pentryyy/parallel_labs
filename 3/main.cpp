@@ -7,18 +7,87 @@
 #include "src/VectorSingleThread.h"
 #include "src/VectorMultiThread.h"
 
+// Метод для выбора способа иницализации
+template <typename VectorType>
+void performAction(VectorType& vector, int choice, const std::string& filename) {
+    switch (choice) {
+        case 1:
+            std::cout << "Выбрана инициализация константами \n";
+            vector.initializedConst(52);
+            break;
+        case 2:
+            std::cout << "Выбрана инициализация случайными числами \n";
+            vector.initializedRandom(1, 255);
+            break;
+        case 3:
+            std::cout << "Выбран импорт с файла - " + filename + '\n';
+            vector.importFromFile(filename);
+            break;
+        default:
+            std::cout << "Неверный выбор \n";
+    }
+}
+
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     
-    /* Практически переполнение по типу данных 
-    у скалярного умножения поэтому Используется 10^7 */
+    /* Примеры работы с импортом и экспортом:
+    vectorClassThread.importFromFile("vector_import.txt"); импорт в объект
+    vectorClassThread.exportToFile("vector_export.txt"); импорт из объекта
+    */
+
+    /* Создано по два объекта каждого класса (SingleThread и MultiThread), 
+    чтобы во втором объекте хранить обратные значения для скалярного произведения
+    */
+    std::cout << "На пк больше 24гб ОЗУ? (y/n) \n";
+    
+    size_t sizeOfVector;
+    std::string filename;
+    char inputChar;
+    
+    std::cin >> inputChar;
+    while(true) {
+        if (inputChar == 'y' || inputChar == 'Y') {
+            sizeOfVector = 1e9;
+            filename = "vector_import_1e9_data.txt";
+            break;
+        } else if (inputChar == 'n' || inputChar == 'N') {
+            sizeOfVector = 1e8;
+            filename = "vector_import_1e8_data.txt";
+            break;
+        } else {
+            std::cout << "Неверное значение \n";
+            std::cin >> inputChar;
+        }
+    }
+    std::cout << "Используется размерность вектора - " + std::to_string(sizeOfVector) + '\n';
+   
+    std::cout << "Выберете метод для инициализации объекта: \n"
+              << "1-Инициализация константами \n"
+              << "2-Инициализация случайными числами \n"
+              << "3-Импорт с файла \n";
+
+    while (true){
+        std::cin >> inputChar;
+
+        // (int)(inputChar - '0') это преобразование строки в число
+        if ((int)(inputChar - '0') >= 1 && (int)(inputChar - '0') <= 3) {
+            break;
+        } else{
+            std::cout << "Неверное значение \n";
+        }
+    }   
 
     std::cout << std::string(32, '-') << "Работа однопоточных методов"  <<  std::string(32, '-') << '\n';
     
-    VectorSingleThread<int> vectorSingleThread(1e7);
-    // vectorSingleThread.initializedConst(52);
-    // vectorSingleThread.initializedRandom(0, 255);
-    vectorSingleThread.importFromFile("vector_import_data.txt");
+    VectorSingleThread<double> vectorSingleThread(sizeOfVector);
+    VectorSingleThread<double> vectorSingleThreadInverted(sizeOfVector);
+    
+    performAction(vectorSingleThread, (int)(inputChar - '0'), filename);
+
+    vectorSingleThreadInverted = vectorSingleThread;
+    vectorSingleThreadInverted.invertValues();
+
     std::cout << "Минимальное значение: "          << vectorSingleThread.minimumValue() << '\n';
     std::cout << "Индекс минимального значения: "  << vectorSingleThread.minimumIndexByValue() << '\n';
     std::cout << "Максимальное значение: "         << vectorSingleThread.maximumValue() << '\n';
@@ -26,17 +95,20 @@ int main() {
     std::cout << "Сумма значений: "                << vectorSingleThread.sumValue() << '\n';
     std::cout << "Среднее значение: "              << vectorSingleThread.avgValue() << '\n';
     std::cout << "Эвклидова норма: "               << vectorSingleThread.euclidMonheton() << '\n';
-    std::cout << "Скалярное произведение: "        << vectorSingleThread.scalarMultiply(vectorSingleThread) << '\n';
-    vectorSingleThread.exportToFile("vector_single_thread_export.txt");
+    std::cout << "Скалярное произведение: "        << vectorSingleThread.scalarMultiply(vectorSingleThreadInverted) << '\n';
     vectorSingleThread.createTestData("single_thread_test_log.txt");
 
     std::cout << std::string(32, '-') << "Работа многопоточных методов" <<  std::string(31, '-') << '\n';
 
-    VectorMultiThread<int> vectorMultiThread(1e7);
+    VectorMultiThread<double> vectorMultiThread(sizeOfVector);
     vectorMultiThread.setThreadCount(10);
-    // vectorMultiThread.initializedConst(52);
-    // vectorMultiThread.initializedRandom(0, 255);
-    vectorMultiThread.importFromFile("vector_import_data.txt");
+    VectorMultiThread<double> vectorMultiThreadInverted(sizeOfVector);
+
+    performAction(vectorMultiThread, (int)(inputChar - '0'), filename);
+
+    vectorMultiThreadInverted = vectorMultiThread;
+    vectorMultiThreadInverted.invertValues();
+
     std::cout << "Минимальное значение: "          << vectorMultiThread.minimumValue() << '\n';
     std::cout << "Индекс минимального значения: "  << vectorMultiThread.minimumIndexByValue() << '\n';
     std::cout << "Максимальное значение: "         << vectorMultiThread.maximumValue() << '\n';
@@ -44,8 +116,7 @@ int main() {
     std::cout << "Сумма значений: "                << vectorMultiThread.sumValue() << '\n';
     std::cout << "Среднее значение: "              << vectorMultiThread.avgValue() << '\n';
     std::cout << "Эвклидова норма: "               << vectorMultiThread.euclidMonheton() << '\n';
-    std::cout << "Скалярное произведение: "        << vectorMultiThread.scalarMultiply(vectorMultiThread) << '\n';
-    vectorMultiThread.exportToFile("vector_multi_thread_export.txt");
+    std::cout << "Скалярное произведение: "        << vectorMultiThread.scalarMultiply(vectorMultiThreadInverted) << '\n';
     vectorMultiThread.createTestData("multi_thread_test_log.txt");
 
     std::cout << "Нажмите любую клавишу для продолжения... ";

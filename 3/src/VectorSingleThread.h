@@ -13,6 +13,10 @@ public:
     ~VectorSingleThread() {}
 
     void initializedConst(T value) override {
+        if (value == 0){
+            throw std::runtime_error("Деление на ноль запрещено");
+        }
+
         for (auto& elem : this->data) {
             elem = value;
         }
@@ -20,6 +24,14 @@ public:
     }
 
     void initializedRandom(int startRandomValue, int endRandomValue) override {
+        if (startRandomValue == 0 || endRandomValue == 0) {
+            throw std::runtime_error("Деление на ноль запрещено");
+        }
+
+        if (!(startRandomValue < endRandomValue)) {
+            throw std::invalid_argument("Начальное значение должно быть меньше конечного");
+        }
+
         std::random_device randomDevice;
         std::mt19937 randomGenerator(randomDevice());
         std::uniform_int_distribution<std::mt19937::result_type> randomRange(startRandomValue, endRandomValue);
@@ -28,6 +40,16 @@ public:
             elem = randomRange(randomGenerator);
         }
         this->isInitialized = true;
+    }
+
+    void invertValues() override {
+        this->checkInitialization();
+
+        /* Проверка на ноль в методах для работы с данными, 
+        чтобы не нагружать лишний раз вычислительные методы */ 
+        for (auto& value : this->data) {
+            value = static_cast<T>(1) / value;
+        }
     }
 
     T minimumValue() override {
@@ -109,7 +131,7 @@ public:
         return std::sqrt(static_cast<T>(sumOfSquares));
     }
 
-    unsigned __int64 scalarMultiply(const Vector<T>& other) override {
+    unsigned __int32 scalarMultiply(const Vector<T>& other) override {
         this->checkInitialization();
         
         if (this->data.size() != other.getData().size()) {

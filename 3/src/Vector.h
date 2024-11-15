@@ -68,6 +68,10 @@ public:
 
         data.clear();
         while (file >> value) {
+            if (value == 0){
+                throw std::runtime_error("Деление на ноль запрещено");
+            }
+            
             data.push_back(value);
         }
 

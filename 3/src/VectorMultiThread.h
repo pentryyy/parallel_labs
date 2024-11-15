@@ -37,7 +37,23 @@ public:
 
     void setThreadCount(int count){ threadCount = count; }
 
+    VectorMultiThread& operator=(const VectorMultiThread& other) {
+        if (this == &other) {
+            return *this;
+        }
+
+        this->data = other.data;
+        this->isInitialized = other.isInitialized;
+        this->threadCount = other.threadCount;
+
+        return *this;
+    }
+
     void initializedConst(T value) override {
+        if (value == 0){
+            throw std::runtime_error("Деление на ноль запрещено");
+        }
+
         auto initTask = [this, value](size_t start, size_t end) {
             for (size_t i = start; i < end; ++i) {
                 this->data[i] = value;
@@ -49,6 +65,14 @@ public:
     }
 
     void initializedRandom(int startRandomValue, int endRandomValue) override {
+        if (startRandomValue == 0 || endRandomValue == 0) {
+            throw std::runtime_error("Деление на ноль запрещено");
+        }
+
+        if (!(startRandomValue < endRandomValue)) {
+            throw std::invalid_argument("Начальное значение должно быть меньше конечного");
+        }
+        
         std::random_device randomDevice;
         std::mt19937 randomGenerator(randomDevice());
         std::uniform_int_distribution<std::mt19937::result_type> randomRange(startRandomValue, endRandomValue);
@@ -61,6 +85,20 @@ public:
 
         runInParallel(initTask);
         this->isInitialized = true;
+    }
+
+    void invertValues() override {
+        this->checkInitialization();
+
+         /* Проверка на ноль в методах для работы с данными, 
+        чтобы не нагружать лишний раз вычислительные методы */ 
+        auto invertTask = [this](size_t start, size_t end) {
+            for (size_t i = start; i < end; ++i) {
+                this->data[i] = static_cast<T>(1) / this->data[i];
+            }
+        };
+
+        runInParallel(invertTask);
     }
 
     T minimumValue() override {
@@ -189,7 +227,7 @@ public:
         return std::sqrt(sumOfSquares);
     }
 
-    unsigned __int64 scalarMultiply(const Vector<T>& other) override {
+    unsigned __int32 scalarMultiply(const Vector<T>& other) override {
         this->checkInitialization();
 
         if (this->data.size() != other.getData().size()) {
