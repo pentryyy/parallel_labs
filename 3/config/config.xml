@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 
+    Количество потоков, 
+    используется только для параллельных методов
+    1,2,3 и т.д.
+    0 - автоматический подбор 
+    -->
+    <numberOfThreads>20</numberOfThreads>
+     
+    <!-- Количество повторов для каждого теста -->
+    <numberOfTests>1</numberOfTests>
+
+    <!-- Путь для сохранения времени теста -->
+    <fileForTestTime>c:/path/to/time_save</fileForTestTime>
+    
+    <!-- Путь для сохранения данных теста -->
+    <fileForTestData>c:/path/to/data_save</fileForTestData>
+</config>
