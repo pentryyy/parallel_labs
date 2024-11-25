@@ -11,9 +11,12 @@
     <!-- Количество повторов для каждого теста -->
     <numberOfTests>1</numberOfTests>
 
+    <!-- Размерность вектора -->
+    <vectorSize>100000000</vectorSize>
+
     <!-- Путь для сохранения времени теста -->
-    <fileForTestTime>c:/path/to/time_save</fileForTestTime>
+    <fileForTestTime>multi_thread_test_time_log.txt</fileForTestTime>
     
     <!-- Путь для сохранения данных теста -->
-    <fileForTestData>c:/path/to/data_save</fileForTestData>
+    <fileForTestMetrics>multi_thread_test_metrics_log.txt</fileForTestMetrics>
 </config>

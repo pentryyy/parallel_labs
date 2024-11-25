@@ -31,11 +31,9 @@ private:
         }
     }
 public:
-    VectorMultiThread(int n) : Vector<T>(n) {}
-
+    VectorMultiThread(size_t n) : Vector<T>(n) {}
+    
     ~VectorMultiThread() {}
-
-    void setThreadCount(int count){ threadCount = count; }
 
     VectorMultiThread& operator=(const VectorMultiThread& other) {
         if (this == &other) {
@@ -48,7 +46,9 @@ public:
 
         return *this;
     }
-
+    
+    void setThreadCount(int count){ threadCount = count; }
+    
     void initializedConst(T value) override {
         if (value == 0){
             throw std::runtime_error("Деление на ноль запрещено");

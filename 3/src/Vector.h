@@ -15,7 +15,7 @@ protected:
         }
     }
 public:
-    Vector(int n) {
+    Vector(size_t n) {
         std::vector<T> newData(n);
         this->data = newData;
     }
@@ -24,6 +24,10 @@ public:
 
     const std::vector<T>& getData() const {
         return data;
+    }
+    
+    void resize(size_t n){
+        data.resize(n);
     }
 
     void exportToFile(const std::string& fileName) {

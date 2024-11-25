@@ -8,8 +8,9 @@ class ConfigReader {
 private:
     int         numberOfThreads;
     int         numberOfTests;
+    size_t      vectorSize;
     std::string fileForTestTime;
-    std::string fileForTestData;
+    std::string fileForTestMetrics;
 public:
     ConfigReader(const std::string& fileName) {
         std::ifstream file("config/" + fileName);
@@ -46,6 +47,14 @@ public:
             throw std::runtime_error("Отсутствующий или недопустимый элемент <numberOfTests>");
         }
 
+        // Читаем <vectorSize>
+        rapidxml::xml_node<>* vectorElement = root->first_node("vectorSize");
+        if (vectorElement && vectorElement->value()) {
+            vectorSize = std::stoi(vectorElement->value());
+        } else {
+            throw std::runtime_error("Отсутствующий или недопустимый элемент <vectorSize>");
+        }
+
         // Читаем <fileForTestTime>
         rapidxml::xml_node<>* timePathElement = root->first_node("fileForTestTime");
         if (timePathElement && timePathElement->value()) {
@@ -54,12 +63,32 @@ public:
             throw std::runtime_error("Отсутствующий или недопустимый элемент <fileForTestTime>");
         }
 
-        // Читаем <fileForTestData>
-        rapidxml::xml_node<>* dataPathElement = root->first_node("fileForTestData");
+        // Читаем <fileForTestMetrics>
+        rapidxml::xml_node<>* dataPathElement = root->first_node("fileForTestMetrics");
         if (dataPathElement && dataPathElement->value()) {
-            fileForTestData = dataPathElement->value();
+            fileForTestMetrics = dataPathElement->value();
         } else {
-            throw std::runtime_error("Отсутствующий или недопустимый элемент <fileForTestData>");
+            throw std::runtime_error("Отсутствующий или недопустимый элемент <fileForTestMetrics>");
         }
+    }
+
+    int getNumberOfThreads() const {
+        return numberOfThreads;
+    }
+
+    int getNumberOfTests() const {
+        return numberOfTests;
+    }
+
+    size_t getVectorSize() const {
+        return vectorSize;
+    }
+
+    std::string getFileForTestTime() const {
+        return fileForTestTime;
+    }
+
+    std::string getfileForTestMetrics() const {
+        return fileForTestMetrics;
     }
 };

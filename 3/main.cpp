@@ -8,8 +8,8 @@
 #include "src/VectorMultiThread.h"
 
 // Метод для выбора способа иницализации
-template <typename VectorType>
-void performAction(VectorType& vector, int choice, const std::string& filename) {
+template <typename VectorT>
+void performAction(VectorT& vector, int choice, const std::string& filename) {
     switch (choice) {
         case 1:
             std::cout << "Выбрана инициализация константами \n";

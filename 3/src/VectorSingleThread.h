@@ -8,7 +8,7 @@
 template <typename T>
 class VectorSingleThread : public Vector<T>, public IOperations<T> {
 public:
-    VectorSingleThread(int n) : Vector<T>(n) {}
+    VectorSingleThread(size_t n) : Vector<T>(n) {}
 
     ~VectorSingleThread() {}
 
