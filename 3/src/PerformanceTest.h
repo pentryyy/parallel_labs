@@ -2,13 +2,13 @@
 #include <chrono>  // Для замера времени
 #include <functional> // Для приема функции в качестве аргумента
 #include "ConfigReader.h"
+#include "HasSetThreadCount.h" // Структура для проверки наличия метода в классе
 
 template <typename VectorT>
 class PerformanceTest {
 private:
     VectorT vectorT = VectorT(1); // Размерность вектора  по умолчанию 1
     ConfigReader configReader;
-    float executionTime;
 public:
     PerformanceTest(VectorT& vectorT, const ConfigReader& configReader) :
         configReader(configReader) {
@@ -25,15 +25,14 @@ public:
             throw std::runtime_error("Ошибка при открытии файла для записи: " + fileName);
         }
 
-        // Устанавливаем количество потоков
         if (configReader.getNumberOfThreads() == 0) {
             threadCountForTest = std::thread::hardware_concurrency();
         } else {
             threadCountForTest = configReader.getNumberOfThreads();
         }
 
-        // Лямбда для измерения времени
-        auto measureTime = [&file, threadCountForTest](const std::function<void()>& func, const std::string& funcName, VectorT& vectorT) {
+        // Лямбда для измерения времени теста
+        auto measureTime = [this, &file, &threadCountForTest](const std::function<void()>& func, const std::string& funcName) {
             static bool firstCall = true;
             if (!firstCall) { 
                 file << '\n'; 
@@ -42,31 +41,44 @@ public:
             }
 
             file << funcName;
+        
+            for (int i = 1; i <= threadCountForTest; ++i) {
+                float threadSum = 0; // Сумма времени для текущего потока
+                for (int j = 1; j <= configReader.getNumberOfTests(); ++j) {
+                    /* 
+                    Метод setThreadCount() выполняется только в том случае 
+                    если он есть в текущем VectorT классе
+                    */
+                    if constexpr (HasSetThreadCount<VectorT>::value) {
+                        vectorT.setThreadCount(i);
+                    } else {
+                        threadCountForTest = 1;
+                    }
 
-            for(int i = 1; i <= threadCountForTest; ++i) {
-                vectorT.setThreadCount(i);
-                auto startTime = std::chrono::high_resolution_clock::now();
+                    auto startTime = std::chrono::high_resolution_clock::now();
+                    func(); // Выполняем переданную функцию
+                    auto endTime = std::chrono::high_resolution_clock::now();
 
-                func();  // Выполняем переданную функцию
+                    std::chrono::duration<double> elapsed = endTime - startTime;
+                    threadSum += elapsed.count(); // Суммируем время для текущего потока
+                }
 
-                auto endTime = std::chrono::high_resolution_clock::now();
-                std::chrono::duration<double> elapsed = endTime - startTime;
-
-                file << '\n' << elapsed.count();
+                // Вычисляем среднее для текущего потока
+                float avgForThread = threadSum / configReader.getNumberOfTests();
+                file << '\n' << threadSum / configReader.getNumberOfTests();
             }
         };
 
         // Выполняем тесты
-        measureTime([&]() { vectorT.minimumValue(); }, "minimumValue", vectorT);
-        measureTime([&]() { vectorT.minimumIndexByValue(); }, "minimumIndexByValue", vectorT);
-        measureTime([&]() { vectorT.maximumValue(); }, "maximumValue", vectorT);
-        measureTime([&]() { vectorT.maximumIndexByValue(); }, "maximumIndexByValue", vectorT);
-        measureTime([&]() { vectorT.sumValue(); }, "sumValue", vectorT);
-        measureTime([&]() { vectorT.avgValue(); }, "avgValue", vectorT);
-        measureTime([&]() { vectorT.euclidMonheton(); }, "euclidMonheton", vectorT);
-        measureTime([&]() { vectorT.scalarMultiply(vectorT); }, "scalarMultiply", vectorT);
+        measureTime([this]() { vectorT.minimumValue(); }, "minimumValue");
+        measureTime([this]() { vectorT.minimumIndexByValue(); }, "minimumIndexByValue");
+        measureTime([this]() { vectorT.maximumValue(); }, "maximumValue");
+        measureTime([this]() { vectorT.maximumIndexByValue(); }, "maximumIndexByValue");
+        measureTime([this]() { vectorT.sumValue(); }, "sumValue");
+        measureTime([this]() { vectorT.avgValue(); }, "avgValue"); 
+        measureTime([this]() { vectorT.euclidMonheton(); }, "euclidMonheton");
+        measureTime([this]() { vectorT.scalarMultiply(vectorT); }, "scalarMultiply");
     
-
         file.close();
         std::cout << "Данные времени тестирования успешно созданы: " << fileName << '\n';
     }

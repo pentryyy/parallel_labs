@@ -2,14 +2,13 @@
 <config>
     <!-- 
     Количество потоков, 
-    используется только для параллельных методов
-    1,2,3 и т.д.
+    1, 2, 3 и т.д.
     0 - автоматический подбор 
     -->
     <numberOfThreads>20</numberOfThreads>
      
     <!-- Количество повторов для каждого теста -->
-    <numberOfTests>1</numberOfTests>
+    <numberOfTests>2</numberOfTests>
 
     <!-- Размерность вектора -->
     <vectorSize>100000000</vectorSize>
@@ -17,6 +16,6 @@
     <!-- Путь для сохранения времени теста -->
     <fileForTestTime>multi_thread_test_time_log.txt</fileForTestTime>
     
-    <!-- Путь для сохранения данных теста -->
+    <!-- Путь для сохранения метрик теста -->
     <fileForTestMetrics>multi_thread_test_metrics_log.txt</fileForTestMetrics>
 </config>

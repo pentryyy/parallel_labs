@@ -1,8 +1,6 @@
 #include <random>
 #include <cmath>
 #include "Vector.h"
-#include <chrono>  // Для замера времени
-#include <functional> // Для приема функции в качестве аргумента
 #include "IOperations.h"
 
 template <typename T>
@@ -143,44 +141,5 @@ public:
             productSum += this->data[i] * other.getData()[i];
         }
         return productSum;
-    }
-
-    void createTestData(const std::string& fileName) override {
-        this->checkInitialization();
-
-        std::ofstream file("export/" + fileName);
-        if (!file.is_open()) {
-            throw std::runtime_error("Ошибка при открытии файла для записи: " + fileName);
-        }
-
-        auto measureTime = [this, &file](const std::function<void()>& func, const std::string& funcName) {
-            // Для коректтной записи значений в файл
-            static bool firstCall = true;
-            if (!firstCall) { file << '\n'; } 
-            else { firstCall = false; }
-            
-            file << funcName;
-
-            auto startTime = std::chrono::high_resolution_clock::now();
-            
-            func();  // Выполняем переданную функцию
-
-            auto endTime = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double> elapsed = endTime - startTime;
-            
-            file << '\n' << elapsed.count();
-        };
-
-        measureTime([this]() { minimumValue(); }, "minimumValue");
-        measureTime([this]() { minimumIndexByValue(); }, "minimumIndexByValue");
-        measureTime([this]() { maximumValue(); }, "maximumValue");
-        measureTime([this]() { maximumIndexByValue(); }, "maximumIndexByValue");
-        measureTime([this]() { sumValue(); }, "sumValue");
-        measureTime([this]() { avgValue(); }, "avgValue"); 
-        measureTime([this]() { euclidMonheton(); }, "euclidMonheton");
-        measureTime([this]() { scalarMultiply(*this); }, "scalarMultiply");
-
-        file.close();
-        std::cout << "Данные тестирования успешно созданы: " << fileName << '\n';
     }
 };

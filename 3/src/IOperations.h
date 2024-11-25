@@ -18,8 +18,6 @@ public:
     virtual unsigned __int32 sumValue() = 0;
     virtual unsigned __int64 euclidMonheton() = 0;
     virtual unsigned __int32 scalarMultiply(const Vector<T>& other) = 0;
-
-    virtual void createTestData(const std::string& fileName) = 0;
 };
 
 #endif

@@ -10,17 +10,30 @@
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
-    
-    std::cout << std::string(32, '-') << "Создание данных теста"  <<  std::string(32, '-') << '\n';
 
-    ConfigReader config("config.xml");
+    std::cout << std::string(32, '-') << "Создание данных тестов"  <<  std::string(32, '-') << '\n';
+
+    // --------------------------Однопоточный тест-------------------------------
+
+    ConfigReader singleThreadConfig("singleThreadConfig.xml");
    
-    VectorMultiThread<double> vectorMultiThread(config.getVectorSize());
-    vectorMultiThread.initializedRandom(1, 999);
+    VectorSingleThread<double> singleThreadVector(singleThreadConfig.getVectorSize());
+    singleThreadVector.initializedRandom(1, 999);
 
-    PerformanceTest performanceTest(vectorMultiThread, config);
+    PerformanceTest singleThreadPerformanceTest(singleThreadVector, singleThreadConfig);
 
-    performanceTest.runTimeTest();
+    singleThreadPerformanceTest.runTimeTest();
+
+    // --------------------------Многопоточный тест------------------------------
+
+    ConfigReader multiThreadConfig("multiThreadConfig.xml");
+   
+    VectorMultiThread<double> multiThreadVector(multiThreadConfig.getVectorSize());
+    multiThreadVector.initializedRandom(1, 999);
+
+    PerformanceTest multiThreadPerformanceTest(multiThreadVector, multiThreadConfig);
+
+    multiThreadPerformanceTest.runTimeTest();
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 

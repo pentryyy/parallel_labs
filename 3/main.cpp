@@ -96,7 +96,6 @@ int main() {
     std::cout << "Среднее значение: "              << vectorSingleThread.avgValue() << '\n';
     std::cout << "Эвклидова норма: "               << vectorSingleThread.euclidMonheton() << '\n';
     std::cout << "Скалярное произведение: "        << vectorSingleThread.scalarMultiply(vectorSingleThreadInverted) << '\n';
-    vectorSingleThread.createTestData("single_thread_test_log.txt");
 
     std::cout << std::string(32, '-') << "Работа многопоточных методов" <<  std::string(31, '-') << '\n';
 
@@ -117,7 +116,6 @@ int main() {
     std::cout << "Среднее значение: "              << vectorMultiThread.avgValue() << '\n';
     std::cout << "Эвклидова норма: "               << vectorMultiThread.euclidMonheton() << '\n';
     std::cout << "Скалярное произведение: "        << vectorMultiThread.scalarMultiply(vectorMultiThreadInverted) << '\n';
-    vectorMultiThread.createTestData("multi_thread_test_log.txt");
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 
