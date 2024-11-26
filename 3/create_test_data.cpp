@@ -34,6 +34,7 @@ int main() {
     PerformanceTest multiThreadPerformanceTest(multiThreadVector, multiThreadConfig);
 
     multiThreadPerformanceTest.runTimeTest();
+    multiThreadPerformanceTest.runDataTest();
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 

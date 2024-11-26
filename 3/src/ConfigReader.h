@@ -20,7 +20,7 @@ public:
 
         // Считываем весь файл в строку
         std::vector<char> buffer((std::istreambuf_iterator<char>(file)),
-                                 std::istreambuf_iterator<char>());
+                                  std::istreambuf_iterator<char>());
         buffer.push_back('\0');
 
         rapidxml::xml_document<> doc;
