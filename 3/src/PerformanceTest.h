@@ -69,6 +69,10 @@ public:
             }
         };
 
+        VectorT vectorTInverted(configReader.getVectorSize());
+        vectorTInverted = vectorT;
+        vectorTInverted.invertValues();
+
         // Выполняем тесты
         measureTime([this]() { vectorT.minimumValue(); }, "minimumValue");
         measureTime([this]() { vectorT.minimumIndexByValue(); }, "minimumIndexByValue");
@@ -77,7 +81,7 @@ public:
         measureTime([this]() { vectorT.sumValue(); }, "sumValue");
         measureTime([this]() { vectorT.avgValue(); }, "avgValue"); 
         measureTime([this]() { vectorT.euclidMonheton(); }, "euclidMonheton");
-        measureTime([this]() { vectorT.scalarMultiply(vectorT); }, "scalarMultiply");
+        measureTime([this, &vectorTInverted]() { vectorT.scalarMultiply(vectorTInverted); }, "scalarMultiply");
     
         file.close();
         std::cout << "Данные времени тестирования успешно созданы: " << fileName << '\n';
