@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import mplcursors  # Библиотека для интерактивных всплывающих окон
 import os
 import sys
 
@@ -45,15 +46,17 @@ def read_data_from_file(filename):
     
 if __name__ == "__main__":
     try:
-        test_data_list = read_data_from_file('multi_thread_test_log.txt')
+        test_data_list = read_data_from_file('multi_thread_test_time_log.txt')
 
         plt.figure(figsize=(12, 8))
         plt.get_current_fig_manager().set_window_title('Результаты маштабирования')
 
         colors = ['blue', 'sienna', 'green', 'darkslategrey', 'purple', 'fuchsia', 'darkgoldenrod', 'gray']
 
+        lines = []  # Для хранения ссылок на графики
         for i, test_data in enumerate(test_data_list):
-            plt.plot(test_data.values, label=test_data.function_name, color=colors[i % len(colors)])
+            line, = plt.plot(test_data.values, label=test_data.function_name, color=colors[i % len(colors)])
+            lines.append((line, test_data))  # Сохраняем график и данные
             plt.xticks(ticks=range(len(test_data_list[0].values)), labels=range(1, len(test_data_list[0].values) + 1))
 
             min_value = min(test_data.values)
@@ -68,7 +71,27 @@ if __name__ == "__main__":
         
         plt.legend()
         plt.grid()
+
+        # Собираем только объекты графиков (Line2D)
+        line_artists = [line for line, _ in lines]
+
+        # Добавляем интерактивность
+        cursor = mplcursors.cursor(line_artists, highlight=True)
+        @cursor.connect("add")
+        def on_hover(sel):
+            # Находим соответствующие данные для выбранного графика
+            selected_line = sel.artist
+            for line, test_data in lines:
+                if line == selected_line:
+                    sel.annotation.set(text=f"{test_data.function_name}\nМетрики:\n"
+                                             f"Минимум: {min(test_data.values):.2f}\n"
+                                             f"Максимум: {max(test_data.values):.2f}\n"
+                                             f"Среднее: {sum(test_data.values) / len(test_data.values):.2f}")
+                    sel.annotation.get_bbox_patch().set(fc="white", alpha=0.8)
+                    break
+
         plt.show()
+
     except FileNotFoundError:
         plt.subplots()
         plt.get_current_fig_manager().set_window_title('Результаты маштабирования')

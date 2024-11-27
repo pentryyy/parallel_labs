@@ -6,7 +6,7 @@
 #include <conio.h>
 #include "src/VectorSingleThread.h"
 #include "src/VectorMultiThread.h"
-#include "src/PerformanceTest.h"
+#include "src/test/PerformanceTest.h"
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
