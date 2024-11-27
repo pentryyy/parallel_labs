@@ -1,110 +1,16 @@
 import matplotlib.pyplot as plt
 import mplcursors
-import os
-import sys
 
-class TimeResult:
-    def __init__(self, function_name, time_values):
-        self.__function_name = function_name
-        self.__time_values   = time_values
+from test_data import TestData
 
-    def get_time_values(self):
-        return self.__time_values
-
-    def get_function_name(self):
-        return self.__function_name
-
-class TestData:
-    def __init__(self):
-        self.time_result_list = [] # Список объектов TimeResult
-        self.func_name_list   = [] # Список имен функций
-
-    def get_time_result_list(self):
-        return self.time_result_list
-    
-    def get_func_name_list(self):
-        return self.func_name_list
-
-    def read_test_data_from_file(self, filename):
-        if getattr(sys, 'frozen', False):
-            # Если скрипт запущен в замороженном виде, например, через PyInstaller
-            bundle_dir = os.path.abspath(os.path.join(os.getcwd(), "..", ".."))  # Поднимаемся на два уровня вверх
-        else:
-            # Если скрипт запущен как обычный Python-файл
-            bundle_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
-        file_path = os.path.join(bundle_dir, "export", filename)
-        with open(file_path, 'r') as file:
-            lines = file.readlines()
-            function_name = None
-            time_values = []
-            
-            for line in lines:
-                line = line.strip()
-
-                if not line:
-                    continue
-
-                if function_name is None:
-                    function_name = line
-                else:
-                    # Если строка не значение, то добавлем его в список и начинаем сначала
-                    try:
-                        time_values.append(float(line))
-                    except ValueError:
-                        self.func_name_list.append(function_name)
-                        self.time_result_list.append(TimeResult(function_name, time_values))
-                        function_name = line
-                        time_values = []
-                       
-            if function_name and len(time_values) > 0:
-                self.func_name_list.append(function_name)
-                self.time_result_list.append(TimeResult(function_name, time_values))
-                
-    def read_metrics_from_file(self, filename, function_name):
-        metrics_dict = {}
-
-        if getattr(sys, 'frozen', False):
-            # Если скрипт запущен в замороженном виде, например, через PyInstaller
-            bundle_dir = os.path.abspath(os.path.join(os.getcwd(), "..", ".."))  # Поднимаемся на два уровня вверх
-        else:
-            # Если скрипт запущен как обычный Python-файл
-            bundle_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
-        file_path = os.path.join(bundle_dir, "export", filename)
-        with open(file_path, 'r', encoding='utf-8') as file:
-            lines = file.readlines()
-            
-            current_function = None  # Текущая обрабатываемая функция
-            for line in lines:
-                stripped_line = line.strip()
-                
-                if stripped_line in self.get_func_name_list():
-                    # Если строка — имя функции, переключаем текущую функцию
-                    current_function = stripped_line
-                    if current_function == function_name:
-                        metrics_dict = {}  # Инициализируем словарь для метрик функции
-                    else:
-                        # Если текущая функция не совпадает, пропускаем
-                        current_function = None
-                    continue
-
-                if ':::' in line and current_function == function_name:
-                    # Если строка содержит метрику и это нужная функция, добавляем её
-                    metric_name, metric_value = line.split(':::')
-                    metrics_dict[metric_name.strip()] = float(metric_value.strip())
-                
-                # Если дошли до конца нужной функции, выходим
-                if current_function == function_name and stripped_line not in self.get_func_name_list():
-                    continue
-
-        return metrics_dict
- 
 if __name__ == "__main__":
     try:
         test_data_list_obj = TestData()
         test_data_list_obj.read_test_data_from_file('multi_thread_test_time_log.txt')
-        test_data_list = test_data_list_obj.get_time_result_list() 
+        test_data_list_obj.read_metrics_from_file('multi_thread_test_metrics_log.txt')
+        
+        test_data_list          = test_data_list_obj.get_time_result_list() 
+        metrics_data_dictionary = test_data_list_obj.get_metrics_result_dictionary()
 
         plt.figure(figsize=(12, 8))
         plt.get_current_fig_manager().set_window_title('Результаты маштабирования')
@@ -142,8 +48,7 @@ if __name__ == "__main__":
             selected_line = sel.artist
             for line, test_data in lines:
                 if line == selected_line:
-                    metrics = test_data_list_obj.read_metrics_from_file('multi_thread_test_metrics_log.txt', 
-                                                                        test_data.get_function_name())
+                    metrics = metrics_data_dictionary[test_data.get_function_name()]
                     sel.annotation.set(text=f"{test_data.get_function_name()}\n"
                                              f"Минимум: {metrics['Минимальное значение']}\n"
                                              f"Максимум: {metrics['Максимальное значение']}\n"
