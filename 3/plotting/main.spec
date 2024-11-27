@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('../export/multi_thread_test_log.txt', '.')],
+    datas=[('../export/multi_thread_test_time_log.txt', '.'), ('../export/multi_thread_test_metrics_log.txt', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

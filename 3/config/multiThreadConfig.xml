@@ -5,7 +5,7 @@
     1, 2, 3 и т.д.
     0 - автоматический подбор 
     -->
-    <numberOfThreads>20</numberOfThreads>
+    <numberOfThreads>12</numberOfThreads>
      
     <!-- Количество повторов для каждого теста -->
     <numberOfTests>2</numberOfTests>

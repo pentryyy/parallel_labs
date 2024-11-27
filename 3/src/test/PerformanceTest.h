@@ -132,7 +132,7 @@ public:
             file << '\n' << "Минимальное значение:::"  << itemOfTestData.findMin();
             file << '\n' << "Максимальное значение:::" << itemOfTestData.findMax();
             file << '\n' << "Среднее значение:::"      << itemOfTestData.calculateMean();
-            file << '\n' << "Среднее значение:::"      << itemOfTestData.calculateMedian();
+            file << '\n' << "Медианное значение:::"    << itemOfTestData.calculateMedian();
             file << '\n' << "95-й процентиль:::"       << itemOfTestData.calculatePercentile95();
         }
 
