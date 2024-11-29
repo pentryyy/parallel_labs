@@ -35,7 +35,8 @@ public:
 
         // Лямбда для измерения времени теста
         auto measureTime = [this, &file, &threadCountForTest](const std::function<void()>& func, const std::string& funcName) {
-            std::list<float> funcTimeValues; // Для хранения времени выполнения тестов
+            // Для хранения времени выполнения тестов на каждый поток
+            std::list<std::list<float>> allFuncTimeValues;
             
             // Для того, чтобы сделать переход строки перед названием функции
             static bool firstCall = true;   
@@ -49,7 +50,9 @@ public:
             file << funcName;
 
             for (int i = 1; i <= threadCountForTest; ++i) {
-                float threadSum = 0; // Сумма времени для текущего потока
+                float            threadSum = 0;  // Сумма времени для текущего потока
+                std::list<float> funcTimeValues; // Для хранения времени повторов теста
+                
                 for (int j = 1; j <= configReader.getNumberOfTests(); ++j) {
                     /* 
                     Метод setThreadCount() выполняется только в том случае 
@@ -65,16 +68,16 @@ public:
                     func();
                     auto endTime = std::chrono::high_resolution_clock::now();
 
-                    std::chrono::duration<double> elapsed = endTime - startTime;
+                    std::chrono::duration<float> elapsed = endTime - startTime;
                     threadSum += elapsed.count();
+                    funcTimeValues.push_back(elapsed.count());
                 }
 
-                float avgForThread = threadSum / configReader.getNumberOfTests(); // Вычисляем среднее для текущего потока
-                file << '\n' << avgForThread;
-                funcTimeValues.push_back(avgForThread);
+                file << '\n' << threadSum / configReader.getNumberOfTests();
+                allFuncTimeValues.push_back(funcTimeValues);
             }
-            TestData testData(funcName, funcTimeValues); // Результаты текущей функции
-            listOfTestData.push_back(testData);          // Добавляем в список результаты текущей функции
+            TestData testData(funcName, allFuncTimeValues); // Результаты текущей функции
+            listOfTestData.push_back(testData);             // Добавляем в список результаты текущей функции
         };
 
         VectorT vectorTInverted(configReader.getVectorSize());
@@ -96,16 +99,6 @@ public:
     }
 
     void runDataTest() {
-        /*
-        Своеобразная проверка на то, 
-        что явялется ли данный вектор многопоточным
-        */
-        if constexpr (HasSetThreadCount<VectorT>::value) {
-            vectorT.setThreadCount(1);
-        } else {
-            throw std::runtime_error("Данный вектор однопоточный");
-        }
-
         if (listOfTestData.size() == 0) {
             throw std::runtime_error("Невозможно расчитать метрики, так как нет данных о времени выполнения функций");
         }
@@ -129,11 +122,16 @@ public:
 
             file << itemOfTestData.getFuncName();
 
-            file << '\n' << "Минимальное значение:::"  << itemOfTestData.findMin();
-            file << '\n' << "Максимальное значение:::" << itemOfTestData.findMax();
-            file << '\n' << "Среднее значение:::"      << itemOfTestData.calculateMean();
-            file << '\n' << "Медианное значение:::"    << itemOfTestData.calculateMedian();
-            file << '\n' << "95-й процентиль:::"       << itemOfTestData.calculatePercentile95();
+            // Вывод метрик для каждого количества потоков
+            for (size_t i = 1; i <= itemOfTestData.getSizeOfList(); ++i) {
+                file << '\n' << i;
+
+                file << '\n' << "Минимальное значение:::"  << itemOfTestData.findMin(i);
+                file << '\n' << "Максимальное значение:::" << itemOfTestData.findMax(i);
+                file << '\n' << "Среднее значение:::"      << itemOfTestData.calculateMean(i);
+                file << '\n' << "Медианное значение:::"    << itemOfTestData.calculateMedian(i);
+                file << '\n' << "95-й процентиль:::"       << itemOfTestData.calculatePercentile95(i);
+            }
         }
 
         file.close();

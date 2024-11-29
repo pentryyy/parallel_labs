@@ -8,7 +8,7 @@
     <numberOfThreads>12</numberOfThreads>
      
     <!-- Количество повторов для каждого теста -->
-    <numberOfTests>2</numberOfTests>
+    <numberOfTests>5</numberOfTests>
 
     <!-- Размерность вектора -->
     <vectorSize>100000000</vectorSize>

@@ -23,6 +23,7 @@ int main() {
     PerformanceTest singleThreadPerformanceTest(singleThreadVector, singleThreadConfig);
 
     singleThreadPerformanceTest.runTimeTest();
+    singleThreadPerformanceTest.runDataTest();
 
     // --------------------------Многопоточный тест------------------------------
 
