@@ -48,13 +48,16 @@ if __name__ == "__main__":
             selected_line = sel.artist
             for line, test_data in lines:
                 if line == selected_line:
-                    metrics = metrics_data_dictionary[test_data.get_function_name()]
-                    sel.annotation.set(text=f"{test_data.get_function_name()}\n"
-                                             f"Минимум: {metrics['Минимальное значение']}\n"
-                                             f"Максимум: {metrics['Максимальное значение']}\n"
-                                             f"Среднее: {metrics['Среднее значение']}\n"
-                                             f"Медиана: {metrics['Медианное значение']}\n"
-                                             f"95-й процентиль: {metrics['95-й процентиль']}")
+
+                    x_index = int(round(sel.target[0])) # Индекс точки
+                    metrics = metrics_data_dictionary[test_data.get_function_name()][x_index + 1]
+                    
+                    sel.annotation.set(text=f"{test_data.get_function_name()} для потоков - {x_index + 1}\n"
+                                            f"Минимум: {metrics['Минимальное значение']}\n"
+                                            f"Максимум: {metrics['Максимальное значение']}\n"
+                                            f"Среднее: {metrics['Среднее значение']}\n"
+                                            f"Медиана: {metrics['Медианное значение']}\n"
+                                            f"95-й процентиль: {metrics['95-й процентиль']}")
                     sel.annotation.get_bbox_patch().set(fc="white", alpha=0.8)
                     break
         plt.show()
