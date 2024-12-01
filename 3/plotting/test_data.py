@@ -19,6 +19,13 @@ class TestData:
     def get_metrics_result_dictionary(self):
         return self.__metrics_result_dictionary
     
+    # Проверка является ли это лог для однопоточной функции
+    def check_single_thread_log(self):
+        for function, threads in self.__metrics_result_dictionary.items():
+            if len(threads) > 1:
+                return False
+        return True
+
     def __is_number(self, value):
         return bool(re.match(r"^\d+$", value))
 

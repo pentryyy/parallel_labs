@@ -6,6 +6,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 from test_data import TestData
 import sys
+import numpy as np
 
 class App:
     def __init__(self, root):
@@ -88,16 +89,25 @@ class App:
             colors = ['blue', 'sienna', 'green', 'darkslategrey', 'purple', 'fuchsia', 'darkgoldenrod', 'gray']
             lines = []
 
-            for i, test_data in enumerate(test_data_list):
-                line, = plt.plot(test_data.get_time_values(), label=test_data.get_function_name(), color=colors[i % len(colors)])
-                lines.append((line, test_data))
+            # Проверка на вывод однопоточного лога
+            if test_data_list_obj.check_single_thread_log() == True:
+                x = np.linspace(1, 2, 400)
+                for i, test_data in enumerate(test_data_list):
+                    y = np.full_like(x, test_data.get_time_values())
+                    line, = plt.plot(x, y, label=test_data.get_function_name(), color=colors[i % len(colors)])
+                    lines.append(line)
+
+                plt.xticks([1])
+            else:
+                for i, test_data in enumerate(test_data_list):
+                    line, = plt.plot(test_data.get_time_values(), label=test_data.get_function_name(), color=colors[i % len(colors)])
+                    lines.append(line)
+                    min_value = min(test_data.get_time_values())
+                    min_index = test_data.get_time_values().index(min_value)
+
+                    plt.plot(min_index, min_value, 'ro')
+                    plt.axvline(x=min_index, color='red', linestyle='--', linewidth=1)
                 plt.xticks(ticks=range(len(test_data_list[0].get_time_values())), labels=range(1, len(test_data_list[0].get_time_values()) + 1))
-
-                min_value = min(test_data.get_time_values())
-                min_index = test_data.get_time_values().index(min_value)
-
-                plt.plot(min_index, min_value, 'ro')
-                plt.axvline(x=min_index, color='red', linestyle='--', linewidth=1)
 
             plt.title('График маштабирования многопоточных методов')
             plt.xlabel('Количество потоков')
@@ -105,17 +115,20 @@ class App:
             plt.legend()
             plt.grid()
 
-            line_artists = [line for line, _ in lines]
-            cursor = mplcursors.cursor(line_artists, highlight=True)
+            cursor = mplcursors.cursor(lines, highlight=True)        
 
             @cursor.connect("add")
             def on_hover(sel):
                 selected_line = sel.artist
-                for line, test_data in lines:
+                for line, test_data in zip(lines, test_data_list):
                     if line != selected_line:
                         continue
 
-                    x_index = int(round(sel.target[0])) + 1
+                    # Проверка курсора для однопоточного лога
+                    if test_data_list_obj.check_single_thread_log() == True:
+                        x_index = 1
+                    else:
+                        x_index = int(round(sel.target[0])) + 1
                     try:
                         metrics = metrics_data_dictionary[test_data.get_function_name()][x_index]
                         sel.annotation.set(text=f"{test_data.get_function_name()} для потоков - {x_index}\n"
