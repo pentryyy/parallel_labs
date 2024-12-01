@@ -6,6 +6,7 @@
 #include <conio.h>
 #include "src/VectorSingleThread.h"
 #include "src/VectorMultiThread.h"
+#include "src/VectorOpenMP.h"
 #include "src/test/PerformanceTest.h"
 
 int main() {
@@ -36,6 +37,18 @@ int main() {
 
     multiThreadPerformanceTest.runTimeTest();
     multiThreadPerformanceTest.runDataTest();
+
+    // --------------------------OpenMP тест-------------------------------------
+
+    ConfigReader openMPConfig("OpenMPConfig.xml");
+   
+    VectorOpenMP<double> openMPVector(openMPConfig.getVectorSize());
+    openMPVector.initializedRandom(1, 999);
+
+    PerformanceTest openMPPerformanceTest(openMPVector, openMPConfig);
+
+    openMPPerformanceTest.runTimeTest();
+    openMPPerformanceTest.runDataTest();
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 

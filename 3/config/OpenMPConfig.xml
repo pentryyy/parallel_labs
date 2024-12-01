@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 
+    Количество потоков, 
+    1, 2, 3 и т.д.
+    0 - автоматический подбор 
+    -->
+    <numberOfThreads>20</numberOfThreads>
+     
+    <!-- Количество повторов для каждого теста -->
+    <numberOfTests>5</numberOfTests>
+
+    <!-- Размерность вектора -->
+    <vectorSize>1000000000</vectorSize>
+
+    <!-- Путь для сохранения времени теста -->
+    <fileForTestTime>openmp_test_time_log.txt</fileForTestTime>
+    
+    <!-- Путь для сохранения метрик теста -->
+    <fileForTestMetrics>openmp_test_metrics_log.txt</fileForTestMetrics>
+</config>

@@ -5,13 +5,13 @@
     1, 2, 3 и т.д.
     0 - автоматический подбор 
     -->
-    <numberOfThreads>12</numberOfThreads>
+    <numberOfThreads>20</numberOfThreads>
      
     <!-- Количество повторов для каждого теста -->
     <numberOfTests>5</numberOfTests>
 
     <!-- Размерность вектора -->
-    <vectorSize>100000000</vectorSize>
+    <vectorSize>1000000000</vectorSize>
 
     <!-- Путь для сохранения времени теста -->
     <fileForTestTime>multi_thread_test_time_log.txt</fileForTestTime>
