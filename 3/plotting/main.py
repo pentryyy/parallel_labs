@@ -49,10 +49,10 @@ if __name__ == "__main__":
             for line, test_data in lines:
                 if line == selected_line:
 
-                    x_index = int(round(sel.target[0])) # Индекс точки
-                    metrics = metrics_data_dictionary[test_data.get_function_name()][x_index + 1]
+                    x_index = int(round(sel.target[0])) + 1 # Индекс, выбранной точки
+                    metrics = metrics_data_dictionary[test_data.get_function_name()][x_index]
                     
-                    sel.annotation.set(text=f"{test_data.get_function_name()} для потоков - {x_index + 1}\n"
+                    sel.annotation.set(text=f"{test_data.get_function_name()} для потоков - {x_index}\n"
                                             f"Минимум: {metrics['Минимальное значение']}\n"
                                             f"Максимум: {metrics['Максимальное значение']}\n"
                                             f"Среднее: {metrics['Среднее значение']}\n"

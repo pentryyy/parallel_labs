@@ -6,6 +6,7 @@
 #include <conio.h>
 #include "src/VectorSingleThread.h"
 #include "src/VectorMultiThread.h"
+#include "src/VectorOpenMP.h"
 
 // Метод для выбора способа иницализации
 template <typename VectorT>
@@ -116,6 +117,26 @@ int main() {
     std::cout << "Среднее значение: "              << vectorMultiThread.avgValue() << '\n';
     std::cout << "Эвклидова норма: "               << vectorMultiThread.euclidMonheton() << '\n';
     std::cout << "Скалярное произведение: "        << vectorMultiThread.scalarMultiply(vectorMultiThreadInverted) << '\n';
+
+    std::cout << std::string(32, '-') << "Работа многопоточных методов OpenMP" <<  std::string(24, '-') << '\n';
+
+    VectorOpenMP<double> vectorOpenMP(sizeOfVector);
+    vectorOpenMP.setThreadCount(10);
+    VectorOpenMP<double> vectorOpenMPInverted(sizeOfVector);
+
+    performAction(vectorOpenMP, (int)(inputChar - '0'), filename);
+
+    vectorOpenMPInverted = vectorOpenMP;
+    vectorOpenMPInverted.invertValues();
+
+    std::cout << "Минимальное значение: "          << vectorOpenMP.minimumValue() << '\n';
+    std::cout << "Индекс минимального значения: "  << vectorOpenMP.minimumIndexByValue() << '\n';
+    std::cout << "Максимальное значение: "         << vectorOpenMP.maximumValue() << '\n';
+    std::cout << "Индекс максимального значения: " << vectorOpenMP.maximumIndexByValue() << '\n';
+    std::cout << "Сумма значений: "                << vectorOpenMP.sumValue() << '\n';
+    std::cout << "Среднее значение: "              << vectorOpenMP.avgValue() << '\n';
+    std::cout << "Эвклидова норма: "               << vectorOpenMP.euclidMonheton() << '\n';
+    std::cout << "Скалярное произведение: "        << vectorOpenMP.scalarMultiply(vectorOpenMPInverted) << '\n';
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 
