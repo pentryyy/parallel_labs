@@ -130,13 +130,16 @@ class App:
                     else:
                         x_index = int(round(sel.target[0])) + 1
                     try:
-                        metrics = metrics_data_dictionary[test_data.get_function_name()][x_index]
+                        metrics_current      = metrics_data_dictionary[test_data.get_function_name()][x_index]
+                        metrics_first_thread = metrics_data_dictionary[test_data.get_function_name()][1]
+                        
                         sel.annotation.set(text=f"{test_data.get_function_name()} для потоков - {x_index}\n"
-                                                f"Минимум: {metrics['Минимальное значение']}\n"
-                                                f"Максимум: {metrics['Максимальное значение']}\n"
-                                                f"Среднее: {metrics['Среднее значение']}\n"
-                                                f"Медиана: {metrics['Медианное значение']}\n"
-                                                f"95-й процентиль: {metrics['95-й процентиль']}")
+                                                f"Минимум: {metrics_current['Минимальное значение']} Маштабирование в {metrics_first_thread['Минимальное значение'] / metrics_current['Минимальное значение']:.2f} раз\n"
+                                                f"Максимум: {metrics_current['Максимальное значение']} Маштабирование в {metrics_first_thread['Максимальное значение'] / metrics_current['Максимальное значение']:.2f} раз\n"
+                                                f"Среднее: {metrics_current['Среднее значение']} Маштабирование в {metrics_first_thread['Среднее значение'] / metrics_current['Среднее значение']:.2f} раз\n"
+                                                f"Медиана: {metrics_current['Медианное значение']} Маштабирование в {metrics_first_thread['Медианное значение'] / metrics_current['Медианное значение']:.2f} раз\n"
+                                                f"95-й процентиль: {metrics_current['95-й процентиль']} Маштабирование в {metrics_first_thread['95-й процентиль'] / metrics_current['95-й процентиль']:.2f} раз")
+
                         sel.annotation.get_bbox_patch().set(fc="white", alpha=0.8)
                     except KeyError:
                         sel.annotation.set(text=f"{test_data.get_function_name()} для потоков - {x_index}\n"
