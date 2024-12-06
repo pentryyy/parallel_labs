@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<import>
+    <!-- Размерность диагональной матрицы n x n -->
+    <matrixSize>5</matrixSize>
+     
+    <!-- Значения диагоналей для индексов (-1, 0, 1)-->
+    <valuesOfIndex_1>1, 2, 3, 31, 444, 657</valuesOfIndex_1>
+    <valuesOfIndex0>4, 5, 6, 7, 90, 554</valuesOfIndex0>
+    <valuesOfIndex1>1, 0, 0, 0, 44</valuesOfIndex1>
+    <valuesOfIndex2>82, 1, 40, 1, 55</valuesOfIndex2>
+</import>
