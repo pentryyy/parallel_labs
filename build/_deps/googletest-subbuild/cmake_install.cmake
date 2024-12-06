@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild
+# Install script for directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

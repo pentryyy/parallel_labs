@@ -26,7 +26,7 @@ public:
         return true;
     }
 
-    bool ImportFromFile(const std::string& fileName) {
+    bool isImportFromFile(const std::string& fileName) {
         std::ifstream file("import/" + fileName);
         if (!file.is_open()) {
             std::cerr << "Ошибка при открытии файла: " << fileName << std::endl;

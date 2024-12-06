@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest-all.cc">
+    <ClCompile Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest-all.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googlemock\src\gmock-all.cc">
+    <ClCompile Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googlemock\src\gmock-all.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googlemock\src\gmock_main.cc">
+    <ClCompile Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googlemock\src\gmock_main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googlemock\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googlemock\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{FE0A2A55-5B36-3D38-A835-56349457BA3F}</UniqueIdentifier>
+      <UniqueIdentifier>{FEC2591C-6688-37B1-BB8E-B51C064D7BCD}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

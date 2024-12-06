@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\CMakeFiles\cf1eb32d042f8f63a3d70fc9c62a8bdb\RUN_TESTS_force.rule">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\CMakeFiles\db63d0d4430c15c39ffacf19bc6dcd75\RUN_TESTS_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{D321AFF8-A630-3FD1-9C37-DDBC0FCFDEE5}</UniqueIdentifier>
+      <UniqueIdentifier>{65D4B999-DF64-3E4F-BE50-7D89D577A5EF}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

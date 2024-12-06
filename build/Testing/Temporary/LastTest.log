@@ -1,13 +1,13 @@
-Start testing: Oct 17 13:33 RTZ 2 (çèìà)
+Start testing: Dec 06 18:56 RTZ 2 (çèìà)
 ----------------------------------------------------------
 1/23 Testing: GpuSpecTest.Constructor
 1/23 Test: GpuSpecTest.Constructor
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=GpuSpecTest.Constructor" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"GpuSpecTest.Constructor" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=GpuSpecTest.Constructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"GpuSpecTest.Constructor" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = GpuSpecTest.Constructor
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -20,21 +20,21 @@ Note: Google Test filter = GpuSpecTest.Constructor
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"GpuSpecTest.Constructor" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"GpuSpecTest.Constructor" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "GpuSpecTest.Constructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 2/23 Testing: GpuSpecTest.Export
 2/23 Test: GpuSpecTest.Export
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=GpuSpecTest.Export" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"GpuSpecTest.Export" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=GpuSpecTest.Export" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"GpuSpecTest.Export" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = GpuSpecTest.Export
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -47,21 +47,21 @@ Note: Google Test filter = GpuSpecTest.Export
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"GpuSpecTest.Export" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"GpuSpecTest.Export" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "GpuSpecTest.Export" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 3/23 Testing: GpuSpecTest.Import
 3/23 Test: GpuSpecTest.Import
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=GpuSpecTest.Import" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"GpuSpecTest.Import" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=GpuSpecTest.Import" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"GpuSpecTest.Import" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = GpuSpecTest.Import
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -74,21 +74,21 @@ Note: Google Test filter = GpuSpecTest.Import
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"GpuSpecTest.Import" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"GpuSpecTest.Import" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "GpuSpecTest.Import" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 4/23 Testing: GpuSpecTest.Print
 4/23 Test: GpuSpecTest.Print
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=GpuSpecTest.Print" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"GpuSpecTest.Print" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=GpuSpecTest.Print" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"GpuSpecTest.Print" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = GpuSpecTest.Print
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -101,21 +101,21 @@ Note: Google Test filter = GpuSpecTest.Print
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"GpuSpecTest.Print" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"GpuSpecTest.Print" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "GpuSpecTest.Print" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 5/23 Testing: CpuSpecTest.Constructor
 5/23 Test: CpuSpecTest.Constructor
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=CpuSpecTest.Constructor" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"CpuSpecTest.Constructor" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=CpuSpecTest.Constructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"CpuSpecTest.Constructor" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = CpuSpecTest.Constructor
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -128,21 +128,21 @@ Note: Google Test filter = CpuSpecTest.Constructor
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"CpuSpecTest.Constructor" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"CpuSpecTest.Constructor" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "CpuSpecTest.Constructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 6/23 Testing: CpuSpecTest.Export
 6/23 Test: CpuSpecTest.Export
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=CpuSpecTest.Export" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"CpuSpecTest.Export" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=CpuSpecTest.Export" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"CpuSpecTest.Export" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = CpuSpecTest.Export
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -155,21 +155,21 @@ Note: Google Test filter = CpuSpecTest.Export
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"CpuSpecTest.Export" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"CpuSpecTest.Export" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "CpuSpecTest.Export" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 7/23 Testing: CpuSpecTest.Import
 7/23 Test: CpuSpecTest.Import
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=CpuSpecTest.Import" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"CpuSpecTest.Import" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=CpuSpecTest.Import" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"CpuSpecTest.Import" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = CpuSpecTest.Import
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -182,21 +182,21 @@ Note: Google Test filter = CpuSpecTest.Import
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"CpuSpecTest.Import" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"CpuSpecTest.Import" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "CpuSpecTest.Import" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 8/23 Testing: CpuSpecTest.Print
 8/23 Test: CpuSpecTest.Print
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=CpuSpecTest.Print" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"CpuSpecTest.Print" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=CpuSpecTest.Print" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"CpuSpecTest.Print" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = CpuSpecTest.Print
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -209,21 +209,21 @@ Note: Google Test filter = CpuSpecTest.Print
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"CpuSpecTest.Print" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"CpuSpecTest.Print" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "CpuSpecTest.Print" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 9/23 Testing: RamSpecTest.Constructor
 9/23 Test: RamSpecTest.Constructor
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=RamSpecTest.Constructor" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"RamSpecTest.Constructor" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=RamSpecTest.Constructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"RamSpecTest.Constructor" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = RamSpecTest.Constructor
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -236,21 +236,21 @@ Note: Google Test filter = RamSpecTest.Constructor
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RamSpecTest.Constructor" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"RamSpecTest.Constructor" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "RamSpecTest.Constructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 10/23 Testing: RamSpecTest.Export
 10/23 Test: RamSpecTest.Export
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=RamSpecTest.Export" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"RamSpecTest.Export" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=RamSpecTest.Export" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"RamSpecTest.Export" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = RamSpecTest.Export
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -263,21 +263,21 @@ Note: Google Test filter = RamSpecTest.Export
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RamSpecTest.Export" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"RamSpecTest.Export" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "RamSpecTest.Export" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 11/23 Testing: RamSpecTest.Import
 11/23 Test: RamSpecTest.Import
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=RamSpecTest.Import" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"RamSpecTest.Import" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=RamSpecTest.Import" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"RamSpecTest.Import" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = RamSpecTest.Import
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -290,21 +290,21 @@ Note: Google Test filter = RamSpecTest.Import
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RamSpecTest.Import" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"RamSpecTest.Import" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "RamSpecTest.Import" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 12/23 Testing: RamSpecTest.Print
 12/23 Test: RamSpecTest.Print
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=RamSpecTest.Print" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"RamSpecTest.Print" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=RamSpecTest.Print" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"RamSpecTest.Print" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = RamSpecTest.Print
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -317,21 +317,21 @@ Note: Google Test filter = RamSpecTest.Print
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"RamSpecTest.Print" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"RamSpecTest.Print" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "RamSpecTest.Print" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 13/23 Testing: LanSpecTest.Constructor
 13/23 Test: LanSpecTest.Constructor
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=LanSpecTest.Constructor" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"LanSpecTest.Constructor" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=LanSpecTest.Constructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"LanSpecTest.Constructor" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = LanSpecTest.Constructor
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -344,21 +344,21 @@ Note: Google Test filter = LanSpecTest.Constructor
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"LanSpecTest.Constructor" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"LanSpecTest.Constructor" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "LanSpecTest.Constructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 14/23 Testing: LanSpecTest.Export
 14/23 Test: LanSpecTest.Export
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=LanSpecTest.Export" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"LanSpecTest.Export" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=LanSpecTest.Export" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"LanSpecTest.Export" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = LanSpecTest.Export
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -371,21 +371,21 @@ Note: Google Test filter = LanSpecTest.Export
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"LanSpecTest.Export" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"LanSpecTest.Export" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "LanSpecTest.Export" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 15/23 Testing: LanSpecTest.Import
 15/23 Test: LanSpecTest.Import
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=LanSpecTest.Import" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"LanSpecTest.Import" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=LanSpecTest.Import" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"LanSpecTest.Import" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = LanSpecTest.Import
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -398,21 +398,21 @@ Note: Google Test filter = LanSpecTest.Import
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"LanSpecTest.Import" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"LanSpecTest.Import" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "LanSpecTest.Import" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 16/23 Testing: LanSpecTest.Print
 16/23 Test: LanSpecTest.Print
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=LanSpecTest.Print" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"LanSpecTest.Print" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=LanSpecTest.Print" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"LanSpecTest.Print" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = LanSpecTest.Print
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -425,21 +425,21 @@ Note: Google Test filter = LanSpecTest.Print
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"LanSpecTest.Print" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"LanSpecTest.Print" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "LanSpecTest.Print" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 17/23 Testing: ClusterNodeTest.Constructor
 17/23 Test: ClusterNodeTest.Constructor
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterNodeTest.Constructor" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"ClusterNodeTest.Constructor" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterNodeTest.Constructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"ClusterNodeTest.Constructor" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = ClusterNodeTest.Constructor
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -452,21 +452,21 @@ Note: Google Test filter = ClusterNodeTest.Constructor
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterNodeTest.Constructor" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"ClusterNodeTest.Constructor" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "ClusterNodeTest.Constructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 18/23 Testing: ClusterNodeTest.Export
 18/23 Test: ClusterNodeTest.Export
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterNodeTest.Export" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"ClusterNodeTest.Export" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterNodeTest.Export" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"ClusterNodeTest.Export" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = ClusterNodeTest.Export
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -479,21 +479,21 @@ Note: Google Test filter = ClusterNodeTest.Export
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterNodeTest.Export" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"ClusterNodeTest.Export" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "ClusterNodeTest.Export" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 19/23 Testing: ClusterNodeTest.Import
 19/23 Test: ClusterNodeTest.Import
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterNodeTest.Import" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"ClusterNodeTest.Import" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterNodeTest.Import" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"ClusterNodeTest.Import" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = ClusterNodeTest.Import
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -506,21 +506,21 @@ Note: Google Test filter = ClusterNodeTest.Import
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterNodeTest.Import" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"ClusterNodeTest.Import" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "ClusterNodeTest.Import" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 20/23 Testing: ClusterNodeTest.Print
 20/23 Test: ClusterNodeTest.Print
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterNodeTest.Print" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"ClusterNodeTest.Print" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterNodeTest.Print" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"ClusterNodeTest.Print" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = ClusterNodeTest.Print
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -533,21 +533,21 @@ Note: Google Test filter = ClusterNodeTest.Print
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterNodeTest.Print" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"ClusterNodeTest.Print" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "ClusterNodeTest.Print" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 21/23 Testing: ClusterTest.Import
 21/23 Test: ClusterTest.Import
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterTest.Import" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"ClusterTest.Import" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterTest.Import" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"ClusterTest.Import" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = ClusterTest.Import
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -560,21 +560,21 @@ Note: Google Test filter = ClusterTest.Import
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.Import" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"ClusterTest.Import" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "ClusterTest.Import" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 22/23 Testing: ClusterTest.Export
 22/23 Test: ClusterTest.Export
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterTest.Export" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"ClusterTest.Export" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterTest.Export" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"ClusterTest.Export" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = ClusterTest.Export
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -587,21 +587,21 @@ Note: Google Test filter = ClusterTest.Export
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.Export" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"ClusterTest.Export" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "ClusterTest.Export" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 23/23 Testing: ClusterTest.Print
 23/23 Test: ClusterTest.Print
-Command: "C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterTest.Print" "--gtest_also_run_disabled_tests"
-Directory: C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build
-"ClusterTest.Print" start time: Oct 17 13:33 RTZ 2 (çèìà)
+Command: "C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/Debug/lab1_tests.exe" "--gtest_filter=ClusterTest.Print" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build
+"ClusterTest.Print" start time: Dec 06 18:56 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
-Running main() from C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Running main() from C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest_main.cc
 Note: Google Test filter = ClusterTest.Print
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
@@ -614,11 +614,11 @@ Note: Google Test filter = ClusterTest.Print
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ClusterTest.Print" end time: Oct 17 13:33 RTZ 2 (çèìà)
+"ClusterTest.Print" end time: Dec 06 18:56 RTZ 2 (çèìà)
 "ClusterTest.Print" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 17 13:33 RTZ 2 (çèìà)
+End testing: Dec 06 18:56 RTZ 2 (çèìà)

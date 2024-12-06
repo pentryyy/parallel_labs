@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{35B45393-4CA9-3AFC-89E9-E224711A76C9}</ProjectGuid>
+    <ProjectGuid>{30B12658-8964-3F03-99FF-B0447F1333CD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\lib\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\lib\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gtest.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gtest</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\lib\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\lib\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gtest.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gtest</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\lib\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\lib\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gtest.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gtest</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\lib\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\lib\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gtest.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gtest</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -98,15 +98,15 @@
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\lib\Debug\gtestpdb_debug_postfix-NOTFOUND.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\lib\Debug\gtestpdb_debug_postfix-NOTFOUND.pdb</ProgramDataBaseFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -119,7 +119,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
@@ -139,15 +139,15 @@
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
-      <ProgramDataBaseFileName>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\lib\Release\gtest.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\lib\Release\gtest.pdb</ProgramDataBaseFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -160,7 +160,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
@@ -180,15 +180,15 @@
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
-      <ProgramDataBaseFileName>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\lib\MinSizeRel\gtest.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\lib\MinSizeRel\gtest.pdb</ProgramDataBaseFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -201,7 +201,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
@@ -220,15 +220,15 @@
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <ProgramDataBaseFileName>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\lib\RelWithDebInfo\gtest.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\lib\RelWithDebInfo\gtest.pdb</ProgramDataBaseFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\include;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -240,11 +240,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/pentryyy/OneDrive/Desktop/parallel_labs -BC:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build --check-stamp-file C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
+C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/mvvol/OneDrive/Desktop/parallel_labs -BC:/Users/mvvol/OneDrive/Desktop/parallel_labs/build --check-stamp-file C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -252,12 +252,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython\Support.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython\Support.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/pentryyy/OneDrive/Desktop/parallel_labs -BC:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build --check-stamp-file C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
+C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/mvvol/OneDrive/Desktop/parallel_labs -BC:/Users/mvvol/OneDrive/Desktop/parallel_labs/build --check-stamp-file C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -265,12 +265,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython\Support.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython\Support.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/pentryyy/OneDrive/Desktop/parallel_labs -BC:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build --check-stamp-file C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
+C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/mvvol/OneDrive/Desktop/parallel_labs -BC:/Users/mvvol/OneDrive/Desktop/parallel_labs/build --check-stamp-file C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -278,12 +278,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython\Support.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython\Support.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/pentryyy/OneDrive/Desktop/parallel_labs -BC:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build --check-stamp-file C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
+C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/mvvol/OneDrive/Desktop/parallel_labs -BC:/Users/mvvol/OneDrive/Desktop/parallel_labs/build --check-stamp-file C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -291,17 +291,17 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython\Support.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindPython\Support.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake;C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest-all.cc" />
+    <ClCompile Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\_deps\googletest-src\googletest\src\gtest-all.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\pentryyy\OneDrive\Desktop\parallel_labs\build\ZERO_CHECK.vcxproj">
-      <Project>{297EF5B1-4FAE-30B7-93F0-A77BD00FB8BD}</Project>
+    <ProjectReference Include="C:\Users\mvvol\OneDrive\Desktop\parallel_labs\build\ZERO_CHECK.vcxproj">
+      <Project>{BC6B7C47-83C5-3AAF-B121-DBE8BA40BCE9}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

@@ -1826,7 +1826,7 @@
 											"top": 861,
 											"width": 220.25439453125,
 											"height": 13,
-											"text": "+bool ImportFromFile(string fileName)",
+											"text": "+bool isImportFromFile(string fileName)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4716,7 +4716,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGSYiO2GmhCvfQ="
 							},
-							"name": "bool ImportFromFile",
+							"name": "bool isImportFromFile",
 							"parameters": [
 								{
 									"_type": "UMLParameter",

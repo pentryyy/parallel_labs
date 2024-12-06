@@ -1,6 +1,6 @@
-^C:\USERS\PENTRYYY\ONEDRIVE\DESKTOP\PARALLEL_LABS\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKELISTS.TXT
+^C:\USERS\MVVOL\ONEDRIVE\DESKTOP\PARALLEL_LABS\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKELISTS.TXT
 setlocal
-C:\Users\pentryyy\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild -BC:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild --check-stamp-file C:/Users/pentryyy/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/generate.stamp
+C:\Users\mvvol\AppData\Local\Programs\Python\Python311\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild -BC:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild --check-stamp-file C:/Users/mvvol/OneDrive/Desktop/parallel_labs/build/_deps/googletest-subbuild/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

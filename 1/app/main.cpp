@@ -14,26 +14,26 @@ int main() {
     LanSpec lan1(2500.0, "00:1B:2C:3D:4E:5F");
 
     GpuSpec gpuF;
-    gpuF.ImportFromFile("gpu_import.txt");
+    gpuF.isImportFromFile("gpu_import.txt");
     gpuF.ExportToFile("gpu_export.txt");
 
     CpuSpec cpuF;
-    cpuF.ImportFromFile("cpu_import.txt");
+    cpuF.isImportFromFile("cpu_import.txt");
     cpuF.ExportToFile("cpu_export.txt");
 
     RamSpec ramF;
-    ramF.ImportFromFile("ram_import.txt");
+    ramF.isImportFromFile("ram_import.txt");
     ramF.ExportToFile("ram_export.txt");
 
     LanSpec lanF;
-    lanF.ImportFromFile("lan_import.txt");
+    lanF.isImportFromFile("lan_import.txt");
     lanF.ExportToFile("lan_export.txt");
 
     ClusterNode clusterNode1(gpu1, cpu1, ram1, lan1);
     ClusterNode clusterNode2(gpuF, cpuF, ramF, lanF);
     
     ClusterNode clusterNodeF;
-    clusterNodeF.ImportFromFile("cluster_node_import.txt");
+    clusterNodeF.isImportFromFile("cluster_node_import.txt");
     clusterNodeF.ExportToFile("cluster_node_export.txt");
     
     Cluster сluster1;
@@ -43,7 +43,7 @@ int main() {
     сluster1.Print();
 
     Cluster сlusterF;
-    сlusterF.ImportFromFile("cluster_import.txt");
+    сlusterF.isImportFromFile("cluster_import.txt");
     сlusterF.ExportToFile("cluster_export.txt");
     сlusterF.Print();
 
