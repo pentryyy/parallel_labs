@@ -9,19 +9,27 @@
 int main() {
     SetConsoleOutputCP(CP_UTF8);
 
-    DiagonalMatrixAlt<int> matrix1;
-    matrix1.importFromXML("diagonal_matrix_1.xml");
-    matrix1.dataOptimization();
+    DiagonalMatrixAlt<int> matrix1d;
+    matrix1d.importFromXML("diagonal_matrix_1.xml");
+    matrix1d.dataOptimization();
+    matrix1d.print();
 
-    matrix1.print();
-    // matrix1.exportToXML("diagonal_matrix_1.xml");
+    DiagonalMatrixAlt<int> matrix2d;
+    matrix2d.importFromXML("diagonal_matrix_2.xml");
+    matrix2d.dataOptimization();
+    matrix2d.print();
 
-    DiagonalMatrixAlt<int> matrix2;
-    matrix2.importFromXML("diagonal_matrix_2.xml");
-    matrix2.dataOptimization();
+    DiagonalMatrixAlt<int> matrixPlusD = matrix1d + matrix2d;
+    DiagonalMatrixAlt<int> matrixMinusD = matrix2d - matrix1d;
+    DiagonalMatrixAlt<int> matrixMultiplyD = matrix1d * matrix2d;
+    DiagonalMatrixAlt<int> transposedMatrixD = matrix2d.Transpose();
+    DiagonalMatrixAlt<int> scaledMatrixD = matrix2d.ScalarMultiplication(3);  
 
-    matrix2.print();
-    // matrix2.exportToXML("diagonal_matrix_2.xml");
+    matrixPlusD.exportToXML("diagonal_matrix_plus.xml");
+    matrixMinusD.exportToXML("diagonal_matrix_minus.xml");
+    matrixMultiplyD.exportToXML("diagonal_matrix_multiply.xml");
+    transposedMatrixD.exportToXML("diagonal_matrix_transpose.xml");
+    scaledMatrixD.exportToXML("diagonal_matrix_scalar.xml");
    
     std::cout << "Нажмите любую клавишу для продолжения... ";
 

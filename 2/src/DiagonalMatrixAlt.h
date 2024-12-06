@@ -10,7 +10,11 @@
 template <typename T>
 class DiagonalMatrixAlt : public XMLDiagonalMatrixParser<T> {
 public:
-    DiagonalMatrixAlt() {}
+    DiagonalMatrixAlt(size_t size) : XMLDiagonalMatrixParser<T>(size) {}
+
+    DiagonalMatrixAlt() : XMLDiagonalMatrixParser<T>() {}
+
+    ~DiagonalMatrixAlt() {}
 
     T operator()(size_t i, size_t j) const {
         if (i >= this->matrixSize || j >= this->matrixSize) {
@@ -73,6 +77,90 @@ public:
         }
     }
 
+    // Оператор сложения
+    DiagonalMatrixAlt<T> operator+(const DiagonalMatrixAlt<T>& other) const {
+        if (this->matrixSize != other.matrixSize) {
+            throw std::invalid_argument("Размеры матриц должны совпадать.");
+        }
+
+        DiagonalMatrixAlt<T> result(this->matrixSize);
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            result.mapOfValuesForDiagonals[diagonalIndex] = values;
+        }
+
+        for (const auto& [diagonalIndex, values] : other.mapOfValuesForDiagonals) {
+            for (size_t i = 0; i < values.size(); ++i) {
+                result.mapOfValuesForDiagonals[diagonalIndex][i] += values[i];
+            }
+        }
+
+        return result;
+    }
+
+    // Оператор вычитания
+    DiagonalMatrixAlt<T> operator-(const DiagonalMatrixAlt<T>& other) const {
+        if (this->matrixSize != other.matrixSize) {
+            throw std::invalid_argument("Размеры матриц должны совпадать.");
+        }
+
+        DiagonalMatrixAlt<T> result(this->matrixSize);
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            result.mapOfValuesForDiagonals[diagonalIndex] = values;
+        }
+
+        for (const auto& [diagonalIndex, values] : other.mapOfValuesForDiagonals) {
+            for (size_t i = 0; i < values.size(); ++i) {
+                result.mapOfValuesForDiagonals[diagonalIndex][i] -= values[i];
+            }
+        }
+
+        return result;
+    }
+
+    // Оператор умножения
+    DiagonalMatrixAlt<T> operator*(const DiagonalMatrixAlt<T>& other) const {
+        if (this->matrixSize != other.matrixSize) {
+            throw std::invalid_argument("Размеры матриц должны совпадать.");
+        }
+
+        DiagonalMatrixAlt<T> result(this->matrixSize);
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            result.mapOfValuesForDiagonals[diagonalIndex] = values;
+        }
+
+        for (const auto& [diagonalIndex, values] : other.mapOfValuesForDiagonals) {
+            for (size_t i = 0; i < values.size(); ++i) {
+                result.mapOfValuesForDiagonals[diagonalIndex][i] *= values[i];
+            }
+        }
+
+        return result;
+    }
+
+    // Транспонирование матрицы
+    DiagonalMatrixAlt<T> Transpose() const {
+        DiagonalMatrixAlt<T> transposed(this->matrixSize);
+
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            transposed.mapOfValuesForDiagonals[-diagonalIndex] = values;
+        }
+
+        return transposed;
+    }
+
+    // Умножение на скаляр
+    DiagonalMatrixAlt<T> ScalarMultiplication(T scalar) const {
+        DiagonalMatrixAlt<T> result(this->matrixSize);
+
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            result.mapOfValuesForDiagonals[diagonalIndex] = values;
+            for (size_t i = 0; i < values.size(); ++i) {
+                result.mapOfValuesForDiagonals[diagonalIndex][i] *= scalar;
+            }
+        }
+
+        return result;
+    }
 
     // Вывод матрицы
     void print(int width = 10) const {

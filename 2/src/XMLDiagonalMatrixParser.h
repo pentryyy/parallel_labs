@@ -13,6 +13,12 @@ class XMLDiagonalMatrixParser {
 protected:
     size_t                        matrixSize;
     std::map<int, std::vector<T>> mapOfValuesForDiagonals;
+
+    XMLDiagonalMatrixParser(size_t size) : matrixSize(size) {}
+
+    XMLDiagonalMatrixParser() {}
+
+    ~XMLDiagonalMatrixParser() {}
 public:
     void importFromXML(const std::string& filename) {
         std::ifstream file("import/" + filename);
