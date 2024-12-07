@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <import>
-  <matrixSize>5</matrixSize>
-  <valuesOfIndex_1>0, 12, 0, 3</valuesOfIndex_1>
-  <valuesOfIndex0>7, 8, 16, 8, 80</valuesOfIndex0>
-  <valuesOfIndex1>0, 0, 30, 2</valuesOfIndex1>
-  <valuesOfIndex2>22, 11, 20</valuesOfIndex2>
+    <!-- Размерность диагональной матрицы n x n -->
+    <matrixSize>8</matrixSize>
+     
+    <!-- Значения диагоналей для индексов (-3, -2, -1, 0, 1, 2, 3) -->
+    <valuesOfIndex_3>8, 7, 6, 5, 4, 3, 2, 1</valuesOfIndex_3>
+    <valuesOfIndex_2>9, 8, 7, 6, 5, 4, 3, 2</valuesOfIndex_2>
+    <valuesOfIndex_1>10, 9, 8, 7, 6, 5, 4, 3</valuesOfIndex_1>
+    <valuesOfIndex0>11, 10, 9, 8, 7, 6, 5, 4</valuesOfIndex0>
+    <valuesOfIndex1>12, 11, 10, 9, 8, 7, 6, 5</valuesOfIndex1>
+    <valuesOfIndex2>13, 12, 11, 10, 9, 8, 7, 6</valuesOfIndex2>
+    <valuesOfIndex3>14, 13, 12, 11, 10, 9, 8, 7</valuesOfIndex3>
 </import>

@@ -5,18 +5,37 @@
 #include <Windows.h>
 #include <conio.h>
 #include "src/DiagonalMatrixAlt.h"
+#include "src/DenseMatrixAlt.h"
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
 
+    DenseMatrixAlt<int> matrix1;
+    matrix1.importFromXML("dense_matrix_1.xml");
+    matrix1.print();
+
+    DenseMatrixAlt<int> matrix2;
+    matrix2.importFromXML("dense_matrix_2.xml");
+    matrix2.print();
+
+    DenseMatrixAlt<int> matrixPlus = matrix1 + matrix2;
+    DenseMatrixAlt<int> matrixMinus = matrix2 - matrix1;
+    DenseMatrixAlt<int> matrixMultiply = matrix1 * matrix2;
+    DenseMatrixAlt<int> transposedMatrix = matrix2.Transpose();
+    DenseMatrixAlt<int> scaledMatrix = matrix2.ScalarMultiplication(2);   
+
+    matrixPlus.exportToXML("dense_matrix_plus.xml");
+    matrixMinus.exportToXML("dense_matrix_minus.xml");
+    matrixMultiply.exportToXML("dense_matrix_multiply.xml");
+    transposedMatrix.exportToXML("dense_matrix_transpose.xml");
+    scaledMatrix.exportToXML("dense_matrix_scalar.xml");
+
     DiagonalMatrixAlt<int> matrix1d;
     matrix1d.importFromXML("diagonal_matrix_1.xml");
-    matrix1d.dataOptimization();
     matrix1d.print();
 
     DiagonalMatrixAlt<int> matrix2d;
     matrix2d.importFromXML("diagonal_matrix_2.xml");
-    matrix2d.dataOptimization();
     matrix2d.print();
 
     DiagonalMatrixAlt<int> matrixPlusD = matrix1d + matrix2d;

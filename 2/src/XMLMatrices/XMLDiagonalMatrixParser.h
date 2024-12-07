@@ -6,7 +6,7 @@
 #include <map>
 #include <sstream>
 #include <stdexcept>
-#include "../../rapidxml/rapidxml.hpp"
+#include "../../../rapidxml/rapidxml.hpp"
 
 template <typename T>
 class XMLDiagonalMatrixParser {
@@ -14,11 +14,17 @@ protected:
     size_t                        matrixSize;
     std::map<int, std::vector<T>> mapOfValuesForDiagonals;
 
-    XMLDiagonalMatrixParser(size_t size) : matrixSize(size) {}
+    XMLDiagonalMatrixParser(size_t size) : matrixSize(size) {
+        if (size == 0) {
+            throw std::invalid_argument("Размерность должна быть больше нуля");
+        }
+    }
 
     XMLDiagonalMatrixParser() {}
 
-    ~XMLDiagonalMatrixParser() {}
+    ~XMLDiagonalMatrixParser() {
+        this->mapOfValuesForDiagonals.clear();
+    }
 public:
     void importFromXML(const std::string& filename) {
         std::ifstream file("import/" + filename);
@@ -51,10 +57,9 @@ public:
            
             // Проверяем, что имя тега содержит "valuesOfIndex"
             if (std::string(node->name()).find("valuesOfIndex") != std::string::npos) {
-                // Извлекаем индекс из имени узла (с учетом возможных символов _ или neg)
                 std::string nodeName = node->name();
                 size_t indexPos = nodeName.find("valuesOfIndex");
-                std::string indexStr = nodeName.substr(indexPos + 13); // Извлекаем строку после "valuesOfIndex"
+                std::string indexStr = nodeName.substr(indexPos + 13);
                 
                 // Заменяем _ для отрицательных индексов и преобразуем в целое число
                 if (indexStr[0] == '_') {
@@ -71,6 +76,11 @@ public:
                     T value;
                     itemStream >> value;
                     values.push_back(value);
+                }
+
+                size_t sizeOfDiagonals = matrixSize - std::abs(index);
+                if (values.size() > sizeOfDiagonals) {
+                    values.resize(sizeOfDiagonals);
                 }
 
                 mapOfValuesForDiagonals[index] = values;

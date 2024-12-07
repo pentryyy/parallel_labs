@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <cmath>
 #include <algorithm> 
-#include "XMLDiagonalMatrixParser.h"
+#include "XMLMatrices/XMLDiagonalMatrixParser.h"
 
 template <typename T>
 class DiagonalMatrixAlt : public XMLDiagonalMatrixParser<T> {
@@ -16,6 +16,7 @@ public:
 
     ~DiagonalMatrixAlt() {}
 
+    // Обращение к данным матрицы, например matrix(0, 0)
     T operator()(size_t i, size_t j) const {
         if (i >= this->matrixSize || j >= this->matrixSize) {
             throw std::out_of_range("Индексы вне диапазона матрицы.");
@@ -34,19 +35,23 @@ public:
         return T{};
     }
 
-    // Установка значения для произвольной диагонали
-    void set(size_t i, size_t j, T value) {
+    // Установка значения для произвольной диагонали, например matrix(0, 1) = 5
+    T& operator()(size_t i, size_t j) {
         if (i >= this->matrixSize || j >= this->matrixSize) {
             throw std::out_of_range("Индексы вне диапазона матрицы.");
         }
         
-        // Вычисляем индекс, задем значение позиции в mapOfValuesForDiagonals 
+        // Вычисляем индекс диагонали
         int diagonalIndex = static_cast<int>(j) - static_cast<int>(i);
         size_t pos = diagonalIndex >= 0 ? i : j;
-    
-        // Изменяем размерность матрицы на ту, что в импорте - |diagonalIndex|
-        this->mapOfValuesForDiagonals[diagonalIndex].resize(this->matrixSize - std::abs(diagonalIndex), T{});
-        this->mapOfValuesForDiagonals[diagonalIndex][pos] = value;
+        
+        // Убедимся, что вектор для данной диагонали имеет правильный размер
+        this->mapOfValuesForDiagonals[diagonalIndex].resize(
+            this->matrixSize - std::abs(diagonalIndex), T{}
+        );
+
+        // Возвращаем ссылку на значение
+        return this->mapOfValuesForDiagonals[diagonalIndex][pos];
     }
 
     // Получение значений для диагонали с заданным смещением
@@ -56,25 +61,6 @@ public:
             return it->second;
         }
         return std::vector<T>(this->matrixSize - std::abs(diagonalIndex), T{});
-    }
-
-    // Метод для оптимизации данных (удаление лишних значений в диагоналях)
-    void dataOptimization() {
-        for (auto it = this->mapOfValuesForDiagonals.begin(); it != this->mapOfValuesForDiagonals.end();) {
-            auto& [diagonalIndex, values] = *it;
-            size_t newSize = this->matrixSize - std::abs(diagonalIndex);
-
-            if (values.size() > newSize) {
-                values.resize(newSize);
-            }
-
-            // Если вектор пуст, удаляем пару (ключ, значения) из mapOfValuesForDiagonals
-            if (std::all_of(values.begin(), values.end(), [](const T& value) { return value == T{}; })) {
-                it = this->mapOfValuesForDiagonals.erase(it);
-            } else {
-                ++it;
-            }
-        }
     }
 
     // Оператор сложения
@@ -164,7 +150,7 @@ public:
 
     // Вывод матрицы
     void print(int width = 10) const {
-        std::cout << "Результат вывода диагональной матрицы \n";
+        std::cout << "Результат вывода диагональной матрицы (" << this->matrixSize << ")\n";
         for (std::size_t i = 0; i < this->matrixSize; ++i) {
             std::cout << "| ";
             for (std::size_t j = 0; j < this->matrixSize; ++j) {
