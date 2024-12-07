@@ -8,7 +8,7 @@
 template <typename MatrixT>
 class BlockMatrix : public Matrix<typename MatrixT::Type> {
 private:
-    std::vector<std::vector<MatrixT>> MatrixBlocks;
+    std::vector<std::vector<MatrixT>>   MatrixBlocks;
     std::pair<std::size_t, std::size_t> MatrixMesh;
     std::pair<std::size_t, std::size_t> MatrixSize;
 public:
@@ -16,13 +16,20 @@ public:
 
     BlockMatrix(const std::vector<std::vector<MatrixT>>& MatrixBlocks, 
                 const std::pair<std::size_t, std::size_t>& MatrixMesh,
-                const std::pair<std::size_t, std::size_t>& MatrixSize)
-        : Matrix<typename MatrixT::Type>(MatrixMesh.first * MatrixSize.first, MatrixMesh.second * MatrixSize.second),
-          MatrixBlocks(MatrixBlocks), MatrixMesh(MatrixMesh), MatrixSize(MatrixSize) {
+                const std::pair<std::size_t, std::size_t>& MatrixSize) : 
+            
+            // Конструктор матрицы <T> M x N
+            Matrix<typename MatrixT::Type>(MatrixMesh.first * MatrixSize.first, 
+                                           MatrixMesh.second * MatrixSize.second),
+            // Конструктор для полей класса
+            MatrixBlocks(MatrixBlocks), 
+            MatrixMesh(MatrixMesh), 
+            MatrixSize(MatrixSize) {
         
         if (MatrixSize.first == 0 || MatrixSize.second == 0) {
             throw std::invalid_argument("Число строк и столбцов в блоке должно быть больше нуля.");
         }
+
         for (std::size_t i = 0; i < (MatrixMesh.first * MatrixSize.first); ++i) {
             for (std::size_t j = 0; j < (MatrixMesh.second * MatrixSize.second); ++j) {
                 std::size_t blockRow = i / MatrixSize.first;
@@ -91,8 +98,8 @@ public:
         std::pair<std::size_t, std::size_t> newMatrixMesh = {MatrixMesh.second, MatrixMesh.first};
         std::vector<std::vector<MatrixT>> transposedBlocks(newMatrixMesh.first, 
                                                                   std::vector<MatrixT>(newMatrixMesh.second,
-                                                                                              MatrixT(MatrixSize.second, 
-                                                                                                             MatrixSize.first)));
+                                                                                       MatrixT(MatrixSize.second, 
+                                                                                               MatrixSize.first)));
         for (std::size_t i = 0; i < MatrixMesh.first; ++i) {
             for (std::size_t j = 0; j < MatrixMesh.second; ++j) {
                 transposedBlocks[j][i] = this->MatrixBlocks[i][j].Transpose();
@@ -112,7 +119,7 @@ public:
         return result;
     }
 
-    std::string GetClassHeader() const override {
+    std::string GetClassHeader() const {
         return "BlockMatrix";
     }
 
@@ -123,9 +130,9 @@ public:
         std::size_t MatrixSizeСomposition = MatrixSize.first * MatrixSize.second;
         // Двумерный вектор для хранения блоков матриц
         std::vector<std::vector<MatrixT>> MatrixBlocks(MatrixMesh.first, 
-                                                              std::vector<MatrixT>(MatrixMesh.second, 
-                                                                                          MatrixT(MatrixSize.first,
-                                                                                                         MatrixSize.second)));
+                                                       std::vector<MatrixT>(MatrixMesh.second, 
+                                                                            MatrixT(MatrixSize.first,
+                                                                                    MatrixSize.second)));
         std::ifstream file("import/" + fileName);
         if (!file.is_open()) {
             throw std::runtime_error("Ошибка при открытии файла: " + fileName);
@@ -156,6 +163,30 @@ public:
     }
 
     void Export(const std::string& fileName) const {
-        Matrix<typename MatrixT::Type>::template Export<BlockMatrix<MatrixT>>(fileName);
+        std::ofstream file("export/" + fileName);
+        if (!file.is_open()) {
+            throw std::runtime_error("Ошибка при открытии файла для записи: " + fileName);
+        }
+        file << this->GetClassHeader() << std::endl;
+        file << this->M << " " << this->N;
+        for (std::size_t i = 0; i < this->M; ++i) {
+            file << std::endl;
+            for (std::size_t j = 0; j < this->N; ++j) {
+                file << (*this)(i, j) << " ";
+            }
+        }
+        file.close();
+        std::cout << "Экспорт в файл успешно выполнен: " << fileName << std::endl;
+    }
+
+    void Print() const {
+        std::cout << "Результат вывода матрицы " << this->M << " x " << this->N << std::endl;
+        for (std::size_t i = 0; i < this-> M; ++i) {
+            std::cout << "| ";
+            for (std::size_t j = 0; j < this -> N; ++j) {
+                std::cout << std::setw(10) << (*this)(i, j) << " ";
+            }
+            std::cout << "|" << std::endl;
+        }
     }
 };

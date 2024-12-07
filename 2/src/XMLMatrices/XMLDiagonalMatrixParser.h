@@ -86,6 +86,8 @@ public:
                 mapOfValuesForDiagonals[index] = values;
             }
         }
+        file.close();
+        std::cout << "Импорт из файла успешно выполнен: " << filename << '\n';
     }
 
     void exportToXML(const std::string& filename) {
@@ -126,5 +128,7 @@ public:
         }
 
         file << "</import>";
+        file.close();
+        std::cout << "Экспорт в файл успешно выполнен: " << filename << '\n';
     }
 };

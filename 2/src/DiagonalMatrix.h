@@ -1,105 +1,167 @@
-#include "Matrix.h"
+#include <iostream>
 #include <vector>
+#include <map>
+#include <stdexcept>
+#include <iomanip>
+#include <cmath>
+#include <algorithm> 
+#include "XMLMatrices/XMLDiagonalMatrixParser.h"
 
 template <typename T>
-class DiagonalMatrix : public Matrix<T> {
-private:
-    std::vector<std::vector<T>> matrix;
+class DiagonalMatrix : public XMLDiagonalMatrixParser<T> {
 public:
-    // Нужен для того, чтобы импортировать матрицу из файла
-    DiagonalMatrix(std::size_t M, std::size_t N) : Matrix<T>(M, N) {
-        if (M != N) {
-            throw std::invalid_argument("Матрица должна быть квадратной");
-        }
-    }
+    using Type = T; // Для получения используемого типа данных в матрице
 
-    // Коснструктор на основе вектора диагональных элементов
-    DiagonalMatrix(const std::vector<T>& diagonal) : Matrix<T>(diagonal.size(), diagonal.size()) {
-        std::size_t size = diagonal.size();
-        for (std::size_t i = 0; i < size; ++i) {
-            (*this)(i, i) = diagonal[i];
-        }
-    }
-    
+    // Для совместимости с блочной матрицей
+    DiagonalMatrix(size_t M, size_t N) : XMLDiagonalMatrixParser<T>(N) {}
+
+    DiagonalMatrix(size_t size) : XMLDiagonalMatrixParser<T>(size) {}
+
+    DiagonalMatrix() : XMLDiagonalMatrixParser<T>() {}
+
     ~DiagonalMatrix() {}
 
-    T& operator()(std::size_t i, std::size_t j) {
-        if (i >= this->M || j >= this->N) {
-            throw std::out_of_range("Индексы выходят за пределы матрицы.");
+    // Обращение к данным матрицы, например matrix(0, 0)
+    T operator()(size_t i, size_t j) const {
+        if (i >= this->matrixSize || j >= this->matrixSize) {
+            throw std::out_of_range("Индексы вне диапазона матрицы.");
         }
-        if (i != j) {
-            static T zero = T(0); 
-            return zero;
+
+        // Вычисляем индекс и ищем его в  mapOfValuesForDiagonals 
+        int diagonalIndex = static_cast<int>(j) - static_cast<int>(i);
+
+        auto it = this->mapOfValuesForDiagonals.find(diagonalIndex);
+        if (it != this->mapOfValuesForDiagonals.end() && i < this->matrixSize && j < this->matrixSize) {
+            size_t pos = diagonalIndex >= 0 ? i : j;
+            if (pos < it->second.size()) {
+                return it->second[pos];
+            }
         }
-        return this->Data[i * this->N + j];
+        return T{};
     }
 
-    T operator()(std::size_t i, std::size_t j) const {
-        if (i >= this->M || j >= this->N) {
-            throw std::out_of_range("Индексы выходят за пределы матрицы.");
+    // Установка значения для произвольной диагонали, например matrix(0, 1) = 5
+    T& operator()(size_t i, size_t j) {
+        if (i >= this->matrixSize || j >= this->matrixSize) {
+            throw std::out_of_range("Индексы вне диапазона матрицы.");
         }
-        if (i != j) {
-            return T(0); 
-        }
-        return this->Data[i * this->N + j];
+        
+        // Вычисляем индекс диагонали
+        int diagonalIndex = static_cast<int>(j) - static_cast<int>(i);
+        size_t pos = diagonalIndex >= 0 ? i : j;
+        
+        // Убедимся, что вектор для данной диагонали имеет правильный размер
+        this->mapOfValuesForDiagonals[diagonalIndex].resize(
+            this->matrixSize - std::abs(diagonalIndex), T{}
+        );
+
+        // Возвращаем ссылку на значение
+        return this->mapOfValuesForDiagonals[diagonalIndex][pos];
     }
 
+    // Получение значений для диагонали с заданным смещением
+    std::vector<T> getDiagonal(int diagonalIndex) const {
+        auto it = this->mapOfValuesForDiagonals.find(diagonalIndex);
+        if (it != this->mapOfValuesForDiagonals.end()) {
+            return it->second;
+        }
+        return std::vector<T>(this->matrixSize - std::abs(diagonalIndex), T{});
+    }
+
+    // Оператор сложения
     DiagonalMatrix<T> operator+(const DiagonalMatrix<T>& other) const {
-        if (this->M != other.M) {
-            throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
+        if (this->matrixSize != other.matrixSize) {
+            throw std::invalid_argument("Размеры матриц должны совпадать.");
         }
-        DiagonalMatrix<T> result(this->M, this->M);
-        for (std::size_t i = 0; i < this->M; ++i) {
-            result(i, i) = (*this)(i, i) + other(i, i);
+
+        DiagonalMatrix<T> result(this->matrixSize);
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            result.mapOfValuesForDiagonals[diagonalIndex] = values;
         }
+
+        for (const auto& [diagonalIndex, values] : other.mapOfValuesForDiagonals) {
+            for (size_t i = 0; i < values.size(); ++i) {
+                result.mapOfValuesForDiagonals[diagonalIndex][i] += values[i];
+            }
+        }
+
         return result;
     }
 
+    // Оператор вычитания
     DiagonalMatrix<T> operator-(const DiagonalMatrix<T>& other) const {
-        if (this->M != other.M) {
-            throw std::invalid_argument("Размеры матриц должны совпадать для вычитания.");
+        if (this->matrixSize != other.matrixSize) {
+            throw std::invalid_argument("Размеры матриц должны совпадать.");
         }
-        DiagonalMatrix<T> result(this->M, this->M);
-        for (std::size_t i = 0; i < this->M; ++i) {
-            result(i, i) = (*this)(i, i) - other(i, i);
+
+        DiagonalMatrix<T> result(this->matrixSize);
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            result.mapOfValuesForDiagonals[diagonalIndex] = values;
         }
+
+        for (const auto& [diagonalIndex, values] : other.mapOfValuesForDiagonals) {
+            for (size_t i = 0; i < values.size(); ++i) {
+                result.mapOfValuesForDiagonals[diagonalIndex][i] -= values[i];
+            }
+        }
+
         return result;
     }
 
+    // Оператор умножения
     DiagonalMatrix<T> operator*(const DiagonalMatrix<T>& other) const {
-        if (this->M != other.M) {
-            throw std::invalid_argument("Размеры матриц должны совпадать для умножения.");
+        if (this->matrixSize != other.matrixSize) {
+            throw std::invalid_argument("Размеры матриц должны совпадать.");
         }
-        DiagonalMatrix<T> result(this->M, this->M);
-        for (std::size_t i = 0; i < this->M; ++i) {
-            result(i, i) = (*this)(i, i) * other(i, i);
+
+        DiagonalMatrix<T> result(this->matrixSize);
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            result.mapOfValuesForDiagonals[diagonalIndex] = values;
         }
+
+        for (const auto& [diagonalIndex, values] : other.mapOfValuesForDiagonals) {
+            for (size_t i = 0; i < values.size(); ++i) {
+                result.mapOfValuesForDiagonals[diagonalIndex][i] *= values[i];
+            }
+        }
+
         return result;
     }
 
-    // Транспонированная диагональная матрица такая же, как исходная
+    // Транспонирование матрицы
     DiagonalMatrix<T> Transpose() const {
-        return *this; 
+        DiagonalMatrix<T> transposed(this->matrixSize);
+
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            transposed.mapOfValuesForDiagonals[-diagonalIndex] = values;
+        }
+
+        return transposed;
     }
 
+    // Умножение на скаляр
     DiagonalMatrix<T> ScalarMultiplication(T scalar) const {
-        DiagonalMatrix<T> result(std::vector<T>(this->M, 0));
-        for (std::size_t i = 0; i < this->M; ++i) {
-            result(i, i) = (*this)(i, i) * scalar;
+        DiagonalMatrix<T> result(this->matrixSize);
+
+        for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
+            result.mapOfValuesForDiagonals[diagonalIndex] = values;
+            for (size_t i = 0; i < values.size(); ++i) {
+                result.mapOfValuesForDiagonals[diagonalIndex][i] *= scalar;
+            }
         }
+
         return result;
     }
 
-    std::string GetClassHeader() const override {
-        return "DiagonalMatrix";
-    }
-
-    void Export(const std::string& fileName) const {
-        Matrix<T>::template Export<DiagonalMatrix<T>>(fileName);
-    }
-
-    static DiagonalMatrix<T> Import(const std::string& fileName) {
-        DiagonalMatrix<T> matrix = Matrix<T>::template Import<DiagonalMatrix<T>>(fileName);
-        return matrix;
+    // Вывод матрицы
+    void print(int width = 10) const {
+        std::cout << "Результат вывода диагональной матрицы (" << this->matrixSize << ")\n";
+        for (std::size_t i = 0; i < this->matrixSize; ++i) {
+            std::cout << "| ";
+            for (std::size_t j = 0; j < this->matrixSize; ++j) {
+                std::cout << std::setw(width) << (*this)(i, j) << " ";
+            }
+            std::cout << "|\n";
+        }
     }
 };

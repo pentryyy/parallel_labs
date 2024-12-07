@@ -1,12 +1,33 @@
-#include "Matrix.h"
+#include <iomanip>
+#include "XMLMatrices/XMLDenseMatrixParser.h"
 
 template <typename T>
-class DenseMatrix : public Matrix<T> {
+class DenseMatrix : public XMLDenseMatrixParser<T> {
 public:
-    DenseMatrix(std::size_t M, std::size_t N) : Matrix<T>(M, N) {}
+    using Type = T; // Для получения используемого типа данных в матрице
+
+    DenseMatrix() : XMLDenseMatrixParser<T>() {}
+
+    DenseMatrix(std::size_t M, std::size_t N) : XMLDenseMatrixParser<T>(M, N) {}
 
     ~DenseMatrix() {}
 
+    // Обращение к данным матрицы, например matrix(0, 0)
+    T operator()(std::size_t i, std::size_t j) const {
+        if (i >= this->M || j >= this->N) {
+            throw std::out_of_range("Индексы выходят за пределы матрицы.");
+        }
+        return this->Data[i * this->N + j];
+    }
+
+    // Установка значения для элемента матрицы, например matrix(0, 1) = 5
+    T& operator()(std::size_t i, std::size_t j) {
+        if (i >= this->M || j >= this->N) {
+            throw std::out_of_range("Индексы выходят за пределы матрицы.");
+        }
+        return this->Data[i * this->N + j];
+    }
+    
     DenseMatrix<T> operator+(const DenseMatrix<T>& other) const {
         if (this->M != other.M || this->N != other.N) {
             throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
@@ -69,16 +90,15 @@ public:
         return result;
     }
 
-    std::string GetClassHeader() const override {
-        return "DenseMatrix";
-    }
-
-    void Export(const std::string& fileName) const {
-        Matrix<T>::template Export<DenseMatrix<T>>(fileName);
-    }
-
-    static DenseMatrix<T> Import(const std::string& fileName) {
-        DenseMatrix<T> matrix = Matrix<T>::template Import<DenseMatrix<T>>(fileName);
-        return matrix;
+    // Вывод матрицы
+    void print(int width = 10) const {
+        std::cout << "Результат вывода плотной матрицы (" << this->M << " x " << this->N << ")\n";
+        for (std::size_t i = 0; i < this->M; ++i) {
+            std::cout << "| ";
+            for (std::size_t j = 0; j < this->N; ++j) {
+                std::cout << std::setw(width) << (*this)(i, j) << " ";
+            }
+            std::cout << "|\n";
+        }
     }
 };
