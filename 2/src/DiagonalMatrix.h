@@ -130,7 +130,7 @@ public:
     }
 
     // Транспонирование матрицы
-    DiagonalMatrix<T> Transpose() const {
+    DiagonalMatrix<T> transpose() const {
         DiagonalMatrix<T> transposed(this->matrixSize);
 
         for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {
@@ -141,7 +141,7 @@ public:
     }
 
     // Умножение на скаляр
-    DiagonalMatrix<T> ScalarMultiplication(T scalar) const {
+    DiagonalMatrix<T> scalarMultiplication(T scalar) const {
         DiagonalMatrix<T> result(this->matrixSize);
 
         for (const auto& [diagonalIndex, values] : this->mapOfValuesForDiagonals) {

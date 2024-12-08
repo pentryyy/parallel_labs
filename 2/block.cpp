@@ -40,12 +40,42 @@ int main() {
     denseBlockMatrixAlt.print();
 
     // Создание блочной матрицы с диагональными матрицами
-    BlockMatrixAlt<DiagonalMatrix<int>> diagonalBlockMatrixAlt(2, 2);
-    diagonalBlockMatrixAlt(0, 0) = std::make_shared<DiagonalMatrix<int>>(matrix1d);
-    diagonalBlockMatrixAlt(1, 1) = std::make_shared<DiagonalMatrix<int>>(matrix2d);
+    BlockMatrixAlt<DiagonalMatrix<int>> diagonalBlockMatrixAlt1(2, 2);
+    diagonalBlockMatrixAlt1(0, 0) = std::make_shared<DiagonalMatrix<int>>(matrix1d);
+    diagonalBlockMatrixAlt1(1, 1) = std::make_shared<DiagonalMatrix<int>>(matrix2d);
+
+    BlockMatrixAlt<DiagonalMatrix<int>> diagonalBlockMatrixAlt2(2, 2);
+    diagonalBlockMatrixAlt2(0, 0) = std::make_shared<DiagonalMatrix<int>>(matrix1d);
+    diagonalBlockMatrixAlt2(1, 1) = std::make_shared<DiagonalMatrix<int>>(matrix2d);
 
     std::cout << "Диагональная блочная матрица:\n";
-    diagonalBlockMatrixAlt.print();
+    diagonalBlockMatrixAlt1.print();
+
+    // Пример сложения блочных матриц
+    auto sumMatrix = diagonalBlockMatrixAlt1 + diagonalBlockMatrixAlt2;
+    std::cout << "Sum of Block Matrices:" << std::endl;
+    sumMatrix.print();
+
+    // Пример вычитания блочных матриц
+    auto diffMatrix = diagonalBlockMatrixAlt1 - diagonalBlockMatrixAlt2;
+    std::cout << "Difference of Block Matrices:" << std::endl;
+    diffMatrix.print();
+
+    // Пример умножения блочных матриц
+    auto productMatrix = diagonalBlockMatrixAlt1 * diagonalBlockMatrixAlt2;
+    std::cout << "Product of Block Matrices:" << std::endl;
+    productMatrix.print();
+
+    // Пример транспонирования матрицы
+    auto transposedMatrix = diagonalBlockMatrixAlt1.transpose();
+    std::cout << "Transposed Block Matrix:" << std::endl;
+    transposedMatrix.print();
+
+    // Пример скалярного умножения
+    int scalar = 2;
+    auto scalarProductMatrix = diagonalBlockMatrixAlt1.scalarMultiplication(scalar);
+    std::cout << "Scalar Multiplication of Block Matrix by " << scalar << ":" << std::endl;
+    scalarProductMatrix.print();
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 

@@ -53,6 +53,109 @@ public:
         return blocks[row][col];
     }
 
+    // Оператор сложения
+    BlockMatrixAlt<MatrixType> operator+(const BlockMatrixAlt<MatrixType>& other) const {
+        if (blockRows != other.blockRows || blockCols != other.blockCols) {
+            throw std::invalid_argument("Размеры блоков должны совпадать.");
+        }
+
+        BlockMatrixAlt<MatrixType> result(blockRows, blockCols);
+        
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+                // Проверяем, что блоки не пустые в обеих матрицах
+                if (blocks[i][j] && other.blocks[i][j]) {
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j] + *other.blocks[i][j]);
+                } else if (blocks[i][j]) {
+                    // Если один из блоков пустой, просто копируем блок
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j]);
+                } else if (other.blocks[i][j]) {
+                    // Если другой блок пустой, просто копируем блок
+                    result(i, j) = std::make_shared<MatrixType>(*other.blocks[i][j]);
+                }
+            }
+        }
+        
+        return result;
+    }
+
+    // Оператор вычитания
+    BlockMatrixAlt<MatrixType> operator-(const BlockMatrixAlt<MatrixType>& other) const {
+        if (blockRows != other.blockRows || blockCols != other.blockCols) {
+            throw std::invalid_argument("Размеры блоков должны совпадать.");
+        }
+
+        BlockMatrixAlt<MatrixType> result(blockRows, blockCols);
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+                // Проверяем, что оба блока не пусты
+                if (blocks[i][j] && other.blocks[i][j]) {
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j] - *other.blocks[i][j]);
+                } else if (blocks[i][j]) {
+                    // Если второй блок пуст, просто копируем первый блок
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j]);
+                } else if (other.blocks[i][j]) {
+                    // Если первый блок пуст, просто копируем второй блок
+                    result(i, j) = std::make_shared<MatrixType>(*other.blocks[i][j]);
+                }
+            }
+        }
+        return result;
+    }
+
+    // Оператор умножения
+    BlockMatrixAlt<MatrixType> operator*(const BlockMatrixAlt<MatrixType>& other) const {
+        if (blockRows != other.blockRows || blockCols != other.blockCols) {
+            throw std::invalid_argument("Размеры блоков должны совпадать.");
+        }
+        
+        BlockMatrixAlt<MatrixType> result(blockRows, blockCols);
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+                if (blocks[i][j] && other.blocks[i][j]) {
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j] * *other.blocks[i][j]);
+                } else if (blocks[i][j]) {
+                    // Если второй блок пуст, просто копируем первый блок
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j]);
+                } else if (other.blocks[i][j]) {
+                    // Если первый блок пуст, просто копируем второй блок
+                    result(i, j) = std::make_shared<MatrixType>(*other.blocks[i][j]);
+                }
+            }
+        }
+        return result;
+    }
+
+    // Транспонирование матрицы
+    BlockMatrixAlt<MatrixType> transpose() const {
+        BlockMatrixAlt<MatrixType> result(blockCols, blockRows);
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+
+                // Транспонирование блока, если он существует
+                if (blocks[i][j]) {
+                    result(j, i) = std::make_shared<MatrixType>(blocks[i][j]->transpose());
+                }
+            }
+        }
+        return result;
+    }
+
+    // Скалярное произведение
+    BlockMatrixAlt<MatrixType> scalarMultiplication(Type scalar) const {
+        BlockMatrixAlt<MatrixType> result(blockRows, blockCols);
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+
+                // Выполняем умножение только для существующих блоков
+                if (blocks[i][j]) {
+                    result(j, i) = std::make_shared<MatrixType>(blocks[i][j]->scalarMultiplication(scalar));
+                }
+            }
+        }
+        return result;
+    }
+
     std::size_t rows() const override {
         return blockRows * blocks[0][0]->rows();
     }

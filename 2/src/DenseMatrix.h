@@ -71,7 +71,7 @@ public:
         return result;
     }
 
-    DenseMatrix<T> Transpose() const {
+    DenseMatrix<T> transpose() const {
         DenseMatrix<T> result(this->N, this->M);
         for (std::size_t i = 0; i < this->M; ++i) {
             for (std::size_t j = 0; j < this->N; ++j) {
@@ -81,7 +81,7 @@ public:
         return result;
     }
 
-    DenseMatrix<T> ScalarMultiplication(T scalar) const {
+    DenseMatrix<T> scalarMultiplication(T scalar) const {
         DenseMatrix<T> result(this->M, this->N); 
         for (std::size_t i = 0; i < this->M; ++i) {
             for (std::size_t j = 0; j < this->N; ++j) {

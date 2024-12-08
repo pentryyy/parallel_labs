@@ -94,7 +94,7 @@ public:
         return result;
     }
 
-   BlockMatrix<MatrixT> Transpose() const {
+   BlockMatrix<MatrixT> transpose() const {
         std::pair<std::size_t, std::size_t> newMatrixMesh = {MatrixMesh.second, MatrixMesh.first};
         std::vector<std::vector<MatrixT>> transposedBlocks(newMatrixMesh.first, 
                                                                   std::vector<MatrixT>(newMatrixMesh.second,
@@ -102,13 +102,13 @@ public:
                                                                                                MatrixSize.first)));
         for (std::size_t i = 0; i < MatrixMesh.first; ++i) {
             for (std::size_t j = 0; j < MatrixMesh.second; ++j) {
-                transposedBlocks[j][i] = this->MatrixBlocks[i][j].Transpose();
+                transposedBlocks[j][i] = this->MatrixBlocks[i][j].transpose();
             }
         }
         return BlockMatrix<MatrixT>(transposedBlocks, newMatrixMesh, MatrixSize);
     }
 
-    BlockMatrix<MatrixT> ScalarMultiplication(typename MatrixT::Type scalar) const {
+    BlockMatrix<MatrixT> scalarMultiplication(typename MatrixT::Type scalar) const {
         BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
                               this->MatrixMesh.second * this->MatrixSize.second);
         for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {

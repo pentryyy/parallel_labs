@@ -20,8 +20,8 @@ int main() {
     DenseMatrix<int> matrixPlus       = matrix1 + matrix2;
     DenseMatrix<int> matrixMinus      = matrix2 - matrix1;
     DenseMatrix<int> matrixMultiply   = matrix1 * matrix2;
-    DenseMatrix<int> transposedMatrix = matrix2.Transpose();
-    DenseMatrix<int> scaledMatrix     = matrix2.ScalarMultiplication(2);   
+    DenseMatrix<int> transposedMatrix = matrix2.transpose();
+    DenseMatrix<int> scaledMatrix     = matrix2.scalarMultiplication(2);   
 
     matrixPlus.exportToXML("dense_matrix_plus.xml");
     matrixMinus.exportToXML("dense_matrix_minus.xml");
@@ -40,8 +40,8 @@ int main() {
     DiagonalMatrix<int> matrixPlusD       = matrix1d + matrix2d;
     DiagonalMatrix<int> matrixMinusD      = matrix2d - matrix1d;
     DiagonalMatrix<int> matrixMultiplyD   = matrix1d * matrix2d;
-    DiagonalMatrix<int> transposedMatrixD = matrix2d.Transpose();
-    DiagonalMatrix<int> scaledMatrixD     = matrix2d.ScalarMultiplication(3);  
+    DiagonalMatrix<int> transposedMatrixD = matrix2d.transpose();
+    DiagonalMatrix<int> scaledMatrixD     = matrix2d.scalarMultiplication(3);  
 
     matrixPlusD.exportToXML("diagonal_matrix_plus.xml");
     matrixMinusD.exportToXML("diagonal_matrix_minus.xml");
@@ -65,8 +65,8 @@ int main() {
     BlockMatrix<DiagonalMatrix<int>> matrixPlusB       = matrix1b + matrix2b;
     BlockMatrix<DiagonalMatrix<int>> matrixMinusB      = matrix2b - matrix1b;
     BlockMatrix<DiagonalMatrix<int>> matrixMultiplyB   = matrix1b * matrix2b;
-    BlockMatrix<DiagonalMatrix<int>> transposedMatrixB = matrix2b.Transpose();
-    BlockMatrix<DiagonalMatrix<int>> scaledMatrixB     = matrix2b.ScalarMultiplication(3);
+    BlockMatrix<DiagonalMatrix<int>> transposedMatrixB = matrix2b.transpose();
+    BlockMatrix<DiagonalMatrix<int>> scaledMatrixB     = matrix2b.scalarMultiplication(3);
 
     matrixPlusB.Export("block_matrix_plus.txt");
     matrixMinusB.Export("block_matrix_minus.txt");
