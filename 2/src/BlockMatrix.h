@@ -114,12 +114,14 @@ public:
             for (std::size_t j = 0; j < blockCols; ++j) {
                 if (blocks[i][j] && other.blocks[i][j]) {
                     result(i, j) = std::make_shared<MatrixType>(*blocks[i][j] * *other.blocks[i][j]);
+                
+                // Возвращаем пустые объекты класса в случае нахождения только одной матрицы
                 } else if (blocks[i][j]) {
-                    // Если второй блок пуст, просто копируем первый блок
-                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j]);
+                    result(i, j) = std::make_shared<MatrixType>(blocks[i][j]->rows(),
+                                                                blocks[i][j]->rows());
                 } else if (other.blocks[i][j]) {
-                    // Если первый блок пуст, просто копируем второй блок
-                    result(i, j) = std::make_shared<MatrixType>(*other.blocks[i][j]);
+                    result(i, j) = std::make_shared<MatrixType>(other.blocks[i][j]->rows(),
+                                                                other.blocks[i][j]->rows());
                 }
             }
         }
