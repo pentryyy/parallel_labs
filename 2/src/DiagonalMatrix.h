@@ -13,7 +13,7 @@ public:
     using Type = T; // Для получения используемого типа данных в матрице
 
     // Для совместимости с блочной матрицей
-    DiagonalMatrix(size_t M, size_t N) : XMLDiagonalMatrixParser<T>(N) {}
+    DiagonalMatrix(size_t M, size_t N) : XMLDiagonalMatrixParser<T>(M) {}
 
     DiagonalMatrix(size_t size) : XMLDiagonalMatrixParser<T>(size) {}
 
@@ -57,6 +57,16 @@ public:
 
         // Возвращаем ссылку на значение
         return this->mapOfValuesForDiagonals[diagonalIndex][pos];
+    }
+
+    // Метод для получения количества строк
+    std::size_t rows() const {
+        return this->matrixSize;
+    }
+
+    // Метод для получения количества столбцов
+    std::size_t cols() const {
+        return this->matrixSize;
     }
 
     // Получение значений для диагонали с заданным смещением

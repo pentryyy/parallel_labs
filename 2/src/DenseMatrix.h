@@ -28,6 +28,16 @@ public:
         return this->Data[i * this->N + j];
     }
     
+    // Метод для получения количества строк
+    std::size_t rows() const {
+        return this->M;
+    }
+
+    // Метод для получения количества столбцов
+    std::size_t cols() const {
+        return this->N;
+    }
+
     DenseMatrix<T> operator+(const DenseMatrix<T>& other) const {
         if (this->M != other.M || this->N != other.N) {
             throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
