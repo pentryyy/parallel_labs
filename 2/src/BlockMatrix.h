@@ -1,192 +1,176 @@
 #include <vector>
-#include <numeric>
 #include <stdexcept>
-#include "Matrix.h"
-#include "DiagonalMatrix.h"
-#include "DenseMatrix.h"
+#include <memory>
+#include <iomanip>
+#include <iostream>
+#include "IMatrixAdditionalActions.h"
 
-template <typename MatrixT>
-class BlockMatrix : public Matrix<typename MatrixT::Type> {
+template <typename MatrixType>
+class BlockMatrix : public IMatrixAdditionalActions<MatrixType> {
 private:
-    std::vector<std::vector<MatrixT>>   MatrixBlocks;
-    std::pair<std::size_t, std::size_t> MatrixMesh;
-    std::pair<std::size_t, std::size_t> MatrixSize;
+    std::size_t                                           blockRows, blockCols;
+    std::vector<std::vector<std::shared_ptr<MatrixType>>> blocks;
 public:
-    BlockMatrix(std::size_t M, std::size_t N) : Matrix<typename MatrixT::Type>(M, N) {}
+    using Type = typename MatrixType::Type;
 
-    BlockMatrix(const std::vector<std::vector<MatrixT>>& MatrixBlocks, 
-                const std::pair<std::size_t, std::size_t>& MatrixMesh,
-                const std::pair<std::size_t, std::size_t>& MatrixSize) : 
-            
-            // Конструктор матрицы <T> M x N
-            Matrix<typename MatrixT::Type>(MatrixMesh.first * MatrixSize.first, 
-                                           MatrixMesh.second * MatrixSize.second),
-            // Конструктор для полей класса
-            MatrixBlocks(MatrixBlocks), 
-            MatrixMesh(MatrixMesh), 
-            MatrixSize(MatrixSize) {
-        
-        if (MatrixSize.first == 0 || MatrixSize.second == 0) {
-            throw std::invalid_argument("Число строк и столбцов в блоке должно быть больше нуля.");
-        }
-
-        for (std::size_t i = 0; i < (MatrixMesh.first * MatrixSize.first); ++i) {
-            for (std::size_t j = 0; j < (MatrixMesh.second * MatrixSize.second); ++j) {
-                std::size_t blockRow = i / MatrixSize.first;
-                std::size_t blockCol = j / MatrixSize.second;
-                std::size_t localRow = i % MatrixSize.first;
-                std::size_t localCol = j % MatrixSize.second;
-                (*this)(i, j) = MatrixBlocks[blockRow][blockCol](localRow, localCol);
-            }
-        }
+    // Конструктор с указанием числа блоков
+    BlockMatrix(std::size_t blockRows, std::size_t blockCols) : 
+                   blockRows(blockRows), blockCols(blockCols) {
+        blocks.resize(blockRows, std::vector<std::shared_ptr<MatrixType>>(blockCols, nullptr));
     }
 
     ~BlockMatrix() {}
 
-    BlockMatrix<MatrixT> operator+(const BlockMatrix<MatrixT>& other) const {
-        if ((this->MatrixMesh.first * this->MatrixSize.first) != 
-            (other.MatrixMesh.first * other.MatrixSize.first) || 
-            (this->MatrixMesh.second * this->MatrixSize.second) != 
-            (other.MatrixMesh.second * other.MatrixSize.second)) {
-            throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
+    // Обращение к данным матрицы, например matrix(0, 0)
+    Type operator()(std::size_t i, std::size_t j) const {
+        std::size_t blockRow = i / blocks[0][0]->rows();
+        std::size_t blockCol = j / blocks[0][0]->cols();
+
+        if (blockRow >= blockRows || blockCol >= blockCols) {
+            throw std::out_of_range("Индексы выходят за пределы блочной матрицы.");
         }
-        BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
-                              this->MatrixMesh.second * this->MatrixSize.second);
-        for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {
-            for (std::size_t j = 0; j < (this->MatrixMesh.second * this->MatrixSize.second); ++j) {
-                result(i, j) = (*this)(i, j) + other(i, j);
-            }
+
+        std::size_t localRow = i % blocks[0][0]->rows();
+        std::size_t localCol = j % blocks[0][0]->cols();
+
+        if (localRow >= blocks[0][0]->rows() || localCol >= blocks[0][0]->cols()) {
+            throw std::out_of_range("Индексы выходят за пределы блока.");
         }
-        return result;
+
+        // Пустой блок возвращает 0
+        if (!blocks[blockRow][blockCol]) {
+            return static_cast<Type>(0);
+        }
+
+        return (*blocks[blockRow][blockCol])(localRow, localCol);
     }
 
-    BlockMatrix<MatrixT> operator-(const BlockMatrix<MatrixT>& other) const {
-        if ((this->MatrixMesh.first * this->MatrixSize.first) != 
-            (other.MatrixMesh.first * other.MatrixSize.first) || 
-            (this->MatrixMesh.second * this->MatrixSize.second) != 
-            (other.MatrixMesh.second * other.MatrixSize.second)) {
-            throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
+    // Установка значения для элемента матрицы, например matrix(0, 1) = make_shared <another matrix>
+    std::shared_ptr<MatrixType>& operator()(std::size_t row, std::size_t col) {
+        if (row >= blockRows || col >= blockCols) {
+            throw std::out_of_range("Индексы блока выходят за пределы блочной матрицы.");
         }
-        BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
-                              this->MatrixMesh.second * this->MatrixSize.second);
-        for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {
-            for (std::size_t j = 0; j < (this->MatrixMesh.second * this->MatrixSize.second); ++j) {
-                result(i, j) = (*this)(i, j) - other(i, j);
-            }
-        }
-        return result;
+        return blocks[row][col];
     }
 
-    BlockMatrix<MatrixT> operator*(const BlockMatrix<MatrixT>& other) const {
-        if ((this->MatrixMesh.first * this->MatrixSize.first) != 
-            (other.MatrixMesh.first * other.MatrixSize.first) || 
-            (this->MatrixMesh.second * this->MatrixSize.second) != 
-            (other.MatrixMesh.second * other.MatrixSize.second)) {
-            throw std::invalid_argument("Размеры матриц должны совпадать для сложения.");
+    // Оператор сложения
+    BlockMatrix<MatrixType> operator+(const BlockMatrix<MatrixType>& other) const {
+        if (blockRows != other.blockRows || blockCols != other.blockCols) {
+            throw std::invalid_argument("Размеры блоков должны совпадать.");
         }
-        BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
-                              this->MatrixMesh.second * this->MatrixSize.second);
-        for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {
-            for (std::size_t j = 0; j < (this->MatrixMesh.second * this->MatrixSize.second); ++j) {
-                result(i, j) = (*this)(i, j) * other(i, j);
-            }
-        }
-        return result;
-    }
 
-   BlockMatrix<MatrixT> transpose() const {
-        std::pair<std::size_t, std::size_t> newMatrixMesh = {MatrixMesh.second, MatrixMesh.first};
-        std::vector<std::vector<MatrixT>> transposedBlocks(newMatrixMesh.first, 
-                                                                  std::vector<MatrixT>(newMatrixMesh.second,
-                                                                                       MatrixT(MatrixSize.second, 
-                                                                                               MatrixSize.first)));
-        for (std::size_t i = 0; i < MatrixMesh.first; ++i) {
-            for (std::size_t j = 0; j < MatrixMesh.second; ++j) {
-                transposedBlocks[j][i] = this->MatrixBlocks[i][j].transpose();
-            }
-        }
-        return BlockMatrix<MatrixT>(transposedBlocks, newMatrixMesh, MatrixSize);
-    }
-
-    BlockMatrix<MatrixT> scalarMultiplication(typename MatrixT::Type scalar) const {
-        BlockMatrix<MatrixT> result(this->MatrixMesh.first * this->MatrixSize.first,
-                              this->MatrixMesh.second * this->MatrixSize.second);
-        for (std::size_t i = 0; i < (this->MatrixMesh.first * this->MatrixSize.first); ++i) {
-            for (std::size_t j = 0; j < (this->MatrixMesh.second * this->MatrixSize.second); ++j) {
-                result(i, j) = (*this)(i, j) * scalar;
-            }
-        }
-        return result;
-    }
-
-    std::string GetClassHeader() const {
-        return "BlockMatrix";
-    }
-
-    static BlockMatrix<MatrixT> Import(const std::string& fileName,
-                                 const std::pair<std::size_t, std::size_t>& MatrixMesh,
-                                 const std::pair<std::size_t, std::size_t>& MatrixSize) {    
-        std::size_t BlocksCount = MatrixMesh.first * MatrixMesh.second;
-        std::size_t MatrixSizeСomposition = MatrixSize.first * MatrixSize.second;
-        // Двумерный вектор для хранения блоков матриц
-        std::vector<std::vector<MatrixT>> MatrixBlocks(MatrixMesh.first, 
-                                                       std::vector<MatrixT>(MatrixMesh.second, 
-                                                                            MatrixT(MatrixSize.first,
-                                                                                    MatrixSize.second)));
-        std::ifstream file("import/" + fileName);
-        if (!file.is_open()) {
-            throw std::runtime_error("Ошибка при открытии файла: " + fileName);
-        }
-        std::string header;
-        std::getline(file, header);
-        std::size_t rows, cols;
-        file >> rows >> cols;
-        BlockMatrix<MatrixT> matrixTemp(rows, cols);
-        if (header != matrixTemp.GetClassHeader()) { 
-            throw std::runtime_error("Неверный формат файла. Ожидается заголовок '" + matrixTemp.GetClassHeader() + "'.");
-        }
-        for (std::size_t i = 0; i < MatrixMesh.first; ++i) {
-            for (std::size_t j = 0; j < MatrixMesh.second; ++j) {
-                for (std::size_t row = 0; row < MatrixSize.first; ++row) {
-                    for (std::size_t col = 0; col < MatrixSize.second; ++col) {
-                        if (!(file >> MatrixBlocks[i][j](row, col))) {
-                            throw std::runtime_error("Ошибка чтения данных из файла.");
-                        }
-                    }
+        BlockMatrix<MatrixType> result(blockRows, blockCols);
+        
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+                // Проверяем, что блоки не пустые в обеих матрицах
+                if (blocks[i][j] && other.blocks[i][j]) {
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j] + *other.blocks[i][j]);
+                } else if (blocks[i][j]) {
+                    // Если один из блоков пустой, просто копируем блок
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j]);
+                } else if (other.blocks[i][j]) {
+                    // Если другой блок пустой, просто копируем блок
+                    result(i, j) = std::make_shared<MatrixType>(*other.blocks[i][j]);
                 }
             }
         }
-        file.close();
-        BlockMatrix<MatrixT> matrix(MatrixBlocks, MatrixMesh, MatrixSize);    
-        std::cout << "Импорт из файла успешно выполнен: " << fileName << std::endl;
-        return matrix;
+        
+        return result;
     }
 
-    void Export(const std::string& fileName) const {
-        std::ofstream file("export/" + fileName);
-        if (!file.is_open()) {
-            throw std::runtime_error("Ошибка при открытии файла для записи: " + fileName);
+    // Оператор вычитания
+    BlockMatrix<MatrixType> operator-(const BlockMatrix<MatrixType>& other) const {
+        if (blockRows != other.blockRows || blockCols != other.blockCols) {
+            throw std::invalid_argument("Размеры блоков должны совпадать.");
         }
-        file << this->GetClassHeader() << std::endl;
-        file << this->M << " " << this->N;
-        for (std::size_t i = 0; i < this->M; ++i) {
-            file << std::endl;
-            for (std::size_t j = 0; j < this->N; ++j) {
-                file << (*this)(i, j) << " ";
+
+        BlockMatrix<MatrixType> result(blockRows, blockCols);
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+                // Проверяем, что оба блока не пусты
+                if (blocks[i][j] && other.blocks[i][j]) {
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j] - *other.blocks[i][j]);
+                } else if (blocks[i][j]) {
+                    // Если второй блок пуст, просто копируем первый блок
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j]);
+                } else if (other.blocks[i][j]) {
+                    // Если первый блок пуст, просто копируем второй блок
+                    result(i, j) = std::make_shared<MatrixType>(*other.blocks[i][j]);
+                }
             }
         }
-        file.close();
-        std::cout << "Экспорт в файл успешно выполнен: " << fileName << std::endl;
+        return result;
     }
 
-    void Print() const {
-        std::cout << "Результат вывода матрицы " << this->M << " x " << this->N << std::endl;
-        for (std::size_t i = 0; i < this-> M; ++i) {
+    // Оператор умножения
+    BlockMatrix<MatrixType> operator*(const BlockMatrix<MatrixType>& other) const {
+        if (blockRows != other.blockRows || blockCols != other.blockCols) {
+            throw std::invalid_argument("Размеры блоков должны совпадать.");
+        }
+        
+        BlockMatrix<MatrixType> result(blockRows, blockCols);
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+                if (blocks[i][j] && other.blocks[i][j]) {
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j] * *other.blocks[i][j]);
+                } else if (blocks[i][j]) {
+                    // Если второй блок пуст, просто копируем первый блок
+                    result(i, j) = std::make_shared<MatrixType>(*blocks[i][j]);
+                } else if (other.blocks[i][j]) {
+                    // Если первый блок пуст, просто копируем второй блок
+                    result(i, j) = std::make_shared<MatrixType>(*other.blocks[i][j]);
+                }
+            }
+        }
+        return result;
+    }
+
+    // Транспонирование матрицы
+    BlockMatrix<MatrixType> transpose() const {
+        BlockMatrix<MatrixType> result(blockCols, blockRows);
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+
+                // Транспонирование блока, если он существует
+                if (blocks[i][j]) {
+                    result(j, i) = std::make_shared<MatrixType>(blocks[i][j]->transpose());
+                }
+            }
+        }
+        return result;
+    }
+
+    // Скалярное произведение
+    BlockMatrix<MatrixType> scalarMultiplication(Type scalar) const {
+        BlockMatrix<MatrixType> result(blockRows, blockCols);
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+
+                // Выполняем умножение только для существующих блоков
+                if (blocks[i][j]) {
+                    result(j, i) = std::make_shared<MatrixType>(blocks[i][j]->scalarMultiplication(scalar));
+                }
+            }
+        }
+        return result;
+    }
+
+    std::size_t rows() const override {
+        return blockRows * blocks[0][0]->rows();
+    }
+
+    std::size_t cols() const override {
+        return blockCols * blocks[0][0]->cols();
+    }
+
+    void print(int width = 10) const override {
+        for (std::size_t i = 0; i < rows(); ++i) {
             std::cout << "| ";
-            for (std::size_t j = 0; j < this -> N; ++j) {
-                std::cout << std::setw(10) << (*this)(i, j) << " ";
+            for (std::size_t j = 0; j < cols(); ++j) {
+                std::cout << std::setw(width) << (*this)(i, j) << " ";
             }
-            std::cout << "|" << std::endl;
+            std::cout << "|\n";
         }
     }
 };

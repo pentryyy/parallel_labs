@@ -4,7 +4,7 @@
 #include <codecvt>
 #include <Windows.h>
 #include <conio.h>
-#include "src/BlockMatrixAlt.h"
+#include "src/BlockMatrix.h"
 #include "src/DiagonalMatrix.h"
 #include "src/DenseMatrix.h"
 
@@ -30,50 +30,50 @@ int main() {
     matrix2.print();
 
     // Создание блочной матрицы
-    BlockMatrixAlt<DenseMatrix<int>> denseBlockMatrixAlt(2, 2);
-    denseBlockMatrixAlt(0, 0) = std::make_shared<DenseMatrix<int>>(matrix1);
-    denseBlockMatrixAlt(0, 1) = std::make_shared<DenseMatrix<int>>(matrix2);
-    denseBlockMatrixAlt(1, 0) = std::make_shared<DenseMatrix<int>>(matrix1);
-    denseBlockMatrixAlt(1, 1) = std::make_shared<DenseMatrix<int>>(matrix2);
+    BlockMatrix<DenseMatrix<int>> denseBlockMatrix(2, 2);
+    denseBlockMatrix(0, 0) = std::make_shared<DenseMatrix<int>>(matrix1);
+    denseBlockMatrix(0, 1) = std::make_shared<DenseMatrix<int>>(matrix2);
+    denseBlockMatrix(1, 0) = std::make_shared<DenseMatrix<int>>(matrix1);
+    denseBlockMatrix(1, 1) = std::make_shared<DenseMatrix<int>>(matrix2);
 
     std::cout << "Плотная блочная матрица:\n";
-    denseBlockMatrixAlt.print();
+    denseBlockMatrix.print();
 
     // Создание блочной матрицы с диагональными матрицами
-    BlockMatrixAlt<DiagonalMatrix<int>> diagonalBlockMatrixAlt1(2, 2);
-    diagonalBlockMatrixAlt1(0, 0) = std::make_shared<DiagonalMatrix<int>>(matrix1d);
-    diagonalBlockMatrixAlt1(1, 1) = std::make_shared<DiagonalMatrix<int>>(matrix2d);
+    BlockMatrix<DiagonalMatrix<int>> diagonalBlockMatrix1(2, 2);
+    diagonalBlockMatrix1(0, 0) = std::make_shared<DiagonalMatrix<int>>(matrix1d);
+    diagonalBlockMatrix1(1, 1) = std::make_shared<DiagonalMatrix<int>>(matrix2d);
 
-    BlockMatrixAlt<DiagonalMatrix<int>> diagonalBlockMatrixAlt2(2, 2);
-    diagonalBlockMatrixAlt2(0, 0) = std::make_shared<DiagonalMatrix<int>>(matrix1d);
-    diagonalBlockMatrixAlt2(1, 1) = std::make_shared<DiagonalMatrix<int>>(matrix2d);
+    BlockMatrix<DiagonalMatrix<int>> diagonalBlockMatrix2(2, 2);
+    diagonalBlockMatrix2(0, 0) = std::make_shared<DiagonalMatrix<int>>(matrix1d);
+    diagonalBlockMatrix2(1, 1) = std::make_shared<DiagonalMatrix<int>>(matrix2d);
 
     std::cout << "Диагональная блочная матрица:\n";
-    diagonalBlockMatrixAlt1.print();
+    diagonalBlockMatrix1.print();
 
     // Пример сложения блочных матриц
-    auto sumMatrix = diagonalBlockMatrixAlt1 + diagonalBlockMatrixAlt2;
+    auto sumMatrix = diagonalBlockMatrix1 + diagonalBlockMatrix2;
     std::cout << "Sum of Block Matrices:" << std::endl;
     sumMatrix.print();
 
     // Пример вычитания блочных матриц
-    auto diffMatrix = diagonalBlockMatrixAlt1 - diagonalBlockMatrixAlt2;
+    auto diffMatrix = diagonalBlockMatrix1 - diagonalBlockMatrix2;
     std::cout << "Difference of Block Matrices:" << std::endl;
     diffMatrix.print();
 
     // Пример умножения блочных матриц
-    auto productMatrix = diagonalBlockMatrixAlt1 * diagonalBlockMatrixAlt2;
+    auto productMatrix = diagonalBlockMatrix1 * diagonalBlockMatrix2;
     std::cout << "Product of Block Matrices:" << std::endl;
     productMatrix.print();
 
     // Пример транспонирования матрицы
-    auto transposedMatrix = diagonalBlockMatrixAlt1.transpose();
+    auto transposedMatrix = diagonalBlockMatrix1.transpose();
     std::cout << "Transposed Block Matrix:" << std::endl;
     transposedMatrix.print();
 
     // Пример скалярного умножения
     int scalar = 2;
-    auto scalarProductMatrix = diagonalBlockMatrixAlt1.scalarMultiplication(scalar);
+    auto scalarProductMatrix = diagonalBlockMatrix1.scalarMultiplication(scalar);
     std::cout << "Scalar Multiplication of Block Matrix by " << scalar << ":" << std::endl;
     scalarProductMatrix.print();
 

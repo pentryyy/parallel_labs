@@ -13,9 +13,6 @@ class DiagonalMatrix : public XMLDiagonalMatrixParser<T>, public IMatrixAddition
 public:
     using Type = T; // Для получения используемого типа данных в матрице
 
-    // Для совместимости с блочной матрицей
-    DiagonalMatrix(size_t M, size_t N) : XMLDiagonalMatrixParser<T>(M) {}
-
     DiagonalMatrix(size_t size) : XMLDiagonalMatrixParser<T>(size) {}
 
     DiagonalMatrix() : XMLDiagonalMatrixParser<T>() {}

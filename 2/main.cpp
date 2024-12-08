@@ -4,7 +4,8 @@
 #include <codecvt>
 #include <Windows.h>
 #include <conio.h>
-#include "src/BlockMatrix.h"
+#include "src/DiagonalMatrix.h"
+#include "src/DenseMatrix.h"
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -48,31 +49,6 @@ int main() {
     matrixMultiplyD.exportToXML("diagonal_matrix_multiply.xml");
     transposedMatrixD.exportToXML("diagonal_matrix_transpose.xml");
     scaledMatrixD.exportToXML("diagonal_matrix_scalar.xml");
-
-    std::pair<std::size_t, std::size_t> matrixMesh = {5, 4};
-    std::pair<std::size_t, std::size_t> matrixSize = {2, 2};
-
-    BlockMatrix<DiagonalMatrix<int>> matrix1b = BlockMatrix<DiagonalMatrix<int>>::Import("block_matrix_1.txt", 
-                                                                                         matrixMesh, 
-                                                                                         matrixSize);
-    BlockMatrix<DiagonalMatrix<int>> matrix2b = BlockMatrix<DiagonalMatrix<int>>::Import("block_matrix_2.txt", 
-                                                                                         matrixMesh, 
-                                                                                         matrixSize);
-    
-    matrix1b.Print();
-    matrix2b.Print();
-
-    BlockMatrix<DiagonalMatrix<int>> matrixPlusB       = matrix1b + matrix2b;
-    BlockMatrix<DiagonalMatrix<int>> matrixMinusB      = matrix2b - matrix1b;
-    BlockMatrix<DiagonalMatrix<int>> matrixMultiplyB   = matrix1b * matrix2b;
-    BlockMatrix<DiagonalMatrix<int>> transposedMatrixB = matrix2b.transpose();
-    BlockMatrix<DiagonalMatrix<int>> scaledMatrixB     = matrix2b.scalarMultiplication(3);
-
-    matrixPlusB.Export("block_matrix_plus.txt");
-    matrixMinusB.Export("block_matrix_minus.txt");
-    matrixMultiplyB.Export("block_matrix_multiply.txt");
-    transposedMatrixB.Export("block_matrix_transpose.txt");
-    scaledMatrixB.Export("block_matrix_scalar.txt");
    
     std::cout << "Нажмите любую клавишу для продолжения... ";
 
