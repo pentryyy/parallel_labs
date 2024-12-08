@@ -1,8 +1,9 @@
 #include <iomanip>
 #include "XMLMatrices/XMLDenseMatrixParser.h"
+#include "IMatrixAdditionalActions.h"
 
 template <typename T>
-class DenseMatrix : public XMLDenseMatrixParser<T> {
+class DenseMatrix : public XMLDenseMatrixParser<T>, public IMatrixAdditionalActions<T> {
 public:
     using Type = T; // Для получения используемого типа данных в матрице
 
@@ -26,16 +27,6 @@ public:
             throw std::out_of_range("Индексы выходят за пределы матрицы.");
         }
         return this->Data[i * this->N + j];
-    }
-    
-    // Метод для получения количества строк
-    std::size_t rows() const {
-        return this->M;
-    }
-
-    // Метод для получения количества столбцов
-    std::size_t cols() const {
-        return this->N;
     }
 
     DenseMatrix<T> operator+(const DenseMatrix<T>& other) const {
@@ -100,8 +91,15 @@ public:
         return result;
     }
 
-    // Вывод матрицы
-    void print(int width = 10) const {
+    std::size_t rows() const override {
+        return this->M;
+    }
+
+    std::size_t cols() const override {
+        return this->N;
+    }
+
+    void print(int width = 10) const override {
         std::cout << "Результат вывода плотной матрицы (" << this->M << " x " << this->N << ")\n";
         for (std::size_t i = 0; i < this->M; ++i) {
             std::cout << "| ";

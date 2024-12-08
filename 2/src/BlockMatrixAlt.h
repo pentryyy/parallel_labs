@@ -3,9 +3,10 @@
 #include <memory>
 #include <iomanip>
 #include <iostream>
+#include "IMatrixAdditionalActions.h"
 
 template <typename MatrixType>
-class BlockMatrixAlt {
+class BlockMatrixAlt : public IMatrixAdditionalActions<MatrixType> {
 private:
     std::size_t                                           blockRows, blockCols;
     std::vector<std::vector<std::shared_ptr<MatrixType>>> blocks;
@@ -52,18 +53,15 @@ public:
         return blocks[row][col];
     }
 
-    // Метод для получения количества строк
-    std::size_t rows() const {
+    std::size_t rows() const override {
         return blockRows * blocks[0][0]->rows();
     }
 
-    // Метод для получения количества столбцов
-    std::size_t cols() const {
+    std::size_t cols() const override {
         return blockCols * blocks[0][0]->cols();
     }
 
-    // Вывод матрицы
-    void print(int width = 10) const {
+    void print(int width = 10) const override {
         for (std::size_t i = 0; i < rows(); ++i) {
             std::cout << "| ";
             for (std::size_t j = 0; j < cols(); ++j) {

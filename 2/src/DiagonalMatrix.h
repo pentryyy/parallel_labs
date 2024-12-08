@@ -6,9 +6,10 @@
 #include <cmath>
 #include <algorithm> 
 #include "XMLMatrices/XMLDiagonalMatrixParser.h"
+#include "IMatrixAdditionalActions.h"
 
 template <typename T>
-class DiagonalMatrix : public XMLDiagonalMatrixParser<T> {
+class DiagonalMatrix : public XMLDiagonalMatrixParser<T>, public IMatrixAdditionalActions<T> {
 public:
     using Type = T; // Для получения используемого типа данных в матрице
 
@@ -57,16 +58,6 @@ public:
 
         // Возвращаем ссылку на значение
         return this->mapOfValuesForDiagonals[diagonalIndex][pos];
-    }
-
-    // Метод для получения количества строк
-    std::size_t rows() const {
-        return this->matrixSize;
-    }
-
-    // Метод для получения количества столбцов
-    std::size_t cols() const {
-        return this->matrixSize;
     }
 
     // Получение значений для диагонали с заданным смещением
@@ -163,8 +154,15 @@ public:
         return result;
     }
 
-    // Вывод матрицы
-    void print(int width = 10) const {
+    std::size_t rows() const override {
+        return this->matrixSize;
+    }
+
+    std::size_t cols() const override {
+        return this->matrixSize;
+    }
+    
+    void print(int width = 10) const override {
         std::cout << "Результат вывода диагональной матрицы (" << this->matrixSize << ")\n";
         for (std::size_t i = 0; i < this->matrixSize; ++i) {
             std::cout << "| ";
