@@ -177,34 +177,56 @@ public:
         }
     }
 
-    void exportToDirectory(const std::string& directoryName, const std::string& directoryPath = "") {
-        std::string exportDirectoryName = (directoryPath.empty()) ? "export/" + directoryName : directoryPath + "/" + directoryName;
-        std::filesystem::path dirPath(exportDirectoryName);
+    void importFromDirectory(const std::string& directoryName, const std::string& directoryPath = "") {
+        std::string importDirectoryPath = (directoryPath.empty() ? "import/" : directoryPath + "/" ) + directoryName;
+        std::filesystem::path dirPath(importDirectoryPath);
 
-        // Создаем все необходимые родительские директории
-        if (!std::filesystem::exists(dirPath.parent_path())) {
-            std::filesystem::create_directories(dirPath.parent_path());
-        }
-
-        // Проверяем, существует ли директория, создаем при необходимости 
+        // Проверяем, существует ли директория
         if (!std::filesystem::exists(dirPath)) {
-            if (std::filesystem::create_directory(dirPath)) {
-                std::cout << "Директория " << dirPath << " успешно создана\n";
-            } else {
-                throw std::runtime_error("Не удалось создать директорию " + dirPath.string());
-            }
-        } else {
-            std::cout << "Директория " << dirPath << " уже существует\n";
+            throw std::runtime_error("Директория не существует: " + dirPath.string());
         }
 
+        for (const auto& entry : std::filesystem::directory_iterator(dirPath)) {
+            if (entry.is_regular_file() && entry.path().extension() == ".xml") {
+
+                // Извлекаем имя файла без расширения и проверяем его корректность
+                std::string filename = entry.path().filename().string();
+                size_t underscorePos = filename.find('_');
+                size_t dotPos = filename.find('.');
+
+                if (underscorePos != std::string::npos && dotPos != std::string::npos) {
+
+                    // Извлекаем индексы i, j и проверяем их корректность
+                    int i = std::stoi(filename.substr(0, underscorePos));
+                    int j = std::stoi(filename.substr(underscorePos + 1, dotPos - underscorePos - 1));
+
+                    if (i >= 0 && i < blockRows && j >= 0 && j < blockCols) {
+
+                        // Создаем объект DiagonalMatrix и загружаем данные из файла
+                        blocks[i][j] = std::make_shared<MatrixType>();
+                        blocks[i][j]->importFromXML(filename, importDirectoryPath);
+                    } else {
+                        throw std::out_of_range("Индексы вне диапазона: (" + std::to_string(i) + ", " + std::to_string(j) + ") в файле " + filename);
+                    }
+                }
+            }
+        }
+        std::cout << "Импорт из директории успешно выполнен: " << directoryName << '\n';
+    }
+
+    void exportToDirectory(const std::string& directoryName, const std::string& directoryPath = "") {
+        std::string exportDirectoryPath = (directoryPath.empty() ? "export/" : directoryPath + "/") + directoryName;
+        std::filesystem::path dirPath(exportDirectoryPath);
+        
         // Делаем экспорт только не пустых блоков
         for (std::size_t i = 0; i < blockRows; ++i) {
             for (std::size_t j = 0; j < blockCols; ++j) {
                 if (blocks[i][j]) {
                     std::string blockName = std::to_string(i) + "_" + std::to_string(j) + ".xml";
-                    blocks[i][j]->exportToXML(blockName, exportDirectoryName);
+                    blocks[i][j]->exportToXML(blockName, exportDirectoryPath);
                 }
             }
         }
+        std::cout << "Экспорт в директорию успешно выполнен: " << directoryName << '\n';
     }
 };

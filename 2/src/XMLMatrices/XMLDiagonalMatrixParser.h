@@ -6,6 +6,7 @@
 #include <map>
 #include <sstream>
 #include <stdexcept>
+#include <filesystem>
 #include "../../../rapidxml/rapidxml.hpp"
 
 template <typename T>
@@ -27,9 +28,9 @@ protected:
     }
 public:
     void importFromXML(const std::string& fileName, const std::string& filePath = "") {
-        std::string fullPath = (filePath.empty() ? "import/" : filePath + "/") + fileName;
+        std::string importFilePath = (filePath.empty() ? "import/" : filePath + "/") + fileName;
 
-        std::ifstream file(fullPath);
+        std::ifstream file(importFilePath);
         if (!file.is_open()) {
             throw std::runtime_error("Не удалось открыть " + fileName);
         }
@@ -93,9 +94,17 @@ public:
     }
 
     void exportToXML(const std::string& fileName, const std::string& filePath = "") {
-        std::string fullPath = (filePath.empty() ? "export/" : filePath + "/") + fileName;
+        std::string exportFilePath = (filePath.empty() ? "export/" : filePath + "/") + fileName;
+        std::filesystem::path dirPath(exportFilePath);
 
-        std::ofstream file(fullPath);
+        // Создаем все необходимые родительские директории
+        if (!std::filesystem::exists(dirPath.parent_path())) {
+            if (!std::filesystem::create_directories(dirPath.parent_path())) {
+                throw std::runtime_error("Не удалось создать директорию " + dirPath.string());
+            }
+        }
+
+        std::ofstream file(exportFilePath);
         if (!file.is_open()) {
             throw std::runtime_error("Не удалось открыть файл для записи: " + fileName);
         }
