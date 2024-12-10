@@ -3,6 +3,7 @@
 #include <memory>
 #include <iomanip>
 #include <iostream>
+#include <filesystem>
 #include "IMatrixAdditionalActions.h"
 
 template <typename MatrixType>
@@ -173,6 +174,37 @@ public:
                 std::cout << std::setw(width) << (*this)(i, j) << " ";
             }
             std::cout << "|\n";
+        }
+    }
+
+    void exportToDirectory(const std::string& directoryName, const std::string& directoryPath = "") {
+        std::string exportDirectoryName = (directoryPath.empty()) ? "export/" + directoryName : directoryPath + "/" + directoryName;
+        std::filesystem::path dirPath(exportDirectoryName);
+
+        // Создаем все необходимые родительские директории
+        if (!std::filesystem::exists(dirPath.parent_path())) {
+            std::filesystem::create_directories(dirPath.parent_path());
+        }
+
+        // Проверяем, существует ли директория, создаем при необходимости 
+        if (!std::filesystem::exists(dirPath)) {
+            if (std::filesystem::create_directory(dirPath)) {
+                std::cout << "Директория " << dirPath << " успешно создана\n";
+            } else {
+                throw std::runtime_error("Не удалось создать директорию " + dirPath.string());
+            }
+        } else {
+            std::cout << "Директория " << dirPath << " уже существует\n";
+        }
+
+        // Делаем экспорт только не пустых блоков
+        for (std::size_t i = 0; i < blockRows; ++i) {
+            for (std::size_t j = 0; j < blockCols; ++j) {
+                if (blocks[i][j]) {
+                    std::string blockName = std::to_string(i) + "_" + std::to_string(j) + ".xml";
+                    blocks[i][j]->exportToXML(blockName, exportDirectoryName);
+                }
+            }
         }
     }
 };

@@ -26,12 +26,12 @@ protected:
         delete[] Data;
     }
 public:
-    void importFromXML(const std::string& filename, const std::string& filepath = "") {
-        std::string fullpath = (filepath.empty() ? "import/" : filepath + "/") + filename;
+    void importFromXML(const std::string& fileName, const std::string& filePath = "") {
+        std::string fullPath = (filePath.empty() ? "import/" : filePath + "/") + fileName;
 
-        std::ifstream file(fullpath);
+        std::ifstream file(fullPath);
         if (!file.is_open()) {
-            throw std::runtime_error("Не удалось открыть " + filename);
+            throw std::runtime_error("Не удалось открыть " + fileName);
         }
 
         // Считываем весь файл в строку
@@ -111,15 +111,15 @@ public:
             }
         }
         file.close();
-        std::cout << "Импорт из файла успешно выполнен: " << filename << '\n';
+        std::cout << "Импорт из файла успешно выполнен: " << fileName << '\n';
     }
 
-    void exportToXML(const std::string& filename, const std::string& filepath = "") {
-        std::string fullpath = (filepath.empty() ? "export/" : filepath + "/") + filename;
+    void exportToXML(const std::string& fileName, const std::string& filePath = "") {
+        std::string fullPath = (filePath.empty() ? "export/" : filePath + "/") + fileName;
         
-        std::ofstream file(fullpath);
+        std::ofstream file(fullPath);
         if (!file.is_open()) {
-            throw std::runtime_error("Не удалось открыть файл для записи: " + filename);
+            throw std::runtime_error("Не удалось открыть файл для записи: " + fileName);
         }
 
         file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
@@ -147,6 +147,6 @@ public:
 
         file << "</import>";
         file.close();
-        std::cout << "Экспорт в файл успешно выполнен: " << filename << '\n';
+        std::cout << "Экспорт в файл успешно выполнен: " << fileName << '\n';
     }
 };
