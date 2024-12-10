@@ -26,8 +26,10 @@ protected:
         this->mapOfValuesForDiagonals.clear();
     }
 public:
-    void importFromXML(const std::string& filename) {
-        std::ifstream file("import/" + filename);
+    void importFromXML(const std::string& filename, const std::string& filepath = "") {
+        std::string fullpath = (filepath.empty() ? "import/" : filepath + "/") + filename;
+
+        std::ifstream file(fullpath);
         if (!file.is_open()) {
             throw std::runtime_error("Не удалось открыть " + filename);
         }
@@ -90,8 +92,10 @@ public:
         std::cout << "Импорт из файла успешно выполнен: " << filename << '\n';
     }
 
-    void exportToXML(const std::string& filename) {
-        std::ofstream file("export/" + filename);
+    void exportToXML(const std::string& filename, const std::string& filepath = "") {
+        std::string fullpath = (filepath.empty() ? "export/" : filepath + "/") + filename;
+
+        std::ofstream file(fullpath);
         if (!file.is_open()) {
             throw std::runtime_error("Не удалось открыть файл для записи: " + filename);
         }
