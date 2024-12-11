@@ -69,6 +69,33 @@ public:
         return std::vector<T>(this->matrixSize - std::abs(diagonalIndex), T{});
     }
 
+    // Удаление ключа диагонали из mapOfValuesForDiagonals
+    void removeDiagonal(int diagonalIndex) {
+        auto it = this->mapOfValuesForDiagonals.find(diagonalIndex);
+        if (it != this->mapOfValuesForDiagonals.end()) {
+            this->mapOfValuesForDiagonals.erase(it);
+        }
+    }
+
+    // Удлаление ключа диагонали нулей из mapOfValuesForDiagonals
+    DiagonalMatrix<T> checkZeros() {
+        int rows = this->rows() - 1;
+        for (int i = -1 * (rows); i <= rows; ++i) {
+            bool allZero = true;
+            for (const auto& item : this->getDiagonal(i)) {
+                if (item != 0) {
+                    allZero = false;
+                    break;
+                }
+            }
+
+            if (allZero) {
+                this->removeDiagonal(i);
+            }
+        }
+        return (*this);
+    }
+
     // Оператор сложения
     DiagonalMatrix<T> operator+(const DiagonalMatrix<T>& other) const {
         if (this->matrixSize != other.matrixSize) {
@@ -86,7 +113,7 @@ public:
             }
         }
 
-        return result;
+        return result.checkZeros();
     }
 
     // Оператор вычитания
@@ -106,7 +133,7 @@ public:
             }
         }
 
-        return result;
+        return result.checkZeros();
     }
 
     // Оператор умножения
@@ -126,7 +153,7 @@ public:
             }
         }
 
-        return result;
+        return result.checkZeros();
     }
 
     // Транспонирование матрицы
@@ -137,7 +164,7 @@ public:
             transposed.mapOfValuesForDiagonals[-diagonalIndex] = values;
         }
 
-        return transposed;
+        return transposed.checkZeros();
     }
 
     // Умножение на скаляр
@@ -151,7 +178,7 @@ public:
             }
         }
 
-        return result;
+        return result.checkZeros();
     }
 
     std::size_t rows() const override {

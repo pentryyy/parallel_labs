@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<import>
+  <matrixSize>8</matrixSize>
+  <valuesOfIndex_3>9, 4, 1, 16, 81</valuesOfIndex_3>
+  <valuesOfIndex_2>16, 25, 9, 36, 144, 225</valuesOfIndex_2>
+  <valuesOfIndex_1>25, 49, 81, 100, 144, 196, 289</valuesOfIndex_1>
+  <valuesOfIndex0>1, 4, 9, 961, 197136, 431649, 504100, 640000</valuesOfIndex0>
+  <valuesOfIndex1>81, 1, 0, 0, 0, 1936, 3025</valuesOfIndex1>
+  <valuesOfIndex2>6724, 225, 1600, 1, 25, 441</valuesOfIndex2>
+  <valuesOfIndex3>9, 2500, 3600, 1, 1089</valuesOfIndex3>
+</import>

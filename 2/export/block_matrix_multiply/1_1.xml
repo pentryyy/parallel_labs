@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<import>
+  <matrixSize>8</matrixSize>
+  <valuesOfIndex_3>64, 49, 36, 25, 16</valuesOfIndex_3>
+  <valuesOfIndex_2>81, 64, 49, 36, 25, 16</valuesOfIndex_2>
+  <valuesOfIndex_1>100, 81, 64, 49, 36, 25, 16</valuesOfIndex_1>
+  <valuesOfIndex0>121, 100, 81, 64, 49, 36, 25, 16</valuesOfIndex0>
+  <valuesOfIndex1>144, 121, 100, 81, 64, 49, 36</valuesOfIndex1>
+  <valuesOfIndex2>169, 144, 121, 100, 81, 64</valuesOfIndex2>
+  <valuesOfIndex3>196, 169, 144, 121, 100</valuesOfIndex3>
+</import>

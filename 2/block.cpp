@@ -51,31 +51,17 @@ int main() {
     std::cout << "Диагональная блочная матрица:\n";
     diagonalBlockMatrix1.print();
 
-    // Пример сложения блочных матриц
-    auto sumMatrix = diagonalBlockMatrix1 + diagonalBlockMatrix2;
-    std::cout << "Sum of Block Matrices:" << std::endl;
-    sumMatrix.print();
-
-    // Пример вычитания блочных матриц
-    auto diffMatrix = diagonalBlockMatrix1 - diagonalBlockMatrix2;
-    std::cout << "Difference of Block Matrices:" << std::endl;
-    diffMatrix.print();
-
-    // Пример умножения блочных матриц
-    auto productMatrix = diagonalBlockMatrix1 * diagonalBlockMatrix2;
-    std::cout << "Product of Block Matrices:" << std::endl;
-    productMatrix.print();
-
-    // Пример транспонирования матрицы
-    auto transposedMatrix = diagonalBlockMatrix1.transpose();
-    std::cout << "Transposed Block Matrix:" << std::endl;
-    transposedMatrix.print();
-
-    // Пример скалярного умножения
-    int scalar = 2;
-    auto scalarProductMatrix = diagonalBlockMatrix1.scalarMultiplication(scalar);
-    std::cout << "Scalar Multiplication of Block Matrix by " << scalar << ":" << std::endl;
-    scalarProductMatrix.print();
+    auto matrixPlusB       = diagonalBlockMatrix1 + diagonalBlockMatrix2;
+    auto matrixMinusB      = diagonalBlockMatrix1 - diagonalBlockMatrix2;
+    auto matrixMultiplyB   = diagonalBlockMatrix1 * diagonalBlockMatrix2;
+    auto transposedMatrixB = diagonalBlockMatrix1.transpose();
+    auto scaledMatrixB     = diagonalBlockMatrix1.scalarMultiplication(2);
+    
+    matrixPlusB.exportToDirectory("block_matrix_plus");
+    matrixMinusB.exportToDirectory("block_matrix_minus");
+    matrixMultiplyB.exportToDirectory("block_matrix_multiply");
+    transposedMatrixB.exportToDirectory("block_matrix_transpose");
+    scaledMatrixB.exportToDirectory("block_matrix_scalar");
 
     std::cout << "Нажмите любую клавишу для продолжения... ";
 

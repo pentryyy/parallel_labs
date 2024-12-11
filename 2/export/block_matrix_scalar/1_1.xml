@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<import>
+  <matrixSize>8</matrixSize>
+  <valuesOfIndex_3>16, 14, 12, 10, 8</valuesOfIndex_3>
+  <valuesOfIndex_2>18, 16, 14, 12, 10, 8</valuesOfIndex_2>
+  <valuesOfIndex_1>20, 18, 16, 14, 12, 10, 8</valuesOfIndex_1>
+  <valuesOfIndex0>22, 20, 18, 16, 14, 12, 10, 8</valuesOfIndex0>
+  <valuesOfIndex1>24, 22, 20, 18, 16, 14, 12</valuesOfIndex1>
+  <valuesOfIndex2>26, 24, 22, 20, 18, 16</valuesOfIndex2>
+  <valuesOfIndex3>28, 26, 24, 22, 20</valuesOfIndex3>
+</import>
