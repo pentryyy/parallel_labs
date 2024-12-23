@@ -10,6 +10,25 @@
 
 template <typename T>
 class DiagonalMatrix : public XMLDiagonalMatrixParser<T>, public IMatrixAdditionalActions<T> {
+private:
+    // Удлаление ключа диагонали нулей из mapOfValuesForDiagonals
+    inline DiagonalMatrix<T> checkZeros() {
+        int rows = this->rows() - 1;
+        for (int i = -1 * (rows); i <= rows; ++i) {
+            bool allZero = true;
+            for (const auto& item : this->getDiagonal(i)) {
+                if (item != 0) {
+                    allZero = false;
+                    break;
+                }
+            }
+
+            if (allZero) {
+                this->removeDiagonal(i);
+            }
+        }
+        return (*this);
+    }
 public:
     using Type = T; // Для получения используемого типа данных в матрице
 
@@ -75,25 +94,6 @@ public:
         if (it != this->mapOfValuesForDiagonals.end()) {
             this->mapOfValuesForDiagonals.erase(it);
         }
-    }
-
-    // Удлаление ключа диагонали нулей из mapOfValuesForDiagonals
-    DiagonalMatrix<T> checkZeros() {
-        int rows = this->rows() - 1;
-        for (int i = -1 * (rows); i <= rows; ++i) {
-            bool allZero = true;
-            for (const auto& item : this->getDiagonal(i)) {
-                if (item != 0) {
-                    allZero = false;
-                    break;
-                }
-            }
-
-            if (allZero) {
-                this->removeDiagonal(i);
-            }
-        }
-        return (*this);
     }
 
     // Оператор сложения

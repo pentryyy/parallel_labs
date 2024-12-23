@@ -23,9 +23,7 @@ protected:
 
     XMLDenseMatrixParser() {}
 
-    ~XMLDenseMatrixParser() {
-        delete[] Data;
-    }
+    ~XMLDenseMatrixParser() = default;
 public:
     void importFromXML(const std::string& fileName, const std::string& filePath = "") {
         std::string importFilePath = (filePath.empty() ? "import/" : filePath + "/") + fileName;
